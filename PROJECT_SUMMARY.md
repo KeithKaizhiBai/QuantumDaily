@@ -16,6 +16,7 @@ Provide a black/blue reading website with restrained purple accents, generated f
 - Apply the naming and upload procedure in README.md to every subsequent report.
 - Report bodies remain in Simplified Chinese. The current report is a sample, not a user-approved final deliverable.
 - On 2026-10-14, the user requested a corresponding webpage for each report, using a black/blue technology style with purple accents. Keep Markdown as the source and generate same-basename HTML pages.
+- On 2026-10-14, the user authorized recurring generation, automatic GitHub commits/publication and website/index updates. The user selected 09:15 Asia/Shanghai for both every-other-day briefs and Monday weekly reports.
 
 ## Active files
 
@@ -42,9 +43,12 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 - An independent code review found a mobile GitHub-link visibility issue; it was fixed. Top-level Markdown-token conversion also preserves fenced code blocks. Dependency audit reported zero vulnerabilities for the pinned builder dependency.
 - The website is live at https://keithkaizhibai.github.io/QuantumDaily/. GitHub Pages publishes main branch, /docs directory. The live homepage and first reading page were opened and checked on 2026-10-14; all 13 source links and the original report fingerprint were present, with no browser console warnings/errors.
 - Initial website source commit: 409a7f86ae140027c6fa39b9a73f594e62f00b34. A follow-up improves extremely narrow navigation and fingerprints shared assets so style updates appear consistently.
+- Active app tasks: `quantumdaily` (QuantumDaily 隔日简报, every two days at 09:15; first automatic issue 2026-10-16) and `quantumdaily-2` (QuantumDaily 周报, Monday 09:15; first automatic issue 2026-10-19). Both are scheduled in this existing chat, with sequential publication when both types are due.
+- Automation creation and saved prompts/schedules were read back on 2026-10-14. The host timezone is China Standard Time (UTC+08:00). The prompts require original-source research, PennyLane/PyTorch feasibility analysis, personnel/trend coverage, dated Markdown/HTML, homepage/README indexing, guarded GitHub publication and deployed-page verification.
+- No unattended scheduled run has occurred yet. This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
 
 ## Next steps
 
 - Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
-- Recurring execution times and a weekly publication day have not been configured.
+- Check the first scheduled brief and weekly report for editorial quality, successful GitHub storage and online index/report publication; distinguish any generation, storage or deployment failure.
 - Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.

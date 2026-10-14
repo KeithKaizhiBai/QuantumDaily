@@ -63,4 +63,26 @@ Commit the generated `docs/` pages together with their Markdown sources and the 
 
 Read [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) for the active files, confirmed decisions, validation status and next steps. Historical milestones are recorded in [TASK_LOG.md](TASK_LOG.md).
 
-The reporting cadence is every-other-day briefs plus weekly reports. No recurring execution schedule has been configured yet.
+## Automatic publication
+
+On 2026-10-14, the user authorized recurring report generation and automatic commits/publication to this repository's `main` branch. Two active scheduled tasks return to the existing Codex chat and use the same project files:
+
+| Report | Start time (Asia/Shanghai) | First automatic issue | Coverage |
+| --- | --- | --- | --- |
+| Every-other-day brief | Every two days at 09:15 | 2026-10-16 | New material since the previous brief's research cutoff |
+| Weekly report | Monday at 09:15 | 2026-10-19 | The previous Monday through Sunday |
+
+09:15 is the start of research and generation; publication follows successful checks. Weekly reports synthesize themes and changes across the week, verify original sources and add an actionable learning/implementation plan. They must not merely concatenate the briefs. Both report types retain personnel/team coverage when supported by public evidence.
+
+For every scheduled run:
+
+1. Read the accessible project rules, this README, PROJECT_SUMMARY.md and recent reports. Inspect the latest remote `main` and local edits. This workspace is a file mirror; use the GitHub connector rather than assuming a local checkout. Reconcile required remote inputs without overwriting user changes.
+2. Research original sources, including arXiv quant-ph, Quantum, QFI discovery leads, official university/company announcements and relevant software documentation. Keep broad algorithms, PennyLane/PyTorch engineering analysis and both classification axes. Record source gaps and distinguish verified facts from implementation assessments.
+3. Create the dated Markdown report with its actual coverage and research cutoff. Use `status: published` for a completed automatic issue. If the same date/type is already fully published, skip duplicate generation. Resume an incomplete upload or deployment before creating another copy.
+4. Generate the matching HTML page and homepage with the existing builder. Update the README report table, PROJECT_SUMMARY.md and TASK_LOG.md. Preserve all historical issues and the existing website style. Check filenames, required metadata, source-link preservation and generated links. Prefer available project dependencies or the app's bundled Node runtime; `load_workspace_dependencies` can locate it without installing another runtime.
+5. Publish only the task's Markdown, generated report page/homepage and related index/state/log changes, in one commit based on the latest remote tree. Recheck the branch before writing; update it with `expected_sha` and `force: false`. If it changed, reread and reconcile the relevant changes. Never force-push or stage unrelated edits.
+6. Read back saved files, check GitHub Pages deployment, and open the online report and homepage to verify the new issue appears. Report the actual outcome with reading/source links. Keep a candidate and recovery details if any step fails; distinguish generated content, GitHub storage and live deployment.
+
+When both tasks are due on the same Monday, process them sequentially in the same chat and recheck the repository before each publication. Both dated types must be retained; neither replaces the other.
+
+The scheduler runs in the local Codex app. Keep the computer on, the app running and this project accessible at run time; it is separate from GitHub Pages, which hosts the generated website. See the [official scheduled-task documentation](https://learn.chatgpt.com/docs/automations?surface=app). Review the first unattended results and adjust the workflow if needed.
