@@ -9,6 +9,7 @@ const require = createRequire(import.meta.url);
 const { Marked } = await import(pathToFileURL(require.resolve('marked')).href);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const output = path.join(root, 'docs');
+const assetVersion = createHash('sha256').update(fs.readFileSync(path.join(output, 'assets/site.css'))).update(fs.readFileSync(path.join(output, 'assets/site.js'))).digest('hex').slice(0,12);
 const repository = 'https://github.com/KeithKaizhiBai/QuantumDaily';
 const typeNames = { 'every-other-day-brief': '隔日简报', 'weekly-report': '周报' };
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
@@ -112,7 +113,7 @@ function footer() {
 }
 
 function document(title, description, prefix, contents, sourceHash = '') {
-  return `<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>${escape(title)} · QuantumDaily</title><meta name="description" content="${escape(description)}">${sourceHash ? `<meta name="source-sha256" content="${sourceHash}">` : ''}<link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}assets/site.css"><script src="${prefix}assets/site.js" defer></script></head><body>${contents}</body></html>\n`;
+  return `<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>${escape(title)} · QuantumDaily</title><meta name="description" content="${escape(description)}">${sourceHash ? `<meta name="source-sha256" content="${sourceHash}">` : ''}<link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}assets/site.css?v=${assetVersion}"><script src="${prefix}assets/site.js?v=${assetVersion}" defer></script></head><body>${contents}</body></html>\n`;
 }
 
 function orbit() {

@@ -132,4 +132,5 @@ button,a,input,summary { -webkit-tap-highlight-color:transparent; }
 @media (max-width:360px) { .brand { font-size:16px; } .brand-mark { width:24px; height:24px; } .site-nav { font-size:11px; gap:10px; } .header-inner { gap:9px; } }
 .site-nav a { white-space:nowrap; }
 @media (max-width:360px) { .site-nav a[href$="#about"] { display:none; } }
+@media (max-width:300px) { .site-nav a[href$="#archive"] { display:none; } .feature-actions { flex-direction:column; align-items:stretch; gap:14px; } .feature-actions .primary-link { min-width:0; } }
 @media print { :root { --text:#101010; --muted:#333; --faint:#444; --line:#bbb; } body { background:white; color:black; } body::before,.site-header,.reading-progress,.outline,.source-link,.back-link,.site-footer { display:none; } .wrap { width:100%; } .reading-layout { display:block; padding:0; } .article-body,.article-body strong,.article-body h2 { color:black; } .issue-top { padding-top:0; } .article-body a { color:#224870; } .article-body h2 { break-after:avoid; } }

@@ -40,11 +40,11 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 - Website generation passes. The original Markdown blob remains 01658ca55cf377c9598060b978633ed27f8103c5.
 - Desktop/mobile browser checks covered archive filtering, keyword search, empty results, article layout and navigation. All 13 original source links remain present; no console warnings/errors were observed in the tested views.
 - An independent code review found a mobile GitHub-link visibility issue; it was fixed. Top-level Markdown-token conversion also preserves fenced code blocks. Dependency audit reported zero vulnerabilities for the pinned builder dependency.
-- Website publication is pending. Target GitHub Pages configuration: main branch, /docs directory. Intended URL: https://keithkaizhibai.github.io/QuantumDaily/.
+- The website is live at https://keithkaizhibai.github.io/QuantumDaily/. GitHub Pages publishes main branch, /docs directory. The live homepage and first reading page were opened and checked on 2026-10-14; all 13 source links and the original report fingerprint were present, with no browser console warnings/errors.
+- Initial website source commit: 409a7f86ae140027c6fa39b9a73f594e62f00b34. A follow-up improves extremely narrow navigation and fingerprints shared assets so style updates appear consistently.
 
 ## Next steps
 
-- Publish the website and verify the live homepage and first reading page, then update the publication status here.
 - Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
 - Recurring execution times and a weekly publication day have not been configured.
 - Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.
