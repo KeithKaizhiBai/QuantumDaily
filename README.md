@@ -36,6 +36,27 @@ Follow original papers, official software documentation and releases, university
 
 Each issue should distinguish publication from event dates, preprints from reviewed publications, simulations from hardware experiments, and sourced facts from engineering assessments or trend hypotheses. State material source-coverage gaps and the actual reproduction status. Do not run paid hardware jobs or large computations merely to prepare a report.
 
+## Writing standard
+
+Apply the general AGENTS.md section 6, "Direct, Explanatory and Scientific Writing Style", to both report types. Its English text is authoritative. Write in natural Simplified Chinese for a colleague learning quantum algorithms and implementing them. Use recent reports to identify sources and continuity; use this standard to guide the prose.
+
+- **Lead with the result.** Open each item with the concrete subject, advance, mechanism and strongest available evidence. Titles name the contribution or problem; short paragraphs explain why it matters for simulation or implementation.
+- **Explain the mechanism.** For an algorithm or physical result, follow the useful part of subject → governing principle → formulation or method → evidence → consequence. Introduce essential assumptions and symbols where they enter the argument. Scale the explanation to a brief; include a derivation or equation only when it improves understanding.
+- **Attach conditions to the claim they qualify.** State the tested system, benchmark, comparison baseline, error model or resource measure next to a quantitative result. Attribute reported results to their authors and mark engineering estimates as assessments. State a specific missing measurement or unresolved interface when it affects the conclusion.
+- **Give concrete implementation guidance.** Explain the roles of PennyLane and PyTorch, the smallest useful example, required operations and data, observable outputs and comparison criteria. Discuss gate counts, depth, shots, memory or runtime only when relevant. Headings should help reading; each item can use the amount of structure its evidence supports.
+- **Write public people/team news precisely.** Report documented role changes, dates and affiliations. A current title or a project role supplies context according to its source. When verified employment-move information is sparse, one short coverage note is enough.
+- **Consolidate verification status.** Give source coverage and the actual reproduction stage once in the verification section. Keep an item-specific qualification beside the result when it materially changes the reader's assessment. Record scheduling/upload diagnostics in project records; an operational delay belongs in the report only to explain a changed coverage window or cutoff.
+- **Revise the complete prose before publication.** After checking facts and citations, remove unnecessary defensive negation, invented objections, repeated caveats and empty transitions such as “值得强调的是” or “更准确地说”. Prefer affirmative statements of the result's scope and requirements. Retain negation that states an essential physical/mathematical condition, an evidence-backed exclusion, a real misconception or a material source/verification gap. Review candidate phrases in context; avoid mechanical keyword bans or blanket replacements.
+
+Examples adapted from the October 16 issue illustrate this revision pass:
+
+| Draft wording | More explanatory wording |
+| --- | --- |
+| 这不等于完整应用已经获得真机加速。 | 该结果评估指定子程序的逻辑资源；完整应用的端到端真机耗时仍待测量。 |
+| Python 接口并不自动意味着 PennyLane QNode 能直接运行。 | PennyLane 接入需核对设备插件、指令集、测量格式和反馈支持。 |
+
+The final editorial pass must preserve the scientific claim, its conditions, source links and dates. Complete it before building HTML, then inspect rendered headings, emphasis, equations if present, and the homepage excerpt. A phrase search can identify passages for review; editorial judgment determines the revision. Both scheduled tasks carry these requirements in their saved prompts as well as reading this README.
+
 ## Reports
 
 | Issue date | Type | Status | Markdown source | Webpage |
@@ -79,7 +100,7 @@ For every scheduled run:
 
 1. Read the accessible project rules, this README, PROJECT_SUMMARY.md and recent reports. Inspect the latest remote `main` and local edits. This workspace is a file mirror; use the GitHub connector rather than assuming a local checkout. Reconcile required remote inputs without overwriting user changes.
 2. Research original sources, including arXiv quant-ph, Quantum, QFI discovery leads, official university/company announcements and relevant software documentation. Keep broad algorithms, PennyLane/PyTorch engineering analysis and both classification axes. Record source gaps and distinguish verified facts from implementation assessments.
-3. Create the dated Markdown report with its actual coverage and research cutoff. Use `status: published` for a completed automatic issue. If the same date/type is already fully published, skip duplicate generation. Resume an incomplete upload or deployment before creating another copy.
+3. Create the dated Markdown report with its actual coverage and research cutoff. Complete the factual and full-prose editorial passes in "Writing standard" before generating HTML. Use `status: published` for a completed automatic issue. If the same date/type is already fully published, skip duplicate generation. Resume an incomplete upload or deployment before creating another copy.
 4. Generate the matching HTML page and homepage with the existing builder. Update the README report table, PROJECT_SUMMARY.md and TASK_LOG.md. Preserve all historical issues and the existing website style. Check filenames, required metadata, source-link preservation and generated links. Prefer available project dependencies or the app's bundled Node runtime; `load_workspace_dependencies` can locate it without installing another runtime.
 5. Publish only the task's Markdown, generated report page/homepage and related index/state/log changes, in one commit based on the latest remote tree. Recheck the branch before writing; update it with `expected_sha` and `force: false`. If it changed, reread and reconcile the relevant changes. Never force-push or stage unrelated edits.
 6. Read back saved files, check GitHub Pages deployment, and open the online report and homepage to verify the new issue appears. Report the actual outcome with reading/source links. Keep a candidate and recovery details if any step fails; distinguish generated content, GitHub storage and live deployment.

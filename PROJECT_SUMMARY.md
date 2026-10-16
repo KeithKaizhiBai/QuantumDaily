@@ -17,6 +17,7 @@ Provide a black/blue reading website with restrained purple accents, generated f
 - Report bodies remain in Simplified Chinese. The 2026-10-14 report remains the initial sample; automatic publication does not imply user approval or independent scientific reproduction.
 - On 2026-10-14, the user requested a corresponding webpage for each report, using a black/blue technology style with purple accents. Keep Markdown as the source and generate same-basename HTML pages.
 - On 2026-10-14, the user authorized recurring generation, automatic GitHub commits/publication and website/index updates. The user selected 09:15 Asia/Shanghai for both every-other-day briefs and Monday weekly reports.
+- On 2026-10-16, the user requested that report generation follow the general AGENTS.md writing requirements. README.md / Writing standard and both saved task prompts now require affirmative, evidence-led explanations and a full-prose revision pass before HTML generation.
 
 ## Active files
 
@@ -52,10 +53,12 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 - Static validation passed for all three HTML files: local links and anchors resolve and all 18 new-issue source URLs are preserved. After correcting five inline emphasis labels, the final generated source fingerprint matches Markdown SHA-256 c4f70652597a0a8454699e12aaf5261d69b8d329f81c46e0234fcc920365248a; no raw bold markers remain in the rendered new article.
 - Report publication commit: 605f63ab3dd58a45dc699321e9ed9770f11dafc3; final formatting commit: b03016519ab03de2a2f0377a91067a621ef9d33c. Remote blobs match the local files. GitHub Pages run 38880648511 completed successfully. Browser checks confirmed the homepage's two issues and latest link, the new report's title, nine section headings, all 18 sources and final source fingerprint; no console warnings/errors were observed. A revision query was used for final readback because ordinary navigation initially reused the earlier page cache.
 - Current arXiv coverage reaches the 2026-10-16 first 50 recent entries plus selected original papers. QFI still displays June 15 entries. Official latest-release endpoints returned PennyLane v0.45.1 and PyTorch v2.14.1, both predating the window; these are source observations, not local installation or compatibility tests.
+- Writing-standard setup was checked against the accessible English general AGENTS.md section 6. Both existing task prompts were updated and read back; saved identity, cadence, active status, target chat and creation timestamps were preserved. The standard includes examples from the current issue and contextual review of negative framing, while retaining scientific conditions, uncertainty and verification evidence. Full report generation under the revised prompts remains to be checked at the next run.
 - This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
 
 ## Next steps
 
 - Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
+- Apply README.md / Writing standard to the next brief and weekly report, with a complete factual/citation check followed by prose revision and rendered-page review.
 - Next intended brief: 2026-10-18 09:15 +08:00; first weekly issue: 2026-10-19 09:15 +08:00. Investigate the observed trigger delay before asserting that the 09:15 schedule has been validated. Continue checking original-source quality and completed storage/deployment on subsequent runs.
 - Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.
