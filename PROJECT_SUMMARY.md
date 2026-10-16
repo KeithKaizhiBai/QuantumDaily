@@ -22,7 +22,7 @@ Provide a black/blue reading website with restrained purple accents, generated f
 
 - README.md: archive naming, publishing procedure, editorial scope and report index.
 - reports/2026/2026-10-14_every-other-day-brief.md: first sample, with its original research cutoff and links preserved.
-- reports/2026/2026-10-16_every-other-day-brief.md: latest generated issue, covering the previous cutoff through 2026-10-16 17:18:31 +08:00.
+- reports/2026/2026-10-16_every-other-day-brief.md: latest published issue, covering the previous cutoff through 2026-10-16 17:18:31 +08:00.
 - PROJECT_SUMMARY.md: the single current-state entry point.
 - tools/build-site.mjs and package.json/package-lock.json: repeatable website generation, using marked 17.0.5.
 - docs/index.html: reading homepage and searchable archive.
@@ -48,13 +48,14 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 - Active app tasks: `quantumdaily` (QuantumDaily 隔日简报, every two days at 09:15; first automatic issue 2026-10-16) and `quantumdaily-2` (QuantumDaily 周报, Monday 09:15; first automatic issue 2026-10-19). Both are scheduled in this existing chat, with sequential publication when both types are due.
 - Automation creation and saved prompts/schedules were read back on 2026-10-14. The host timezone is China Standard Time (UTC+08:00). The prompts require original-source research, PennyLane/PyTorch feasibility analysis, personnel/trend coverage, dated Markdown/HTML, homepage/README indexing, guarded GitHub publication and deployed-page verification.
 - The first automatic issue was triggered on 2026-10-16 at 17:13 +08:00, later than the agreed 09:15. Its window uses the actual research cutoff; the delay's cause has not been established. Preserve the agreed publication schedule while investigating evidence before changing timing settings.
-- The 2026-10-16 issue contains five developments: evaluator-guided reversible circuits, SynDebug, rare-event QEC simulation, Terra Quantum/QuEra cooperation, and QC3 team participation. Source passages and author repository instructions were read. No algorithm simulation, LLM search, training or hardware job was executed. The website builder generated two report pages and the homepage; GitHub publication and deployment verification are pending for the new issue.
-- Static validation passed for all three HTML files: local links and anchors resolve, all 18 new-issue source URLs are preserved, and the generated source fingerprint matches Markdown SHA-256 06429acb6b5a606abda6dac1678917cf4194396821618000bd49a3216601ec7e.
+- The 2026-10-16 issue contains five developments: evaluator-guided reversible circuits, SynDebug, rare-event QEC simulation, Terra Quantum/QuEra cooperation, and QC3 team participation. Source passages and author repository instructions were read. No algorithm simulation, LLM search, training or hardware job was executed. The report, reading page and homepage/README index were saved to GitHub and verified online.
+- Static validation passed for all three HTML files: local links and anchors resolve and all 18 new-issue source URLs are preserved. After correcting five inline emphasis labels, the final generated source fingerprint matches Markdown SHA-256 c4f70652597a0a8454699e12aaf5261d69b8d329f81c46e0234fcc920365248a; no raw bold markers remain in the rendered new article.
+- Report publication commit: 605f63ab3dd58a45dc699321e9ed9770f11dafc3; final formatting commit: b03016519ab03de2a2f0377a91067a621ef9d33c. Remote blobs match the local files. GitHub Pages run 38880648511 completed successfully. Browser checks confirmed the homepage's two issues and latest link, the new report's title, nine section headings, all 18 sources and final source fingerprint; no console warnings/errors were observed. A revision query was used for final readback because ordinary navigation initially reused the earlier page cache.
 - Current arXiv coverage reaches the 2026-10-16 first 50 recent entries plus selected original papers. QFI still displays June 15 entries. Official latest-release endpoints returned PennyLane v0.45.1 and PyTorch v2.14.1, both predating the window; these are source observations, not local installation or compatibility tests.
 - This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
 
 ## Next steps
 
 - Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
-- Finish the 2026-10-16 issue's remote readback and live-page verification, then check the first weekly issue on 2026-10-19. Investigate the observed trigger delay before asserting that the 09:15 schedule has been validated.
+- Next intended brief: 2026-10-18 09:15 +08:00; first weekly issue: 2026-10-19 09:15 +08:00. Investigate the observed trigger delay before asserting that the 09:15 schedule has been validated. Continue checking original-source quality and completed storage/deployment on subsequent runs.
 - Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.
