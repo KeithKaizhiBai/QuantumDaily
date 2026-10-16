@@ -1,6 +1,6 @@
 # QuantumDaily current state
 
-Updated: 2026-10-14, Asia/Shanghai.
+Updated: 2026-10-16, Asia/Shanghai.
 
 ## Objective
 
@@ -14,7 +14,7 @@ Provide a black/blue reading website with restrained purple accents, generated f
 - Algorithms remain general; PennyLane and PyTorch guide implementation analysis.
 - On 2026-10-14, the user designated KeithKaizhiBai/QuantumDaily as the online storage destination and requested date-plus-report-type filenames in English.
 - Apply the naming and upload procedure in README.md to every subsequent report.
-- Report bodies remain in Simplified Chinese. The current report is a sample, not a user-approved final deliverable.
+- Report bodies remain in Simplified Chinese. The 2026-10-14 report remains the initial sample; automatic publication does not imply user approval or independent scientific reproduction.
 - On 2026-10-14, the user requested a corresponding webpage for each report, using a black/blue technology style with purple accents. Keep Markdown as the source and generate same-basename HTML pages.
 - On 2026-10-14, the user authorized recurring generation, automatic GitHub commits/publication and website/index updates. The user selected 09:15 Asia/Shanghai for both every-other-day briefs and Monday weekly reports.
 
@@ -22,10 +22,12 @@ Provide a black/blue reading website with restrained purple accents, generated f
 
 - README.md: archive naming, publishing procedure, editorial scope and report index.
 - reports/2026/2026-10-14_every-other-day-brief.md: first sample, with its original research cutoff and links preserved.
+- reports/2026/2026-10-16_every-other-day-brief.md: latest generated issue, covering the previous cutoff through 2026-10-16 17:18:31 +08:00.
 - PROJECT_SUMMARY.md: the single current-state entry point.
 - tools/build-site.mjs and package.json/package-lock.json: repeatable website generation, using marked 17.0.5.
 - docs/index.html: reading homepage and searchable archive.
 - docs/reports/2026/2026-10-14_every-other-day-brief.html: first sample's reading page.
+- docs/reports/2026/2026-10-16_every-other-day-brief.html: latest issue's generated reading page.
 - docs/assets/site.css and docs/assets/site.js: shared responsive style and reader/archive interactions.
 - TASK_LOG.md: historical milestones and their reasons.
 
@@ -45,10 +47,14 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 - Initial website source commit: 409a7f86ae140027c6fa39b9a73f594e62f00b34. A follow-up improves extremely narrow navigation and fingerprints shared assets so style updates appear consistently.
 - Active app tasks: `quantumdaily` (QuantumDaily 隔日简报, every two days at 09:15; first automatic issue 2026-10-16) and `quantumdaily-2` (QuantumDaily 周报, Monday 09:15; first automatic issue 2026-10-19). Both are scheduled in this existing chat, with sequential publication when both types are due.
 - Automation creation and saved prompts/schedules were read back on 2026-10-14. The host timezone is China Standard Time (UTC+08:00). The prompts require original-source research, PennyLane/PyTorch feasibility analysis, personnel/trend coverage, dated Markdown/HTML, homepage/README indexing, guarded GitHub publication and deployed-page verification.
-- No unattended scheduled run has occurred yet. This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
+- The first automatic issue was triggered on 2026-10-16 at 17:13 +08:00, later than the agreed 09:15. Its window uses the actual research cutoff; the delay's cause has not been established. Preserve the agreed publication schedule while investigating evidence before changing timing settings.
+- The 2026-10-16 issue contains five developments: evaluator-guided reversible circuits, SynDebug, rare-event QEC simulation, Terra Quantum/QuEra cooperation, and QC3 team participation. Source passages and author repository instructions were read. No algorithm simulation, LLM search, training or hardware job was executed. The website builder generated two report pages and the homepage; GitHub publication and deployment verification are pending for the new issue.
+- Static validation passed for all three HTML files: local links and anchors resolve, all 18 new-issue source URLs are preserved, and the generated source fingerprint matches Markdown SHA-256 06429acb6b5a606abda6dac1678917cf4194396821618000bd49a3216601ec7e.
+- Current arXiv coverage reaches the 2026-10-16 first 50 recent entries plus selected original papers. QFI still displays June 15 entries. Official latest-release endpoints returned PennyLane v0.45.1 and PyTorch v2.14.1, both predating the window; these are source observations, not local installation or compatibility tests.
+- This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
 
 ## Next steps
 
 - Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
-- Check the first scheduled brief and weekly report for editorial quality, successful GitHub storage and online index/report publication; distinguish any generation, storage or deployment failure.
+- Finish the 2026-10-16 issue's remote readback and live-page verification, then check the first weekly issue on 2026-10-19. Investigate the observed trigger delay before asserting that the 09:15 schedule has been validated.
 - Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.

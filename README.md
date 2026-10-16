@@ -40,6 +40,7 @@ Each issue should distinguish publication from event dates, preprints from revie
 
 | Issue date | Type | Status | Markdown source | Webpage |
 | --- | --- | --- | --- | --- |
+| 2026-10-16 | Every-other-day brief | Published | [Source](reports/2026/2026-10-16_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-16_every-other-day-brief.html) |
 | 2026-10-14 | Every-other-day brief | Sample | [Source](reports/2026/2026-10-14_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-14_every-other-day-brief.html) |
 
 ## Website maintenance
