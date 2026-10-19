@@ -1,6 +1,6 @@
 # QuantumDaily current state
 
-Updated: 2026-10-16, Asia/Shanghai.
+Updated: 2026-10-19, Asia/Shanghai.
 
 ## Objective
 
@@ -23,12 +23,14 @@ Provide a black/blue reading website with restrained purple accents, generated f
 
 - README.md: archive naming, publishing procedure, editorial scope and report index.
 - reports/2026/2026-10-14_every-other-day-brief.md: first sample, with its original research cutoff and links preserved.
-- reports/2026/2026-10-16_every-other-day-brief.md: latest published issue, editorially revised at the user's request; coverage ends at the original 2026-10-16 17:18:31 +08:00 cutoff.
+- reports/2026/2026-10-16_every-other-day-brief.md: previous published issue, editorially revised at the user's request; its original cutoff and all 18 sources are preserved.
+- reports/2026/2026-10-19_every-other-day-brief.md: current generated issue; coverage begins at 2026-10-16 17:18:31 +08:00 and ends at 2026-10-19 09:05:40 +08:00. GitHub saving and deployment checks are pending.
 - PROJECT_SUMMARY.md: the single current-state entry point.
 - tools/build-site.mjs and package.json/package-lock.json: repeatable website generation, using marked 17.0.5.
 - docs/index.html: reading homepage and searchable archive.
 - docs/reports/2026/2026-10-14_every-other-day-brief.html: first sample's reading page.
-- docs/reports/2026/2026-10-16_every-other-day-brief.html: latest issue's generated reading page.
+- docs/reports/2026/2026-10-16_every-other-day-brief.html: previous issue's reading page.
+- docs/reports/2026/2026-10-19_every-other-day-brief.html: current generated reading page.
 - docs/assets/site.css and docs/assets/site.js: shared responsive style and reader/archive interactions.
 - TASK_LOG.md: historical milestones and their reasons.
 
@@ -36,30 +38,20 @@ The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkou
 
 ## Validation and limits
 
-- For the sample, relevant original paper passages, author-code entry points, institutional/company announcements and PennyLane documentation were inspected during the 2026-10-14 research session.
-- No simulations, hardware jobs or independent paper reproductions were executed.
-- arXiv coverage after the visible 2026-10-12 listing was not confirmed. The QFI homepage's latest visible entries were dated 2026-06-15.
-- The initial report and README were published to the GitHub main branch and read back on 2026-10-14. Their saved contents exactly match the prepared files.
-- Report storage commit: 460e80dc0ce8be282e51397949202c19f0a9abbd. This records archival publication, not independent scientific reproduction.
-- Website generation passes. The original Markdown blob remains 01658ca55cf377c9598060b978633ed27f8103c5.
-- Desktop/mobile browser checks covered archive filtering, keyword search, empty results, article layout and navigation. All 13 original source links remain present; no console warnings/errors were observed in the tested views.
-- An independent code review found a mobile GitHub-link visibility issue; it was fixed. Top-level Markdown-token conversion also preserves fenced code blocks. Dependency audit reported zero vulnerabilities for the pinned builder dependency.
-- The website is live at https://keithkaizhibai.github.io/QuantumDaily/. GitHub Pages publishes main branch, /docs directory. The live homepage and first reading page were opened and checked on 2026-10-14; all 13 source links and the original report fingerprint were present, with no browser console warnings/errors.
-- Initial website source commit: 409a7f86ae140027c6fa39b9a73f594e62f00b34. A follow-up improves extremely narrow navigation and fingerprints shared assets so style updates appear consistently.
-- Active app tasks: `quantumdaily` (QuantumDaily 隔日简报, every two days at 09:15; first automatic issue 2026-10-16) and `quantumdaily-2` (QuantumDaily 周报, Monday 09:15; first automatic issue 2026-10-19). Both are scheduled in this existing chat, with sequential publication when both types are due.
-- Automation creation and saved prompts/schedules were read back on 2026-10-14. The host timezone is China Standard Time (UTC+08:00). The prompts require original-source research, PennyLane/PyTorch feasibility analysis, personnel/trend coverage, dated Markdown/HTML, homepage/README indexing, guarded GitHub publication and deployed-page verification.
-- The first automatic issue was triggered on 2026-10-16 at 17:13 +08:00, later than the agreed 09:15. Its window uses the actual research cutoff; the delay's cause has not been established. Preserve the agreed publication schedule while investigating evidence before changing timing settings.
-- The 2026-10-16 issue contains five developments: evaluator-guided reversible circuits, SynDebug, rare-event QEC simulation, Terra Quantum/QuEra cooperation, and QC3 team participation. Source passages and author repository instructions were read. No algorithm simulation, LLM search, training or hardware job was executed. The report, reading page and homepage/README index were saved to GitHub and verified online.
-- The 2026-10-16 editorial revision applies the writing standard to the full existing issue: concrete result statements, explanations of uncomputation and measurement conditions, actionable reproduction steps and consolidated verification status. The five topics, quantitative findings, front matter and all 18 source URLs are preserved. This is a prose/structure revision using the previously read sources; no new research window or numerical execution was introduced.
-- Static validation passed for all three HTML files: local links and anchors resolve, all 18 source URLs are present and bold labels render. The revised Markdown SHA-256 is c696d41f740fef4b7050090359c41382639a3dbda530b0dd4b5c37f69c5fa4ae. The reading page and homepage excerpt are published.
-- Current editorial publication commit: 19608a28f894e4baa88fd5cbb0a5e1efe5ce4e99; earlier publication history is in TASK_LOG.md. Remote blobs matched the prepared files and GitHub Pages run 38883888347 succeeded. Live browser readback confirmed the revised title/lead, nine section headings, all 18 sources, matching source fingerprint and the homepage's updated focus/excerpt with both issues retained. Desktop visual inspection found readable layout with no horizontal overflow; no console warnings/errors were observed. Revision queries were used to avoid earlier cached HTML.
-- Current arXiv coverage reaches the 2026-10-16 first 50 recent entries plus selected original papers. QFI still displays June 15 entries. Official latest-release endpoints returned PennyLane v0.45.1 and PyTorch v2.14.1, both predating the window; these are source observations, not local installation or compatibility tests.
-- Writing-standard setup was checked against the accessible English general AGENTS.md section 6. Both task prompts were updated and read back with identity, cadence, active status, target chat and creation timestamps preserved. The current issue has now undergone a manual full-prose revision; automatic generation under the revised prompts remains to be checked at the next run.
-- This local scheduler requires the computer and app to be running, the project to remain accessible and the required connectors to be available.
+- Remote main was checked at a859149a14cf055b90344baa115043d1889893ef before this run. The remote archive contained only the October 14 sample and October 16 issue. Required local inputs matched their remote blobs; this workspace has no local Git checkout.
+- The October 19 issue contains two announcements with verified timestamps after the previous cutoff: Quantum X Labs' company-reported IBM-device calibration tests and QuTech's next QIA integration programme. UKRI's October 16 announcement is explicitly marked as a date-only boundary supplement. Personnel coverage reports existing QIA roles; no new senior career move was verified.
+- Read primary announcements, framework documentation and release records. Checked arXiv recent/new, Quantum homepage/RSS and QFI. arXiv still showed October 16 listings, Quantum's latest paper was October 15, and QFI's latest visible entries remained June 15. Chinese university coverage is limited. An APS acknowledgment correction and a newly published interview recorded in February 2025 were excluded from new-result/personnel coverage after checking their original dates.
+- The minimal reproduction plan uses PennyLane circuits and PyTorch readout calibration/statistics. No quantum simulations, fitting/training, independent paper reproductions or hardware jobs were executed. LayerQake's reported improvement remains a company test claim; the read announcement lacks the detailed protocol/data/code needed for a method-level reproduction.
+- Full-prose and factual passes were completed before HTML generation using README / Writing standard and accessible English general AGENTS.md section 6. The report explains mechanisms, conditions, measurement costs and hardware access requirements directly.
+- The Node builder completed for three report pages. Static checks passed for four HTML files, local targets/anchors, all 18 current-issue source URLs, metadata/naming and rendered emphasis. Current Markdown SHA-256: 4ac2a3aa64fec64c8833c7293c2e14f78a0f6c378cac75d9b8424a110f10778e. The October 14/16 sources and pages, shared CSS/JS and generator retain their prior blobs.
+- Current issue status: generated and statically checked; GitHub storage, Pages deployment and live browser checks are pending. Preserve the candidate and resume publication if a later step fails.
+- Previous issue's editorial publication: 19608a28f894e4baa88fd5cbb0a5e1efe5ce4e99; Pages run 38883888347 succeeded and live source fingerprint/18 links/homepage were checked. Initial site checks also covered mobile/desktop reading, filtering/search and browser errors. Earlier evidence and publication history remain in TASK_LOG.md.
+- Active local-app tasks are quantumdaily (every two days at 09:15, anchored at October 16) and quantumdaily-2 (Monday 09:15, first October 19). Both use this chat and must publish sequentially. Saved schedules/prompts were previously read back; timing has not been validated by unattended execution.
+- The current heartbeat arrived October 19 at 08:56:37 +08:00, with no October 18 publication in the checked remote archive. Its actual issue date is October 19; no October 18 issue is backdated. The October 16 trigger also arrived later than its intended start. These observations do not establish the timing failure's cause; preserve the agreed schedule pending evidence.
+- The computer, local app, project and connectors must be available for scheduled execution. GitHub Pages hosts the generated site separately.
 
 ## Next steps
 
-- Future report runs must generate and save both Markdown and HTML using the same basename, update the indexes and state, and verify the deployed reading page.
-- Apply README.md / Writing standard to subsequent briefs and weekly reports, with factual/citation checks, full-prose revision and rendered-page review. The current manual editorial revision is published and checked.
-- Next intended brief: 2026-10-18 09:15 +08:00; first weekly issue: 2026-10-19 09:15 +08:00. Investigate the observed trigger delay before asserting that the 09:15 schedule has been validated. Continue checking original-source quality and completed storage/deployment on subsequent runs.
-- Broaden direct coverage of Chinese universities and companies; assess the SamBa-GQW small-instance reproduction separately if requested.
+- Complete guarded publication of the October 19 candidate, read back the saved files, verify Pages and inspect the report/homepage in a browser; then update these records with the observed result.
+- The next intended brief remains October 20 at 09:15 +08:00 under the original two-day cadence; after successful publication it should resume from this issue's research cutoff. The October 19 weekly report belongs to its separate scheduled run and covers October 12-18.
+- Continue source/citation and full-prose checks, original Chinese institutional coverage and public personnel tracking. Investigate scheduler timing using actual evidence before changing settings.
