@@ -1,64 +1,36 @@
 # QuantumDaily current state
 
-Updated: 2026-10-26, Asia/Shanghai.
+Updated: 2026-10-30, Asia/Shanghai.
 
-## Objective
+## Objective and confirmed decisions
 
-Maintain an online archive of quantum computing briefs for an algorithm engineer learning general quantum algorithms and working with PennyLane and PyTorch. Cover simulation and hardware implementation, plus field trends and public personnel/team changes.
+Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer. Keep the algorithm scope general, analyze PennyLane/PyTorch simulation and hardware feasibility, and cover field trends and publicly verified people/team moves along academia/industry and science/engineering axes.
 
-Provide a black/blue reading website with restrained purple accents, generated from the same Markdown reports and published through the existing GitHub repository.
-
-## Confirmed decisions
-
-- The user selected every-other-day briefs plus weekly reports.
-- Algorithms remain general; PennyLane and PyTorch guide implementation analysis.
-- On 2026-10-14, the user designated KeithKaizhiBai/QuantumDaily as the online storage destination and requested date-plus-report-type filenames in English.
-- Apply the naming and upload procedure in README.md to every subsequent report.
-- Report bodies remain in Simplified Chinese. The 2026-10-14 report remains the initial sample; automatic publication does not imply user approval or independent scientific reproduction.
-- On 2026-10-14, the user requested a corresponding webpage for each report, using a black/blue technology style with purple accents. Keep Markdown as the source and generate same-basename HTML pages.
-- On 2026-10-14, the user authorized recurring generation, automatic GitHub commits/publication and website/index updates. The user selected 09:15 Asia/Shanghai for both every-other-day briefs and Monday weekly reports.
-- On 2026-10-16, the user requested that report generation follow the general AGENTS.md writing requirements. README.md / Writing standard and both saved task prompts now require affirmative, evidence-led explanations and a full-prose revision pass before HTML generation.
+The user authorized automatic commits/publication to KeithKaizhiBai/QuantumDaily main, date-plus-English-type names, matching Markdown/HTML pages and archive updates. The chosen start time is 09:15 Asia/Shanghai. Preserve the black/blue/purple reading site and existing history. Follow README Writing standard and the current authoritative general English AGENTS.md; its direct/evidence-based writing rules are now in section 1 (the older saved section-6 title reference remains in project guidance).
 
 ## Active files
 
-- README.md: archive naming, publishing procedure, editorial scope and report index.
-- reports/2026/2026-10-14_every-other-day-brief.md: first sample, with its original research cutoff and links preserved.
-- reports/2026/2026-10-16_every-other-day-brief.md: previous published issue, editorially revised at the user's request; its original cutoff and all 18 sources are preserved.
-- reports/2026/2026-10-19_every-other-day-brief.md: previous published brief; its verified cutoff remains 2026-10-19 09:05:40 +08:00.
-- reports/2026/2026-10-21_every-other-day-brief.md: previous published brief, issue 004; its verified cutoff remains 2026-10-21 17:29:33 +08:00.
-- reports/2026/2026-10-23_every-other-day-brief.md: previous published brief, issue 005; verified cutoff 2026-10-23 17:26:15 +08:00.
-- reports/2026/2026-10-25_every-other-day-brief.md: current issue 006, continuing from that cutoff through 2026-10-25 17:21:32 +08:00. Generated, statically checked, GitHub-saved and live; readback/deployment/browser verification passed.
-- reports/2026/2026-10-19_weekly-report.md: first weekly issue, published for October 12-18; storage and live deployment verified.
-- reports/2026/2026-10-26_weekly-report.md: weekly issue 002 for October 19 00:00 through October 25 23:59:59, cutoff October 26 09:22:27 +08:00. Generated, GitHub-saved and live; the table correction and final readback/deployment/browser checks passed. The brief cutoff remains October 25 17:21:32 +08:00.
-- PROJECT_SUMMARY.md: the single current-state entry point.
-- tools/build-site.mjs and package.json/package-lock.json: repeatable website generation, using marked 17.0.5.
-- docs/index.html: reading homepage and searchable archive.
-- docs/reports/2026/2026-10-14_every-other-day-brief.html: first sample's reading page.
-- docs/reports/2026/2026-10-16_every-other-day-brief.html: previous issue's reading page.
-- docs/reports/2026/2026-10-19_every-other-day-brief.html: previous brief reading page.
-- docs/reports/2026/2026-10-19_weekly-report.html: published weekly reading page.
-- docs/reports/2026/2026-10-21_every-other-day-brief.html: previous published reading page.
-- docs/reports/2026/2026-10-23_every-other-day-brief.html: previous published reading page.
-- docs/reports/2026/2026-10-25_every-other-day-brief.html: latest published brief reading page.
-- docs/reports/2026/2026-10-26_weekly-report.html: published weekly reading page, featured on the verified live homepage.
-- docs/assets/site.css and docs/assets/site.js: shared responsive style and reader/archive interactions.
-- TASK_LOG.md: historical milestones and their reasons.
+- README.md: editorial/publishing procedure and report index.
+- reports/2026/2026-10-30_every-other-day-brief.md: finalized issue 007, cutoff 2026-10-30T17:18:23+08:00; expanded coverage starts at the last published brief cutoff, October 25 17:21:32.
+- docs/reports/2026/2026-10-30_every-other-day-brief.html and docs/index.html: generated reading page and nine-issue archive; local build/save and link checks passed.
+- reports/2026/2026-10-26_weekly-report.md: latest published weekly 002 for October 19-25; its cutoff is independent.
+- tools/build-site.mjs, docs/assets/site.css/site.js and package files: existing generator/assets, unchanged.
+- PROJECT_SUMMARY.md: single current-state entry point; TASK_LOG.md: publication history and recovery evidence.
+- The October 27 draft source/page are retained locally as recovery evidence, superseded by the expanded October 30 issue. They have not been published; exclude that draft from publication build inputs. The remote archive contains only actual published issues/sample.
 
-The local workspace at E:/CosmosWork/QC_News is a file mirror, not a Git checkout. The GitHub repository holds the online archive and commit history.
+This directory is a file mirror without .git. Preserve other tasks' local changes; use connector trees/guarded updates for remote version control.
 
-## Validation and limits
+## Validation and publication state
 
-- October 26 weekly preparation started from remote main ac469dabf351ef1614207bc41468d55e0694585b, containing seven issues and no October 26 report. All 26 local input blobs matched remote. This remains a file mirror without a Git checkout; no project/parent AGENTS.md was present at the checked roots. Accessible general English rules, README, state and recent reports/log were read.
-- Weekly 002 covers October 19-25, with research cutoff October 26 09:22:27 +08:00. Three themes connect structured simulation/measurement, hardware evidence within complete workflows, and verifiable compiler/simulator/control interfaces. October 16 news in the October 19 brief is kept in the preceding week. StateDRIFT, DMFT, MIS and ArcTN are new preprints; TQS/Floquet formal publication is separated from their 2025 preprints. Fresh Google October 21 and ETH October 20 primary announcements supplement the briefs.
-- Retrieved relevant public method/results sections, Quantum pages/RSS, Quantinuum technical manuscript, ArcTN README/license information, official framework docs/releases and university/company announcements. Floquet details reuse the formal PDF read in the October 25 run, with fresh article/RSS checks. Quantinuum's manuscript peer-review status is unverified. arXiv screening is targeted, with the visible listing October 19-23; QFI returned 502. Domestic technical coverage comes mainly from ArcTN, with institutional coverage still limited. Official latest releases remain PennyLane v0.45.1 and PyTorch v2.14.1.
-- The report retains DMFT's classically converged final-iteration hardware replacement, pretrained circuits, 65 two-qubit gates and 8,192 shots per time point; MIS diversity is separated from end-to-end gain and missing classical-seed control. Color-code memory and two-logical-qubit Clifford metrics retain their distinct denominators, Wilson intervals, sample counts and decoder conditions. ArcTN comparisons retain common-success cases, aggregation and resource limits; noncommercial source/engine licenses are disclosed. Google competition tasks/verification are separated from complete application performance. Qendra is described at MVP stage and its February founding is separated from this week's disclosure.
-- Public people coverage retains Zapata's October 20 advisory appointments and Sparrow's October 22 CEO/advisor transition. Qendra's CTO change is a role disclosed in the October 20 article with no effective date, so it is organizational background. No academic departure or private motivation is inferred.
-- The five-day learning plan fixes one two-qubit parity-preserving Hamiltonian and C(t)=<B(t)A>. Manually checked quench-state identities, the negative imaginary-part convention, C(0)=0, 4x4 matrix size, 22S/22MS measurement counts and unoptimized six-CNOT Trotter step plus two-CNOT real quench. No simulation, PennyLane/PyTorch execution, training, fitting, author-code reproduction or QPU task was run; local framework/plugin compatibility remains untested.
-- Full factual/citation and whole-prose revision preceded generation. Build produced eight reading pages. Static checks passed for all nine HTML files, local targets/anchors (including links to related briefs), required metadata/naming, all 22 current-issue external URLs, seven headings, three tables, resolved emphasis and homepage focus. Source SHA-256: 91a2a8f01ece15bf588ce8ab6b0760f947c17e1e83c9f0fb78c95b8bd9ad9e2c. All prior reports/pages, shared assets/generator/packages retain baseline blobs. Initial content commit b6f1f5125eb7e54c61f514131227f44344d57a97 saved exactly the six authorized files, all read back exactly; Pages run 40254249342 succeeded. Live inspection caught a Markdown pipe in the Tuesday ket notation truncating that table row. Replaced it with a plain reference to the initial state and regenerated; table widths now match [3,3,3], [3,3,3], [2,2,2,2,2,2], with both quench formulas and -Im C preserved. Correction commit aeaba1055124c2468bd68425ee5af803cff3e59f changed only the report source/page and two state/log records through a fresh guarded update; all four saved files were read back exactly. Pages run 40254467108 succeeded. Final online fingerprint and all table row widths match the corrected source; the complete Tuesday formulas/instructions were visually verified. Initial browser checks also confirmed 22 external sources, seven headings, three related-report links and the homepage focus/excerpt/link with all eight issues (six briefs, two weekly reports). Desktop lead/action-table views, document-width checks and console warning/error checks passed. Chrome DevTools was unavailable; the existing IAB supplied read-only DOM/log/screenshot verification. Temporary tabs were closed.
-- The latest brief remains fully saved/live: October 25 content commit 97f1c153c3f0e08e0de3e62d55963410ae369f64, successful Pages run 40180563855, source fingerprint 658680a55eac67edd2b4df0542168e796dc4bab34f9fec52ea24d2e3a9b12b40. Historical publication details are in TASK_LOG.md. Heartbeat quantumdaily-2 arrived October 26 09:16:41 +08:00; no shared files were edited concurrently and no automation settings changed.
+- GitHub access recovered October 30. Read main at 2d1ec2672d8c4fdfdf2d255c4d82391330d321d0, tree 5cd1574cb1988b74974bf4e8204b89e269c9d48c: eight existing issues, no duplicate October 30 issue. All 28 remote input blobs match the mirror except the locally updated state/log; two additional local files are the retained October 27 draft/page. Live Chrome readback also showed the eight-issue archive.
+- Issue 007 covers FITE, multiqubit synthesis, 1:4 control multiplexing, SQcircuit formal publication, PyTorch 2.15.0 and Intel/Classiq's proposed integration. It includes a two-qubit Hubbard filtering lesson. Full factual/citation and prose revision preceded generation.
+- Fresh reads covered arXiv/Quantum/QFI, official framework docs/releases, Intel and UW-Madison. QFI returned June 15 listings and supplied no in-window evidence. Personnel searches did not confirm another new primary-source appointment. Publication and preprint dates, ideal numerical models, XEB calibration, conditional transactions and hardware requirements are stated explicitly.
+- No simulation, training, framework compatibility run or QPU task was executed. Small-case algebra/resource checks are assessments only.
+- Memory-only execution of the unchanged generator used published/sample sources plus today's issue, excluding the retained draft. All eight historical reading pages and shared assets were identical. Static checks passed for 17 external sources, 11 headings, emphasis, extracted homepage focus and nine archive entries. No tables occur in this issue. Source SHA-256: 89db61cd447b6301750a185af52ec0400f805aec5aa37bf328f8ee125065990d.
+- Preparation stage: finalized source, generated page/homepage and index/state records are saved locally. Existing generator execution and all local targets/anchors passed; eight historical pages/assets are unchanged. GitHub commit, Pages deployment and new live-page verification are pending. Metadata/index labels describe the intended release; this record supplies the actual publication state.
 
-## Next steps
+## Next action
 
-- Weekly 002 is generated, GitHub-saved and online, with no publication recovery pending. Continue guarded updates, exact remote readback and live checks for future issues.
-- The separately scheduled October 26 brief continues from October 25 17:21:32 +08:00; do not replace that cutoff with the weekly cutoff. Next weekly: November 2, covering October 26-November 1. Process the two report types sequentially.
-- Continue source-date checks, full-prose revision, domestic institutional coverage and public personnel tracking. Investigate scheduler timing only from evidence.
+Finish guarded local preparation, recheck remote head, atomically commit only the six current release/index/state paths with expected_sha and force:false, read back every saved file, then verify Pages and the live reading page/homepage. On interruption preserve issue 007 and the error/recovery steps; use the actual resumed publication date.
+
+Until publication succeeds, the last successful brief cutoff remains October 25 17:21:32 +08:00. The next nominal two-day slot after October 30 is November 1. Next weekly November 2 covers October 26-November 1; process types sequentially. Historical evidence and prior deployment identifiers remain in TASK_LOG.md.

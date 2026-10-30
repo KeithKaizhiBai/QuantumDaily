@@ -61,6 +61,7 @@ The final editorial pass must preserve the scientific claim, its conditions, sou
 
 | Issue date | Type | Status | Markdown source | Webpage |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | Every-other-day brief | Published | [Source](reports/2026/2026-10-30_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-30_every-other-day-brief.html) |
 | 2026-10-26 | Weekly report | Published | [Source](reports/2026/2026-10-26_weekly-report.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-26_weekly-report.html) |
 | 2026-10-25 | Every-other-day brief | Published | [Source](reports/2026/2026-10-25_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-25_every-other-day-brief.html) |
 | 2026-10-23 | Every-other-day brief | Published | [Source](reports/2026/2026-10-23_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-10-23_every-other-day-brief.html) |
