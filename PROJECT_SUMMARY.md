@@ -4,33 +4,33 @@ Updated: 2026-11-02, Asia/Shanghai.
 
 ## Objective and confirmed decisions
 
-Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer. Keep general algorithms, PennyLane/PyTorch simulation and hardware feasibility, field trends and publicly confirmed people/team moves, using academia/industry and science/engineering axes.
+Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer. Keep general algorithms, PennyLane/PyTorch simulation and hardware feasibility, field trends and verified people/team news, using academia/industry and science/engineering axes.
 
-The user authorized automatic publication to KeithKaizhiBai/QuantumDaily main, actual-date English type names, Markdown/HTML pairs and archive updates. Both schedules start at 09:15 Asia/Shanghai. Preserve the black/blue/purple website and history. Follow README Writing standard and current authoritative general English AGENTS.md; its direct/evidence-based rules are now section 1.
+The user authorized automatic main publication, actual-date English type names and Markdown/HTML pairs with archive updates. Both schedules start 09:15 Asia/Shanghai. Preserve the black/blue/purple site and history. Follow README Writing standard and current general English AGENTS.md (direct/evidence-based writing is now section 1).
 
-## Active files and current release
+## Active files and independent report windows
 
-- reports/2026/2026-11-02_every-other-day-brief.md: finalized issue 008, coverage October 30 17:18:23 through November 2 09:17:29 +08:00.
-- docs/reports/2026/2026-11-02_every-other-day-brief.html and docs/index.html: generated and deployed ten-issue archive; exact remote readback and live checks passed.
-- README.md: report index and publication procedure; PROJECT_SUMMARY.md: current state; TASK_LOG.md: historical evidence and recovery details.
-- reports/2026/2026-10-26_weekly-report.md: latest published weekly 002, October 19-25. The November 2 weekly task remains separate.
-- tools/build-site.mjs, shared assets and packages: unchanged.
-- October 27 draft source/page remain local-only recovery evidence, superseded by October 30. Exclude that draft from publication build inputs; the existing builder includes every Markdown file regardless of status.
+- reports/2026/2026-11-02_weekly-report.md: finalized weekly 003 for October 26 00:00-November 1 23:59:59 Beijing, research cutoff November 2 09:29:50 +08:00.
+- docs/reports/2026/2026-11-02_weekly-report.html and docs/index.html: locally generated eleven-issue archive; weekly GitHub saving/deployment pending.
+- reports/2026/2026-11-02_every-other-day-brief.md and matching HTML: issue 008 published separately. Successful brief cutoff remains November 2 09:17:29 +08:00.
+- README.md: editorial/publishing procedure and index; PROJECT_SUMMARY.md: current state; TASK_LOG.md: history and recovery evidence.
+- tools/build-site.mjs, shared assets and package files: unchanged.
+- October 27 draft source/page remain local-only recovery evidence, superseded by October 30. Exclude them from publication build inputs; the existing builder includes all Markdown statuses.
 
-This directory is a file mirror without .git. Main was read at b975d2fb427684210d2bc89d683c7d2beb602d61, tree f165a48ed1e0135faface17966be45f09e4bdaae. All 30 remote blobs matched local inputs; the two local-only files are the retained draft/page. No duplicate November 2 issue was present. Preserve other tasks' edits; use connector atomic trees with expected_sha and force:false.
+This directory is a file mirror without .git. Weekly preflight read main 37ed883e99c2c94c69bf9d54cd72c1a7409f86d7, tree bd32dae38c8f9daa419b17daed5746f96c6fd082. All 32 remote blobs matched local inputs; only the two retained recovery files were local-only. Ten issues were published/sample, with no duplicate November 2 weekly. Brief and weekly processing was sequential. Preserve other tasks' edits and use latest-tree atomic commits with expected_sha/force:false.
 
-## Evidence and validation
+## Weekly evidence and validation
 
-Issue 008 is a shorter issue with one confirmed new formal publication: Quantum 10, 2257, published October 30 10:13:12 UTC (18:13:12 Beijing) according to RSS, after the previous cutoff. The original preprint dates to March 11, 2025; v4 is October 28, 2026. Read the paper's QFI and subsystem-variance definitions and witness conditions.
+Three themes connect resource placement, hardware evidence and software/model interfaces. Supplemented the October 30 brief with Quantum 2256 quantum-input re-uploading (formal October 29; v1 September 23, 2025, v7 October 13, 2026) and IQM's October 29 whole-chip GHZ announcement. The latter reports 40-qubit fidelity .515 without REM and 54-qubit .516 with REM; its public announcement omits shot counts and confidence intervals. This qualification is explicit. Formal publication versus earlier preprints is distinguished for SQcircuit and Quantum 2257.
 
-The independent four-qubit teaching model predicts F=16 lambda squared and N_ent=4 lambda squared for phase-damped GHZ with A=sum Z/2, plus a product-state control, parity scan, gradient/shot estimates and hardware requirements. This is a feasibility/analytic plan; no simulation, framework execution, fitting, compatibility upgrade or QPU job occurred.
+Fresh weekly reads covered arXiv/Quantum/QFI, primary FITE/FDM/re-uploading/SQcircuit methods, IQM/Intel/UW-Madison originals, official framework releases/Torch interface and mid-measurement reset documentation. People search mixed old roles/interviews and lacked additional confirmed original appointments. Intel/Classiq remains a conditional transaction expected H1 2027, independent until closing. QFI returned June 15; arXiv latest visible was October 30. Search feedback succeeded.
 
-Fresh reads covered arXiv, Quantum/RSS, QFI, official PennyLane/Torch releases/docs, company and Stony Brook originals. arXiv still returned October 30 as latest; QFI returned June 15. Framework releases were unchanged. Equal1 appointment search hit could not be confirmed because its original page returned 404; no appointment was inferred from snippets. Several aggregated hardware/software leads predate this window and were excluded.
+The independent teaching plan uses a memory qubit, fresh RY(theta) inputs and input-controlled CNOT. Analytic channel E(sigma)=(1-p)sigma+p X sigma X, p=sin squared(theta/2), gives m_L=(cos theta)^L and its closed-form derivative. L=1,2,4,8 expanded circuits need up to nine qubits; four angles x four L x 1000 shots give 16,000 runs and 60,000 input preparations. Two-qubit reuse requires real input refresh and L-1 resets. Generic unknown-state fresh-copy access and standard reset-to-zero are explicitly distinguished. No simulation, fitting, training, gradient test, compatibility run or QPU job occurred.
 
-Factual/citation and full-prose review preceded generation. Unchanged builder was executed through an in-memory filesystem overlay excluding the retained draft. All nine historical reading pages/assets stayed identical. Static checks passed: required metadata/naming, 13 source URLs, six h2 headings, emphasis, extracted focus/excerpt, ten archive entries and 103 internal targets/links. Source SHA-256 fca6c53232ddf0ff475fde8640bc59f2b260fbf3a1e66080e5476497e31d3d4c. Report/page/home and index/state/log were saved locally. Content commit fba1669295f8332cfef8080678c72627a40b2562 changed exactly the six authorized paths using a latest-head atomic tree with expected_sha/force:false. All six files and blob hashes matched exact remote readback; all 32 remote blobs matched the mirror. Pages run 41372163772 succeeded. Live Chrome verified source fingerprint, all six headings, 13 sources, five learning steps and rendered density-matrix/Fisher/parity formulas. Homepage focus, excerpt and reading link match; ten issues are present and the local draft is absent. Weekly filter returned two rows; a 3.24 full-text search returned only the new issue. Desktop screenshots and DOM checks at 1536 CSS pixels showed readable formulas and no horizontal document overflow. Both page console warning/error lists were empty. Temporary tabs were closed; website code/styles stayed unchanged. Generated, GitHub-saved and online states are verified.
+Full factual/citation and prose review preceded generation. Ran unchanged builder through an in-memory filesystem overlay excluding the retained draft. All ten historical pages/assets were identical. Static checks passed metadata/naming, 19 external sources, seven headings, two tables with row widths [3,3,3,3] and [2,2,2,2,2,2], emphasis, two related-report rewrites, homepage focus/excerpt, eleven archive entries and 114 internal targets/links. Source SHA-256 7fd99b242fe51cac4fc41d4fc0691eba296b3f82f1df0b1a4d1779515884fa66. Source/page/home and README/state/log saved locally; GitHub/live validation is next.
 
 ## Next action
 
-Issue 008 is fully published. The last successfully published brief cutoff is November 2 09:17:29 +08:00. Continue the anchor-based cadence; the next original two-day slot after this delayed window is November 3. November 2 weekly coverage is October 26-November 1, independent of the brief; process its scheduled task separately and sequentially.
+Recheck main, publish only the weekly release's six paths, read back exact files/blobs, inspect Pages and verify live report/homepage and table/formula rendering. Then mark weekly completion in records.
 
-Preserve local recovery evidence and the existing responsive stylesheet. Prior narrow-window checks reached 806 CSS pixels; phone-specific layout remains unverified because the previous 390-pixel override did not affect the browser viewport.
+Brief 008 already passed exact readback, Pages runs 41372163772 and 41372399889 and live desktop checks; final brief head was 37ed883e99c2c94c69bf9d54cd72c1a7409f86d7. The next original brief anchor slot is November 3; next weekly November 9 covers November 2-8. Phone-specific layout remains unverified; prior narrow-window evidence reached 806 CSS pixels.

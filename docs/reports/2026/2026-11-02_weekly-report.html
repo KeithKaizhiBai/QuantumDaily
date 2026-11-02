@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师周报｜第003期 · QuantumDaily</title><meta name="description" content="本周的算法工作把资源放到不同环节：虚时演化把基变换编译移到离线，量子数据重上传通过反复获取输入态拷贝压缩同时使用的比特。硬件方面，控制线复用与整芯片 GHZ 测试分别提供门级和整态证据。下一周优先用一个两比特通道练习，把输入制备、寄存器复用、梯度和采样的成本接起来。"><meta name="source-sha256" content="7fd99b242fe51cac4fc41d4fc0691eba296b3f82f1df0b1a4d1779515884fa66"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">WEEKLY REPORT / 2026-11-02</div><h1 class="issue-title">量子算法工程师周报｜第003期</h1><div class="issue-toolbar"><span>内容窗口 2026-10-26 — 2026-11-01</span><span>PennyLane + PyTorch</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-02_weekly-report.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>刊期：2026 年 11 月 2 日｜报道周：北京时间 10 月 26 日 00:00—11 月 1 日 23:59:59｜检索截止：11 月 2 日 09:29:50｜阅读约 9—12 分钟</p>
+<h2 id="section-50df754483">本期优先关注：用重复输入的量子通道核算比特、拷贝与采样成本</h2>
+<p>本周的算法工作把资源放到不同环节：虚时演化把基变换编译移到离线，量子数据重上传通过反复获取输入态拷贝压缩同时使用的比特。硬件方面，控制线复用与整芯片 GHZ 测试分别提供门级和整态证据。下一周优先用一个两比特通道练习，把输入制备、寄存器复用、梯度和采样的成本接起来。</p>
+<p>本期以 <a href="2026-10-30_every-other-day-brief.html">10 月 30 日简报</a> 为周内线索，补查量子输入重上传和 IQM 原始公告，并纳入 <a href="2026-11-02_every-other-day-brief.html">11 月 2 日简报</a> 中发生于上周的正式发表。新闻窗口截至周日；周一检索用于核验和补漏。</p>
+<h2 id="section-7e64f9ddf1"><span class="section-index">01</span>压缩在线空间，需要连同拷贝、重试与编译成本评估</h2>
+<p><em>学界、业界｜科学与工程；10 月 29 日预印本及期刊正式发表，技术证据为理论与数值计算。</em></p>
+<p>FITE 通过离线拟合 <code>H≈W𝓗W†</code>，把虚时演化转为 W 基中的辅助位滤波。固定编译表示时，改变虚时只需调整旋转角，完整单次尝试的门数保持固定。论文的三比特 XYZ、β=1.1 比较很能说明资源口径的重要性：FITE 与分组二阶滤波 G2 每次完整尝试分别需 50、56 个逻辑 CX，计入失败提前终止与同一输入重试后的平均接受输出成本约为 236,000、3,300 个 CX。比较使用同一组 16,384 个复 Haar 输入，平均失真加 1.96 倍标准误差须不超过 1%，基线从 1—400 步选最小合格值；模型无门噪声，未计输入制备、离线编译、系数估计和路由。<a href="https://arxiv.org/html/2610.39600v1#S3.SS3" target="_blank" rel="noopener noreferrer">FITE 方法与资源核算</a></p>
+<p>本周另一条路线减少的是<strong>同时占用的比特数</strong>。Hyunho Cha、Daniel K. Park 与 Jungwoo Lee 的量子输入重上传工作于 10 月 29 日发表于 Quantum；预印本始于 2025 年 9 月 23 日，当前 v7 为 10 月 13 日版本。一个存储比特逐层与新的 n 比特输入态拷贝相互作用，输入寄存器随后丢弃并重新加载，存储比特保留到下一层，最终通过单比特测量及仿射后处理产生输出。<a href="https://quantum-journal.org/papers/q-2026-10-29-2256/" target="_blank" rel="noopener noreferrer">正式发表</a>、<a href="https://arxiv.org/abs/2509.18530" target="_blank" rel="noopener noreferrer">版本历史</a></p>
+<p>该工作的通用逼近结论假设能反复获得同一个未知态 ρ 的新拷贝，并允许选取所需的 Pauli 耦合、局域旋转和足够多层。定理保证有界连续函数的表示能力；具体任务的有效层数、门分解和样本预算仍需专门构造。L 次上传用到 L 份输入，复用实现的宽度为 n+1；展开为独立输入寄存器后，等价线路宽度为 Ln+1。<a href="https://arxiv.org/html/2509.18530v7#Thmtheorem2" target="_blank" rel="noopener noreferrer">完整条件与通道解释</a></p>
+<p>这两项工作的联系在于：线路的宽度或单次门数可以压缩，获得有用输出还依赖额外资源。FITE 需要把编译成本按实际复用次数分摊，再计算成功概率；重上传需要把每个 shot 中的输入制备次数累计起来。PennyLane 可构造相应线路与分解，PyTorch 可提供小矩阵演化、通道递推和梯度参考。对真机，前者关注后选择和条件终止，后者关注输入刷新与存储比特在刷新期间的相干时间。</p>
+<h2 id="section-30c086f269"><span class="section-index">02</span>门级测试、整态测试与物理模型正在提供互补证据</h2>
+<p><em>学界、业界｜科学与工程；10 月 26 日实验预印本、29 日公司实验公告、30 日期刊正式发表。</em></p>
+<p>中国科大、合肥国家实验室及合作单位的控制线复用预印本完成四路门控制频分复用。四个目标的平均单比特门保真度为 99.894±0.002%，平均 MP-CZ 保真度为 99.35±0.01%；后者从 XEB 周期结果中除去参与比特的单比特门标定因子。实验按不同时间重复采集数据，区间为包含系统波动和拟合误差的 95% 置信区间。已实现比例为 1:4，进一步的控制线缩减依赖频率规划、时分复用和片上直流源条件。<a href="https://arxiv.org/html/2610.35227v1" target="_blank" rel="noopener noreferrer">实验与补充方法</a></p>
+<p>IQM 于 10 月 29 日公告，在 Emerald 的全部 54 个比特上制备 GHZ 态。公司报告，40 比特目标态保真度为 0.515、未使用读出误差缓解；54 比特为 0.516、使用了读出误差缓解。制备程序同时考虑门保真度与空闲时间来选择操作顺序。<a href="https://iqm.tech/press-releases/iqm-demonstrates-entanglement-across-a-complete-54-qubit-processor-bringing-full-chip-performance-to-cloud-users" target="_blank" rel="noopener noreferrer">IQM 原始公告</a></p>
+<p>GHZ 目标态保真度超过 0.5 是排除双可分态的见证条件，适合检验跨整个寄存器的相干关联。对 0.516 这一接近阈值的估计，统计区间和读出缓解的校准模型会直接影响判断；公告正文尚未给出测量 shots 与置信区间。真机复现时应同时保存原始计数、缓解结果和误差传播。这里的整态测试与前述 XEB 门级测试，分别回答了不同层级的实验问题。</p>
+<p>10 月 30 日正式发表的另一项 Quantum 研究，进一步把量子 Fisher 信息按物理尺度或局域方差归一化，分别衡量机械系统的相干尺度和多体纠缠规模。它基于理论及既有振子、分子衍射数据的分析，预印本首发于 2025 年 3 月 11 日。其纠缠见证明确依赖观测量和子系统划分，这也提醒我们在比较“纠缠规模”时保留指标定义。<a href="https://quantum-journal.org/papers/q-2026-10-30-2257/" target="_blank" rel="noopener noreferrer">Quantum 10, 2257</a>、<a href="https://arxiv.org/html/2503.08324v4#S2.SS4" target="_blank" rel="noopener noreferrer">方法与划分条件</a></p>
+<table>
+<thead>
+<tr>
+<th>证据层级</th>
+<th>本周实例</th>
+<th>对算法实现最直接的用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>门及控制链路</td>
+<td>四路复用下的 XEB 与波形预失真</td>
+<td>选择门序列，评估并行控制、串扰与标定条件</td>
+</tr>
+<tr>
+<td>整个输出态</td>
+<td>IQM 全芯片 GHZ 目标态保真度</td>
+<td>检查态制备、空闲时间、读出和跨芯片关联</td>
+</tr>
+<tr>
+<td>物理量及见证</td>
+<td>Fisher 信息与局域方差归一化</td>
+<td>明确测量目标、子系统划分及可证明的结论</td>
+</tr>
+</tbody></table>
+<p>周报的工程判断是，算法评估应把这三类证据接到同一输出任务上。用 PennyLane 建立门级模型时，先说明噪声参数来自哪种标定；用 PyTorch 做拟合和缓解时，保留原始计数及不确定度。单一门保真度向多层算法输出的传播，还需检验相关误差、空闲退相干和测量模型。</p>
+<h2 id="section-8fca8f4248"><span class="section-index">03</span>可微设计与自动综合的接口，开始影响实验工作流</h2>
+<p><em>学界、业界、开源社区｜科学与工程；本周正式发表、稳定版发布及有条件的产业整合公告。</em></p>
+<p>10 月 27 日正式发表的 SQcircuit 框架，把器件电容、电感、结参数和外部控制连接到稀疏哈密顿量本征系统，再以频率、矩阵元和噪声敏感性组成优化目标。它通过自定义计算节点接入 PyTorch，展示的是数值器件设计；本周事件为期刊发表，初始预印本来自 2024 年。<a href="https://quantum-journal.org/papers/q-2026-10-27-2249/" target="_blank" rel="noopener noreferrer">Quantum 正式发表</a>、<a href="https://arxiv.org/html/2408.12704v3" target="_blank" rel="noopener noreferrer">数值方法</a></p>
+<p>这为“器件参数如何进入算法模型”提供了学习入口：先验证希尔伯特空间截断及本征系统梯度，再提取有效门模型供 PennyLane 评估。优化得到的器件指标与实际制备后的标定结果，应各自记录。涉及简并或接近简并的本征矢时，梯度还需稳定性检查。</p>
+<p>PyTorch 2.15.0 于北京时间 10 月 29 日发布。与量子模拟环境直接相关的变化包括预编译包最低 Python 版本升至 3.11，以及重复初始化、复数排序等操作的行为调整。PennyLane 当前发布页仍列 0.45.1 为最新稳定版、0.46.0b1 为较早预发布。下一轮基准宜固定已验证环境，在独立环境比较态归一化、观测量、梯度和耗时。<a href="https://github.com/pytorch/pytorch/releases/tag/v2.15.0" target="_blank" rel="noopener noreferrer">Torch 发布说明</a>、<a href="https://github.com/PennyLaneAI/pennylane/releases" target="_blank" rel="noopener noreferrer">PennyLane 发布页</a></p>
+<p>产业侧，Intel 于 10 月 26 日宣布签署收购 Classiq 的协议，拟把算法综合软件与硅自旋及制造能力结合。预计交割时间为 2027 年上半年，须满足监管和惯常条件；交割前双方独立运营。Intel 表示，交割后拟继续支持 Classiq 现有多平台集成和硬件无关方案。<a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html" target="_blank" rel="noopener noreferrer">Intel 公告</a></p>
+<p>对算法工程师，可观察的长期方向是模型、综合和执行接口之间的数据流更紧密。判断新平台是否适合迁移，需要看同一算法的导出格式、实际门分解、连接约束、测量返回值和端到端耗时；本周的协议和设计框架提供了这条路线的投入证据。</p>
+<h2 id="section-85043b732f">人物与团队动向</h2>
+<p>本周核实的团队层面变化为 Intel／Classiq 的拟议整合。公告中的 Lip-Bu Tan 为 Intel CEO，Nir Minerbi 为 Classiq 联合创始人兼 CEO；个人人事安排及生效日期仍待公开。定向检索中的其他任职线索，部分发生于较早月份，部分缺少可访问原始正文，本期不据此补充新任命。</p>
+<p>大学方面，<a href="https://news.wisc.edu/quantum-fusion-and-ai-stand-out-during-doe-leaders-campus-visit/" target="_blank" rel="noopener noreferrer">UW–Madison 10 月 28 日报道</a>记录 Darío Gil 于 26 日参与研究交流，涉及公私合作、成果转化和人才培养。这里可确认的是访问与研究合作议题。</p>
+<h2 id="section-7dc5a5d42f">下一周行动清单</h2>
+<p>优先做一个<strong>重复输入与寄存器复用的两比特通道对照</strong>。它检验重上传的拷贝访问与通道递推原理；完整通用逼近实验还需选择更一般的耦合和可训练单比特操作。</p>
+<p>设 A 为存储比特，初态为零态；每层给 B 一份用 RY(θ) 制备的新输入，然后执行 B 控制、A 为目标的 CNOT，最后对 B 取偏迹。令 <code>p=sin²(θ/2)</code>，则一层对存储态 σ 的作用为 <code>Eθ(σ)=(1−p)σ+pXσX</code>。L 层后的解析预期为：</p>
+<p><code>mL=⟨Z_A⟩=(cos θ)^L</code>，<code>∂mL/∂θ=−L sin θ (cos θ)^(L−1)</code>。</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>实现与可检查的输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>周一 11 月 2 日</td>
+<td>PyTorch 建立两比特 4×4 联合密度矩阵，每层作用 CNOT 后取偏迹，保留 2×2 存储态。检查迹、半正定性和上述闭式解。</td>
+</tr>
+<tr>
+<td>周二 11 月 3 日</td>
+<td>PennyLane 展开为一个存储比特加 L 个独立输入，依次执行 L 个 CNOT，测量存储位 Z。取 L=1、2、4、8，核对它与通道递推一致。</td>
+</tr>
+<tr>
+<td>周三 11 月 4 日</td>
+<td>用 Torch 接口的解析梯度与有限差分、闭式梯度比较。θ 重复出现在 L 个 RY 中，逐门普通参数移位再求和的朴素实现需 2L 个移位线路。</td>
+</tr>
+<tr>
+<td>周四 11 月 5 日</td>
+<td>在四个 θ 值和四个 L 值上，每点先规划 1,000 shots 的模拟采样，比较估计值及区间。分别记录线路执行数和输入制备数。</td>
+</tr>
+<tr>
+<td>周五 11 月 6 日</td>
+<td>评估复用版：输入位复位到零态后重新执行 RY(θ)，存储位持续保留；核对插件的中途测量、复位、实际编译宽度与延迟，再制定小规模真机预算。</td>
+</tr>
+</tbody></table>
+<p>这个教学族选择已知 RY 输入，便于独立核验。L=8 的展开版只有九个比特、512 个态向量振幅，含八个逻辑 CNOT；它们共享存储位，需要顺序作用，实际连接图可能引入路由。复用版同时只用两个比特，但刷新输入要计入 L 次制备和层间 L−1 次复位。</p>
+<p>采样也会改变可读出的信息：θ=π/3、L=8 时，解析信号为 <code>1/256≈0.00391</code>；1,000 个独立 ±1 样本的均值标准误差上界约为 0.0316。应以统计区间判断分辨能力。若四个 θ 分别取 0、π/6、π/3、π/2，上述基础扫描共 16,000 次线路执行、60,000 次输入制备，梯度与重复实验另计。</p>
+<p>PennyLane 的 <a href="https://docs.pennylane.ai/en/stable/introduction/interfaces/torch.html" target="_blank" rel="noopener noreferrer">Torch 接口</a>可连接解析模拟与经典梯度；<a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.measure.html" target="_blank" rel="noopener noreferrer">中途测量文档</a>中的 reset 是把被测位置为零态。本文已知输入可随后用 RY 重新制备；论文一般未知态的重新加载，要求实际的新拷贝来源。设备若以延迟测量变换实现功能，还需记录变换后的真实宽度。</p>
+<h2 id="section-c626b4c57d">来源覆盖与验证状态</h2>
+<p>本期重新检索 arXiv quant-ph、Quantum、QFI、PennyLane／PyTorch 官方发布与文档、大学及公司原始页面。周报补核了量子输入重上传的定理条件、FITE 的统一精度与重试口径、控制复用的 XEB 校准，以及 IQM 公告中的读出缓解条件。周一新增的检索时间单独记录，周报内容范围保持至周日。</p>
+<ul>
+<li><a href="https://arxiv.org/list/quant-ph/recent" target="_blank" rel="noopener noreferrer">arXiv quant-ph</a> 返回的最新刊列仍为 10 月 30 日，采用定向标题筛选与相关全文追溯。<a href="https://quantum-journal.org/" target="_blank" rel="noopener noreferrer">Quantum</a> 的正式发表与早期预印本分别标明。</li>
+<li><a href="https://news.quantumclouds.cn/" target="_blank" rel="noopener noreferrer">QFI</a> 本次返回的最新首页日期仍为 6 月 15 日，国内技术覆盖主要来自控制线复用和 FITE 原始论文。</li>
+<li>IQM 条目的证据为公司实验公告；正文未给出的 shots、区间和缓解细节保留为具体核验项。人物信息按原始公告的职责与时间陈述。</li>
+<li>下一周清单为可行性评估，解析值来自所定义教学模型。尚未执行模拟、训练、梯度测试、采样拟合、框架兼容性测试或真机任务。</li>
+</ul>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-50df754483">本期重点</a></li><li><a href="#section-7e64f9ddf1">压缩在线空间，需要连同拷贝、重试与编译成本评估</a></li><li><a href="#section-30c086f269">门级测试、整态测试与物理模型正在提供互补证据</a></li><li><a href="#section-8fca8f4248">可微设计与自动综合的接口，开始影响实验工作流</a></li><li><a href="#section-85043b732f">人物与团队动向</a></li><li><a href="#section-7dc5a5d42f">下一周行动清单</a></li><li><a href="#section-c626b4c57d">来源覆盖与验证状态</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>
