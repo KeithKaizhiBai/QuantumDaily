@@ -11,8 +11,8 @@ The user authorized automatic main publication and Markdown/HTML pairs with arch
 ## Active files and independent windows
 
 - reports/2026/2026-11-13_every-other-day-brief.md: finalized brief 011, expanded window November 6 17:23:12 to November 13 09:43:09 +08:00.
-- docs/reports/2026/2026-11-13_every-other-day-brief.html and docs/index.html: generated fourteen-issue archive. GitHub save/live verification pending.
-- Last successful brief cutoff remains November 6 17:23:12 +08:00 until this release is verified.
+- docs/reports/2026/2026-11-13_every-other-day-brief.html and docs/index.html: generated fourteen-issue archive, saved to GitHub and verified online.
+- Successful brief cutoff is November 13 09:43:09 +08:00.
 - Latest published weekly remains reports/2026/2026-11-02_weekly-report.md, covering October 26-November 1, cutoff November 2 09:29:50 +08:00. No November 9 weekly exists remotely. This brief run leaves the weekly window independent.
 - README.md has the index and process. TASK_LOG.md retains historical evidence/recovery details.
 - October 27 draft source/page remain local-only, superseded by October 30. Exclude from build inputs, retain both files and historical site assets.
@@ -29,6 +29,8 @@ Independent teaching model H=n0+1.4n1+0.1(XX+YY), n=(I-Z)/2, has ground |00> and
 
 Source/prose review preceded the unchanged builder in a memory filesystem overlay excluding the draft. All thirteen old HTML pages and generated assets matched. Checked nine sections, 24 sources, formulas/emphasis, focus/excerpt, fourteen archive rows and 269 local links/fragments. Source SHA-256 101e0cf4e55b69d9c0dfd9d5f0163198f2320d3595f99971585ddb43d6c2daa1.
 
+Content commit 9c2071fb5c13fac47399c1cbd08c5d8be6674a64 updated exactly the six release paths with expected_sha and force:false. All six texts/blob hashes matched remote readback. Pages run 43347744858 succeeded. Live article/home returned 200, with source fingerprint, nine headings, all 24 source URLs, formula/reference values, focus/excerpt, fourteen rows, prior brief/weekly links and draft exclusion verified. Style asset version remains 79bbaf014fd5. No site code changes or additional viewport check.
+
 ## Next action
 
-Guardedly save the six release files, read back all changed blobs, then verify Pages and live article/homepage. Advance brief cutoff after verification. Weekly status remains separate, next scheduled weekly November 16 covers November 9-15.
+Brief 011 is generated, GitHub-saved and online. Continue from successful cutoff November 13 09:43:09 +08:00 with fresh remote-state and guarded publication checks. Weekly remains separate, next scheduled weekly November 16 covers November 9-15.
