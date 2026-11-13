@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师周报｜第004期 · QuantumDaily</title><meta name="description" content="本周进展把量子算法的成本进一步分散到经典表示、测量、优化和反馈环节。Pauli 截断与采样子空间需要针对目标误差评估，GENIE 把噪声强度纳入有限预算下的模型选择，器件实验和量子经典联合平台则提供不同层次的硬件证据。下一周优先完成一个三比特分布学习练习，把训练、验证和误差条放进同一本采样账本。"><meta name="source-sha256" content="f8fe631309bc9a9b710ae17269e921cd8361a0b11c3b27a27bc1170c2f8b9c1c"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">WEEKLY REPORT / 2026-11-13</div><h1 class="issue-title">量子算法工程师周报｜第004期</h1><div class="issue-toolbar"><span>内容窗口 2026-11-02 — 2026-11-08</span><span>PennyLane + PyTorch</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-13_weekly-report.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>实际刊期 2026 年 11 月 13 日｜报道周 北京时间 11 月 2 日 00:00—11 月 8 日 23:59:59｜检索截止 11 月 13 日 10:02:40｜阅读约 9—12 分钟</p>
+<h2 id="section-fa1036b365">本期优先关注：在固定总采样预算下比较带噪训练</h2>
+<p>本周进展把量子算法的成本进一步分散到经典表示、测量、优化和反馈环节。Pauli 截断与采样子空间需要针对目标误差评估，GENIE 把噪声强度纳入有限预算下的模型选择，器件实验和量子经典联合平台则提供不同层次的硬件证据。下一周优先完成一个三比特分布学习练习，把训练、验证和误差条放进同一本采样账本。</p>
+<p>本期以 <a href="2026-11-02_every-other-day-brief.html">11 月 2 日简报</a>、<a href="2026-11-04_every-other-day-brief.html">11 月 4 日简报</a> 和 <a href="2026-11-06_every-other-day-brief.html">11 月 6 日简报</a> 为线索，按原始事件与版本日期筛选周内新增，并补查有限采样训练。检索时获知的后续公告按其实际日期归入后续报道。</p>
+<h2 id="section-862cfd7134"><span class="section-index">01</span>经典压缩应围绕输出误差选择表示</h2>
+<p><em>学界与业界 × 科学与工程。本周证据包括 11 月 3 日正式发表的 QwaveMPS，以及 11 月 3—5 日提交的 SQD、Pauli 截断预印本。</em></p>
+<p>Pauli 截断的新理论研究如何用少量 Pauli 串逼近海森堡算符。对满足 <code>2⁻ⁿ Tr(O²) = 1</code> 的算符族，某个固定 <code>0 &lt; α &lt; 1/2</code> 下的算符稳定子 Rényi 熵若仅按 O(log n) 增长，就能以多项式项数保证所有输入态的期望值精度。这里的全输入态保证由算符谱范数控制。针对特定输入态的误差、态系综上的平均误差和逐步传播的累计误差，需要分别检验。 <a href="https://arxiv.org/html/2611.07545v1#S3" target="_blank" rel="noopener noreferrer">定义与截断保证</a> · <a href="https://arxiv.org/html/2611.07545v1#S4" target="_blank" rel="noopener noreferrer">传播与读出条件</a></p>
+<p>QwaveMPS 则把波导光场写成时间片的矩阵乘积态，通过交换网络让回返时间片再次与发射体相互作用。其压缩对象包含传播记忆，收敛检查要同时改变时间步、局域光子截断与键维度。该工具于 11 月 3 日正式发表于 Quantum，预印本始于 2 月。 <a href="https://quantum-journal.org/papers/q-2026-11-03-2258/" target="_blank" rel="noopener noreferrer">正式论文</a></p>
+<p>SQD 的压缩对象是采样得到的行列式子空间。IBM Quantum、RIKEN 等团队的破缺对称参考态工作，在四铁簇的 54 电子、36 空间轨道算例中，使用含 72 个数据比特的 88 比特真机线路，编译后有 3,944 个 CZ、双比特门深度 276。随后在 GPU 系统上进行组态恢复和子空间求解，维度 3×10¹⁰ 的直接计算点比同一活性空间、键维度 D = 4,000 的 DMRG 能量高约 4.3 mHa。子空间求解与量子采样共同构成该结果的资源成本。 <a href="https://arxiv.org/html/2611.04496v1" target="_blank" rel="noopener noreferrer">线路与后处理</a> · <a href="https://arxiv.org/html/2611.04496v1#S4.SS2" target="_blank" rel="noopener noreferrer">四铁簇数值点</a></p>
+<table>
+<thead>
+<tr>
+<th>表示方式</th>
+<th>首要精度检查</th>
+<th>需要共同记录的成本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pauli 算符展开</td>
+<td>目标态期望值误差与全态谱范数误差</td>
+<td>系数传播、截断、保留项读出</td>
+</tr>
+<tr>
+<td>时间片 MPS</td>
+<td>时间步、光子截断与键维度收敛</td>
+<td>传播延迟、张量交换、相关函数计算</td>
+</tr>
+<tr>
+<td>SQD 采样子空间</td>
+<td>固定活性空间下的能量与子空间收敛</td>
+<td>参考态、真机采样、恢复和经典求解</td>
+</tr>
+</tbody></table>
+<p>这些路线提示一个工程选择原则，先固定输出量、输入态范围和精度，再选择表示。对小例，PyTorch 可给出密集矩阵参考，PennyLane 可核对线路输出与测量代价。扩大规模前，应把经典内存与求解时间计入比较。</p>
+<h2 id="section-51e3b151a6"><span class="section-index">02</span>有限预算把训练、验证和噪声选择连在一起</h2>
+<p><em>学界 × 科学与工程。GENIE 于 11 月 4 日首次提交，CQITE 于 11 月 5 日首次提交，均为预印本。</em></p>
+<p>Ngo 等人的 GENIE 工作研究量子线路 Born machine（QCBM）的泛化。QCBM 通过测量产生分布，训练目标采用最大均值差异（MMD）。在充分 scrambling 的局域 Pauli 噪声可近似为有效白噪声模型时，残余噪声会收缩可达分布类的复杂度，同时把输出推向均匀分布。论文的相应结论保留模型失配项。GENIE 用有成本上限的概率误差削减（PER）实现候选残余噪声水平，再依据留出数据和剩余预算进行选择。 <a href="https://arxiv.org/abs/2611.06630" target="_blank" rel="noopener noreferrer">提交时间</a> · <a href="https://arxiv.org/html/2611.06630v1#S2" target="_blank" rel="noopener noreferrer">模型条件与方法</a></p>
+<p>论文的 12 比特合成数据实验采用 10 层、360 个参数、500 次 Adam 更新，每次更新包含 721 个基准／参数移位采样设置。以每条线路 2,000 次采样定义单位预算，<code>U = 500×721×2000 = 7.21×10⁸</code> 次线路执行。GENIE 每 25 步比较五个候选噪声水平，探测使用总预算的 2%，并计入自身成本。 <a href="https://arxiv.org/html/2611.06630v1#S4.SS4" target="_blank" rel="noopener noreferrer">实验设置</a></p>
+<p>在 blob、定 Hamming 重量、Ising 三种目标，局域 Pauli 错误率均值 0.002、0.004、0.008，数据量 64、256、1024、4096，以及预算 1、5、25、125 倍 U 组成的 144 个条件下，作者比较 GENIE、无缓解、半缓解与全缓解。每种方法取三个种子，按最终精确总体 MMD² 先平均，再相对四方法中的最佳者计算 regret。GENIE 的中位相对 regret 为 0.3%，均值为 3.8%。这些是 JAX、CPU 模拟中的方法间比较，全部实验为 10／12 比特经典模拟。 <a href="https://arxiv.org/html/2611.06630v1#S2.SS5" target="_blank" rel="noopener noreferrer">数值结果与比较口径</a></p>
+<p>PER 提供带符号权重的期望值估计，生成新样本时还需区分原始硬件分布与加权模型。完整复现需要实现 PER 方差、验证 U-statistic 和控制器的预算扣除。代码与数据声明为向通讯作者合理请求获得，论文未提供公开仓库。 <a href="https://arxiv.org/html/2611.06630v1" target="_blank" rel="noopener noreferrer">方法与可用性声明</a></p>
+<p>CQITE 从另一个方向体现经典后处理的重要性。它在能量下降过程中保持指定可观测量的期望值，通过约束协方差线性系统确定拉格朗日乘子，再用算符池近似虚时演化。论文在小型自旋与费米子模型上做数值验证。移入有限采样时，协方差矩阵的条件数和伪逆阈值会影响更新稳定性，应与约束残差一同监测。 <a href="https://arxiv.org/html/2611.07800v1#S2" target="_blank" rel="noopener noreferrer">CQITE 方法</a> · <a href="https://arxiv.org/html/2611.07800v1#S4" target="_blank" rel="noopener noreferrer">算符池与数值验证</a></p>
+<p>这两项工作的工程联系是，测量之后的选择和求解会改变预算分配与统计误差。比较优化方法时，应固定总执行次数、数据划分和评估指标，再给探测、验证和校准分配份额。</p>
+<h2 id="section-72dc57c176"><span class="section-index">03</span>器件寿命与系统闭环需使用各自的误差指标</h2>
+<p><em>学界与业界 × 科学与工程。Kerr-cat 器件预印本为 11 月 3 日，IBM／ORNL／AMD 平台公告为 11 月 5 日。</em></p>
+<p>Weizmann Institute 的自主冷却实验通过有耗散模式排出 Kerr-cat 势阱内的激发。在 Purcell 滤波器共振、平均光子数 33.8 的工作点，重复读出跳转记录给出的空闲比特翻转时间为 448 ± 57 秒，误差条为一个标准误。相位翻转时间由独立 Ramsey 测量获得，高光子数处的制备对比度限制了可靠提取。该证据适合约束指定工作点的噪声模型，线路评估还需使用门操作和读出期间的数据。 <a href="https://arxiv.org/html/2611.04868v1#S0.F4" target="_blank" rel="noopener noreferrer">器件实验与图 4</a></p>
+<p>系统层面，IBM、ORNL 与 AMD 的联合平台把 Nighthawk 量子处理器与 Umbra 高性能计算系统共址，使用 AMD Instinct MI355X GPU 和第五代 EPYC CPU，面向纠错解码、算法验证与工作流编排。公告给出中途测量、实时响应和原始测量信号等能力，为测量—经典处理—条件操作的闭环提供实验环境。 <a href="https://www.ibm.com/quantum/blog/ornl-amd-error-correction-co-design-platform" target="_blank" rel="noopener noreferrer">IBM 原始公告</a></p>
+<p>对算法工程师，可把下一阶段硬件证据分成两张表，一张记录工作点对应的比特翻转、相位翻转、门和读出误差，另一张记录批量采样吞吐、解码延迟、队列与反馈时序。离线模型训练由 PennyLane/PyTorch 承担，实时闭环接入需要进一步核对平台权限、控制接口和计时定义。</p>
+<h2 id="section-85043b732f">人物与团队动向</h2>
+<p>芝加哥大学 11 月 2 日公告，Aaron Fluitt 当日加入 Chicago Quantum Exchange，出任第二任 CEO，接替 Kate Timmerman。他此前担任 PsiQuantum 技术合作高级总监，负责与大学、国家实验室及联盟的科研合作。<a href="https://pme.uchicago.edu/news-events/news/aaron-fluitt-joins-chicago-quantum-exchange-ceo" target="_blank" rel="noopener noreferrer">芝加哥大学公告</a></p>
+<h2 id="section-7dc5a5d42f">下一周行动清单</h2>
+<p>行动安排按实际刊期后的下一周，即 11 月 16—22 日。优先做一个独立的三比特 QCBM 教学代理，检验有限数据、有限采样与分布偏差之间的关系。</p>
+<p>目标分布在 000、111 上各取 0.35，其余六种输出各取 0.05。每个种子生成 64 个训练样本与 64 个留出样本，各方法共用数据与初始参数。线路从 000 出发，两层各含三个 RY 和两个串行 CX。第一层 CX 次序为 0→1、1→2，第二层为 2→1、1→0，共六个参数、四个 CX，适合线性三比特连接。</p>
+<p>定义 <code>pγ = (1−γ)p₀ + γu</code>，u 为八种输出的均匀分布，γ 取 0、0.2、0.4。γ 表示把整个测量输出替换为均匀三比特串的概率，实机逐门噪声需要另行建模。固定核 <code>K(x,y)=exp[−Hamming(x,y)/2]</code>，训练损失为 <code>(pγ−q̂)ᵀK(pγ−q̂)</code>，其中 q̂ 为训练频率。</p>
+<ol>
+<li><strong>11 月 16—17 日，完成精确概率和梯度对照。</strong> PennyLane 返回八维 Born 概率，PyTorch 处理直方图、MMD 和优化记录。解析阶段使用 Torch 接口核对自动微分、概率参数移位与有限差分。三个 γ 共用同一核与目标。无噪声分布恰好匹配目标时，混合引入的 MMD² 随 γ² 增长，可作为偏差检查。 <a href="https://docs.pennylane.ai/en/stable/introduction/interfaces/torch.html" target="_blank" rel="noopener noreferrer">PennyLane Torch 接口</a> · <a href="https://docs.pytorch.org/docs/2.15/generated/torch.bincount.html" target="_blank" rel="noopener noreferrer">PyTorch 直方图计数</a></li>
+<li><strong>11 月 18—19 日，加入采样并封顶预算。</strong> 每个参数各做两次移位，加一次基准，共 13 条线路构成一次梯度更新。通过概率参数移位和 MMD 链式法则形成估计，基准批次与移位批次独立。三档 γ、三个种子、每组 20 次更新、每条 128 次采样，共 299,520 次训练执行。每五步追加一条独立验证线路，共 4,608 次验证执行，合计 304,128 次。验证使用两样本无偏 MMD²，保留有限样本产生的负波动值，另用精确总体 MMD² 评价最终模型。</li>
+<li><strong>11 月 20—22 日，整理真机路线和误差账本。</strong> 比较三档固定 γ 的总体拟合、训练—留出差距、梯度方差及总执行次数。若加入自适应控制器，从同一总预算扣除候选探测。真机方案先核对插件、原生门、三比特映射、编译后深度、读出校准和批量提交条件。完整 GENIE 路线还需实现 PER 的带符号估计与噪声学习，教学代理提供有效白噪声模型下的基础对照。</li>
+</ol>
+<h2 id="section-c626b4c57d">来源覆盖与验证状态</h2>
+<p>本周的共同方向是把误差定义与完整工作流绑定。经典压缩改变存储和求解成本，噪声选择改变方差与偏差，闭环硬件改变数据移动和反馈成本。现有证据支持分别测量这些环节，未来趋势仍需由可比较的端到端实验检验。</p>
+<p>本次重新读取 arXiv quant-ph、Quantum、QFI、相关原始论文、官方框架发布与文档，以及公司和大学公告。arXiv 返回截至 11 月 11 日的近期刊列，本期再按原始日期筛选 11 月 2—8 日证据。QFI 本次返回空刊列，未提供可用新闻线索。PennyLane 发布页仍列 0.45.1 稳定版及 0.46.0b1 预发行，PyTorch 稳定版为 2.15.0。11 月 10—12 日的新公告保留在后续报道范围。 <a href="https://arxiv.org/list/quant-ph/recent" target="_blank" rel="noopener noreferrer">arXiv</a> · <a href="https://quantum-journal.org/" target="_blank" rel="noopener noreferrer">Quantum</a> · <a href="https://news.quantumclouds.cn/" target="_blank" rel="noopener noreferrer">QFI</a> · <a href="https://github.com/PennyLaneAI/pennylane/releases" target="_blank" rel="noopener noreferrer">PennyLane 发布页</a> · <a href="https://github.com/pytorch/pytorch/releases" target="_blank" rel="noopener noreferrer">PyTorch 发布页</a></p>
+<p>教学代理已用 NumPy 2.3.5 检查分布归一化、核矩阵正定性、混合偏差关系，以及六个参数在三档 γ 下的 18 个梯度分量。参数移位与有限差分的最大差约 4.52×10⁻¹¹，低于预设 10⁻⁹ 阈值。PennyLane/PyTorch 执行、训练、采样优化和真机任务均未运行，行动清单为待执行方案。</p>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-fa1036b365">本期重点</a></li><li><a href="#section-862cfd7134">经典压缩应围绕输出误差选择表示</a></li><li><a href="#section-51e3b151a6">有限预算把训练、验证和噪声选择连在一起</a></li><li><a href="#section-72dc57c176">器件寿命与系统闭环需使用各自的误差指标</a></li><li><a href="#section-85043b732f">人物与团队动向</a></li><li><a href="#section-7dc5a5d42f">下一周行动清单</a></li><li><a href="#section-c626b4c57d">来源覆盖与验证状态</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>
