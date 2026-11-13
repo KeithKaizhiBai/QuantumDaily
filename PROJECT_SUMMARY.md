@@ -1,34 +1,34 @@
 # QuantumDaily current state
 
-Updated: 2026-11-06, Asia/Shanghai.
+Updated: 2026-11-13, Asia/Shanghai.
 
 ## Objective and confirmed decisions
 
-Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer. Cover general algorithms, PennyLane/PyTorch simulation and hardware feasibility, trends and verified people/team news, using academia/industry and science/engineering axes.
+Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer. Prioritize general algorithms, PennyLane/PyTorch simulation and hardware implementation, retaining field trends and verified people/team moves along academia/industry and science/engineering axes.
 
-The user authorized automatic main publication, actual-date filenames, Markdown/HTML pairs and archive updates. Both schedules target 09:15 Asia/Shanghai. Follow README Writing standard and current authoritative English AGENTS.md. Direct/evidence-based writing is section 1 of version 2026-10-27-r1.
+The user authorized automatic main publication and Markdown/HTML pairs with archive updates. Both schedules target 09:15 Asia/Shanghai. Use actual issue dates and coverage windows. Follow README Writing standard and authoritative English AGENTS 2026-10-27-r1, direct writing in section 1.
 
-## Active files and independent report windows
+## Active files and independent windows
 
-- reports/2026/2026-11-06_every-other-day-brief.md: finalized brief 010, November 4 17:22:12 through November 6 17:23:12 +08:00.
-- docs/reports/2026/2026-11-06_every-other-day-brief.html and docs/index.html: generated thirteen-issue archive, saved to GitHub and verified online.
-- Successful brief cutoff is November 6 17:23:12 +08:00.
-- reports/2026/2026-11-02_weekly-report.md: published weekly 003, October 26-November 1 coverage and independent cutoff November 2 09:29:50 +08:00.
-- README.md contains the report index/procedure. TASK_LOG.md contains publication and recovery evidence.
-- October 27 draft source/page remain local-only recovery evidence, superseded by October 30. Exclude them from builder inputs. Retain site assets and historical pages.
+- reports/2026/2026-11-13_every-other-day-brief.md: finalized brief 011, expanded window November 6 17:23:12 to November 13 09:43:09 +08:00.
+- docs/reports/2026/2026-11-13_every-other-day-brief.html and docs/index.html: generated fourteen-issue archive. GitHub save/live verification pending.
+- Last successful brief cutoff remains November 6 17:23:12 +08:00 until this release is verified.
+- Latest published weekly remains reports/2026/2026-11-02_weekly-report.md, covering October 26-November 1, cutoff November 2 09:29:50 +08:00. No November 9 weekly exists remotely. This brief run leaves the weekly window independent.
+- README.md has the index and process. TASK_LOG.md retains historical evidence/recovery details.
+- October 27 draft source/page remain local-only, superseded by October 30. Exclude from build inputs, retain both files and historical site assets.
 
-The mirror has no .git. November 6 preflight main d94595f1189b261372ed7d894001205319c3a14f and tree 01842746c6703114f162f91a0bf2ae8cbb5c5ef0 held twelve issues and no November 6 duplicate. All 36 remote blobs matched local. Use a fresh tree, expected_sha and force:false.
+Mirror has no .git. November 13 preflight main 8ced4d9bf0acdc92954f2e824904135877217057, tree 9dafd6e57aa387c64f5c923b63e6becd70f25edb held thirteen issues and no new duplicate. All 38 remote blobs matched the mirror. Publish from a fresh tree with expected_sha and force:false.
 
 ## Evidence and validation
 
-Brief 010 covers Pauli truncation/OSE guarantees, constrained QITE, Quantum 2260 formal publication and the IBM/ORNL/AMD QEC co-design platform. Checked source dates, preprint versus reviewed status and numerical versus hardware evidence. QDiff's new arXiv upload has a 2021 ASE reference and is excluded as a new result. No verified personnel move within the window. QFI returned June 15. PennyLane 0.45.1 and PyTorch 2.15.0 remain stable releases.
+Brief 011 covers XAS, locally learned preparation circuits, graph GBS classical sampling, 63-qubit gauge dynamics and IBM developer workflows. Three Quantum papers formally published November 10, distinct from older preprints. Scott Aaronson joining Qedma's scientific advisory board is supported by a November 12 company press release and the company's current list.
 
-Independent four-qubit teaching example has RY on each |+> input followed by CX 0-1, 1-2, 2-3 and Z3 readout. O is the tensor product of cos(theta) Z minus sin(theta) X, with expectation sin(theta)^4. NumPy 2.3.5 checked five angles, 25 truncations and one finite-difference derivative. Maximum operator difference 4.44e-16 is below 1e-12. No PennyLane/PyTorch execution, training, compatibility test or QPU task.
+arXiv recent/new returned November 11 snapshots, leaving November 12-13 coverage incomplete. QFI returned June 15. Framework release checks still list PennyLane stable 0.45.1/prerelease 0.46.0b1 and PyTorch 2.15.0. XAS table 1 distinguishes 3.54e8 Toffoli in longest circuit from 5.20e11 overall; magic factories excluded from 100 logical qubits. Nearby text/table caption differ in spectral-width parameter (1 versus 2 Ha), explicitly flagged.
 
-Facts/citations and full prose were reviewed before generation. Existing builder ran with a memory filesystem overlay excluding the recovery draft. All twelve old report pages and generated assets matched. Checked eight headings, all 21 sources, emphasis/formulas, focus/excerpt, thirteen archive rows and 250 local links/fragments. Source SHA-256 db61387aaaaa064773abe73852e6a6e486f187bd6b23641e152e3a7872d89c9b.
+Independent teaching model H=n0+1.4n1+0.1(XX+YY), n=(I-Z)/2, has ground |00> and dipole-prepared |10>. NumPy 2.3.5 verified C(t), spectral weights, six ancilla X/Y readouts, second-order product convergence and finite integration. Max C discrepancy 2.24e-16, tolerance 1e-12. Framework execution, training, compatibility checks and QPU jobs remain unperformed. PennyLane TrotterProduct's positive sign and controlled identity phase are addressed.
 
-Content commit 626cbbef77423c5ed1da50363b513333f2e27e22 saved exactly the six release paths using expected_sha and force:false. Every changed text/blob matched remote readback. Pages run 42195380726 succeeded. Live article and homepage returned 200, with source fingerprint, eight sections, all 21 sources, formulas/reference values, focus/excerpt, thirteen archive rows, previous brief/weekly links and draft exclusion verified. Style asset reference remains 79bbaf014fd5. No site code changed and no additional viewport check was performed.
+Source/prose review preceded the unchanged builder in a memory filesystem overlay excluding the draft. All thirteen old HTML pages and generated assets matched. Checked nine sections, 24 sources, formulas/emphasis, focus/excerpt, fourteen archive rows and 269 local links/fragments. Source SHA-256 101e0cf4e55b69d9c0dfd9d5f0163198f2320d3595f99971585ddb43d6c2daa1.
 
 ## Next action
 
-Brief 010 is generated, GitHub-saved and online. Continue from successful cutoff November 6 17:23:12 +08:00 with fresh remote-state and guarded publication checks. Weekly remains independent. Next weekly November 9 covers November 2-8.
+Guardedly save the six release files, read back all changed blobs, then verify Pages and live article/homepage. Advance brief cutoff after verification. Weekly status remains separate, next scheduled weekly November 16 covers November 9-15.
