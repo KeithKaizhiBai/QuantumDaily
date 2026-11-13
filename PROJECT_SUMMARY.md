@@ -11,9 +11,9 @@ The user authorized automatic main publication, actual issue dates and Markdown/
 ## Active files and independent windows
 
 - reports/2026/2026-11-13_weekly-report.md: finalized weekly 004, covering November 2 00:00-November 8 23:59:59 +08:00, research cutoff November 13 10:02:40. Actual issue date November 13, no November 9 backdating.
-- docs/reports/2026/2026-11-13_weekly-report.html and docs/index.html: generated fifteen-issue archive. Weekly GitHub save/live verification pending.
+- docs/reports/2026/2026-11-13_weekly-report.html and docs/index.html: generated fifteen-issue archive, GitHub-saved and verified online.
 - reports/2026/2026-11-13_every-other-day-brief.md and matching page: published brief 011, expanded window November 6 17:23:12-November 13 09:43:09. Its successful cutoff stays November 13 09:43:09.
-- Last verified weekly remains 003 dated November 2, covering October 26-November 1, cutoff November 2 09:29:50, until weekly 004 is verified.
+- Successful weekly 004 covers November 2-8 with research cutoff November 13 10:02:40. Both report types are verified.
 - README.md is the report index/process. TASK_LOG.md retains historical evidence and recovery details.
 - October 27 draft source/page remain local-only recovery evidence, superseded by October 30. Exclude from builder inputs and retain both files.
 
@@ -29,6 +29,8 @@ Independent three-qubit teaching proxy uses six RY parameters/four CX, two-mode 
 
 Facts/citations and full prose reviewed before generation. Existing builder ran unchanged in memory excluding the recovery draft. All fourteen previous pages/assets matched. Checked seven h2 headings,22 external sources, one table with four rows/three columns, three converted brief links, formulas/emphasis, focus/excerpt, fifteen archive rows and289 local links/fragments. Source SHA-256 f8fe631309bc9a9b710ae17269e921cd8361a0b11c3b27a27bc1170c2f8b9c1c.
 
+Content commit ba00ac211198fe490cfe40df0fd5bf9171812185 updated exactly the six weekly release paths with expected_sha and force:false. All six texts/Git blobs matched remote readback. Pages run43350130427 succeeded. Live article/home returned200, with source fingerprint, seven headings, all22 sources, intact table, formulas, three related briefs, focus/excerpt, fifteen rows and both November13 types verified. Style version79bbaf014fd5 unchanged. No additional viewport or framework/QPU check.
+
 ## Next action
 
-Save the six weekly release files with guarded GitHub update, read back each blob and verify Pages plus live article/homepage. Preserve both November13 types. After success, weekly004 covers November2-8. Next scheduled weekly November16 covers November9-15.
+Weekly004 is generated, GitHub-saved and online. Continue brief from November13 09:43:09. Next scheduled weekly November16 covers November9-15, independently of its later research cutoff. Retain guarded publication and live checks.
