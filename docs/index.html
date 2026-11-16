@@ -1,5 +1,91 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子计算观察站 · QuantumDaily</title><meta name="description" content="面向量子算法工程师的隔日简报与周报，关注通用算法、模拟、真机实现、领域趋势和人物动向。"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css?v=79bbaf014fd5"><script src="assets/site.js?v=79bbaf014fd5" defer></script></head><body><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="index.html#archive" aria-current="page">简报档案</a><a href="index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><section class="hero" aria-labelledby="hero-title"><div><div class="eyebrow">QUANTUM COMPUTING INTELLIGENCE</div><h1 id="hero-title">量子计算，<span>持续观测。</span></h1><p class="hero-copy">连接算法进展、模拟实践与真实量子硬件。<br>为量子算法工程师筛选值得读、值得验证、值得实现的变化。</p><div class="axis-line"><span>学界 × 业界</span><span>科学 × 工程</span></div></div><div class="orbit" aria-hidden="true"><svg viewBox="0 0 500 380" fill="none"><defs><linearGradient id="orbit-blue" x1="60" y1="90" x2="450" y2="300"><stop stop-color="#83c8ff"/><stop offset="1" stop-color="#3b5584"/></linearGradient><radialGradient id="orbit-glow"><stop stop-color="#65afff" stop-opacity=".3"/><stop offset="1" stop-color="#65afff" stop-opacity="0"/></radialGradient></defs><circle cx="255" cy="180" r="115" fill="url(#orbit-glow)"/><ellipse cx="255" cy="180" rx="179" ry="70" stroke="url(#orbit-blue)" stroke-width=".9" transform="rotate(-30 255 180)"/><ellipse cx="255" cy="180" rx="179" ry="70" stroke="#a287db" stroke-opacity=".65" stroke-width=".9" transform="rotate(36 255 180)"/><ellipse cx="255" cy="180" rx="145" ry="91" stroke="#5384b5" stroke-opacity=".6" stroke-width=".7" transform="rotate(88 255 180)"/><circle cx="255" cy="180" r="40" stroke="#648bb550"/><circle cx="255" cy="180" r="28" stroke="#8fcaff99"/><circle cx="255" cy="180" r="9" fill="#81bfff"/><circle cx="118" cy="218" r="4" fill="#a5d8ff"/><circle cx="390" cy="267" r="4" fill="#b8a0fa"/><circle cx="260" cy="38" r="3" fill="#81bfff"/><path d="M118 218H64M390 267h43M260 38V20" stroke="#426d99"/><text x="22" y="236" fill="#97b1d1" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">ALGORITHMS</text><text x="382" y="289" fill="#b1a1cd" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">HARDWARE</text><text x="213" y="14" fill="#97b1d1" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">SIMULATION</text><path d="M38 54h16m-8-8v16M449 322h14m-7-7v14" stroke="#52769880"/></svg><span class="orbit-note">EXPLORE / VERIFY / IMPLEMENT</span></div></section><section class="issue-feature" aria-labelledby="latest-title"><div class="date-block"><span class="day">15</span><span class="month">NOV 2026</span></div><div class="feature-copy"><div class="issue-labels"><span class="type-label">最新一期 / 隔日简报</span></div><h2 id="latest-title">用实测噪声指标做同预算外推</h2><p>本窗口核实到 Caltech–Broadcom 合作近况和 IonQ 管理团队调整。技术部分补充上期未覆盖的三篇预印本：bnZNE 的真机误差缓解、Pauli 传播的并行分区，以及小型分类器的完整硬件训练。三篇均早于上期截止，本期按补漏收录；最适合先做的练习是检验噪声外推的横轴、拟合偏差和采样成本。</p></div><div class="feature-actions"><a class="primary-link" href="reports/2026/2026-11-15_every-other-day-brief.html">阅读本期<span class="arrow" aria-hidden="true">→</span></a><a class="secondary-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-15_every-other-day-brief.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 ↗</a></div></section><div class="coverage-strip"><span><i class="dot"></i><strong>PennyLane + PyTorch</strong> 实现视角</span><span>算法范围 <strong>通用</strong></span><span>内容窗口 <strong>2026-11-13 — 2026-11-15</strong></span></div><section id="archive" class="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE ARCHIVE</div><h2 id="archive-title">简报档案</h2></div><p id="archive-status" class="archive-count" aria-live="polite">16 期</p></div><div class="archive-tools"><div class="filters" role="group" aria-label="按报刊类型筛选"><button type="button" data-filter="all" aria-pressed="true">全部 16</button><button type="button" data-filter="every-other-day-brief" aria-pressed="false">隔日简报 12</button><button type="button" data-filter="weekly-report" aria-pressed="false">周报 4</button></div><form id="archive-search-form" class="search" role="search"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor"/><path d="m13 13 4 4" stroke="currentColor"/></svg><input id="archive-search" type="search" aria-label="搜索简报" placeholder="搜索日期、主题或关键词" autocomplete="off"></form></div><div class="archive-list"><article class="report-row" data-report data-type="every-other-day-brief" data-search="2026-11-15 量子算法工程师隔日简报｜第012期 刊期 2026 年 11 月 15 日｜北京时间 11 月 13 日 09:43:09 至 11 月 15 日 17:22:26｜含上期检索缺口补漏｜阅读约 6—8 分钟
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子计算观察站 · QuantumDaily</title><meta name="description" content="面向量子算法工程师的隔日简报与周报，关注通用算法、模拟、真机实现、领域趋势和人物动向。"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css?v=79bbaf014fd5"><script src="assets/site.js?v=79bbaf014fd5" defer></script></head><body><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="index.html#archive" aria-current="page">简报档案</a><a href="index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><section class="hero" aria-labelledby="hero-title"><div><div class="eyebrow">QUANTUM COMPUTING INTELLIGENCE</div><h1 id="hero-title">量子计算，<span>持续观测。</span></h1><p class="hero-copy">连接算法进展、模拟实践与真实量子硬件。<br>为量子算法工程师筛选值得读、值得验证、值得实现的变化。</p><div class="axis-line"><span>学界 × 业界</span><span>科学 × 工程</span></div></div><div class="orbit" aria-hidden="true"><svg viewBox="0 0 500 380" fill="none"><defs><linearGradient id="orbit-blue" x1="60" y1="90" x2="450" y2="300"><stop stop-color="#83c8ff"/><stop offset="1" stop-color="#3b5584"/></linearGradient><radialGradient id="orbit-glow"><stop stop-color="#65afff" stop-opacity=".3"/><stop offset="1" stop-color="#65afff" stop-opacity="0"/></radialGradient></defs><circle cx="255" cy="180" r="115" fill="url(#orbit-glow)"/><ellipse cx="255" cy="180" rx="179" ry="70" stroke="url(#orbit-blue)" stroke-width=".9" transform="rotate(-30 255 180)"/><ellipse cx="255" cy="180" rx="179" ry="70" stroke="#a287db" stroke-opacity=".65" stroke-width=".9" transform="rotate(36 255 180)"/><ellipse cx="255" cy="180" rx="145" ry="91" stroke="#5384b5" stroke-opacity=".6" stroke-width=".7" transform="rotate(88 255 180)"/><circle cx="255" cy="180" r="40" stroke="#648bb550"/><circle cx="255" cy="180" r="28" stroke="#8fcaff99"/><circle cx="255" cy="180" r="9" fill="#81bfff"/><circle cx="118" cy="218" r="4" fill="#a5d8ff"/><circle cx="390" cy="267" r="4" fill="#b8a0fa"/><circle cx="260" cy="38" r="3" fill="#81bfff"/><path d="M118 218H64M390 267h43M260 38V20" stroke="#426d99"/><text x="22" y="236" fill="#97b1d1" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">ALGORITHMS</text><text x="382" y="289" fill="#b1a1cd" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">HARDWARE</text><text x="213" y="14" fill="#97b1d1" font-family="Consolas,monospace" font-size="9" letter-spacing="1.5">SIMULATION</text><path d="M38 54h16m-8-8v16M449 322h14m-7-7v14" stroke="#52769880"/></svg><span class="orbit-note">EXPLORE / VERIFY / IMPLEMENT</span></div></section><section class="issue-feature" aria-labelledby="latest-title"><div class="date-block"><span class="day">16</span><span class="month">NOV 2026</span></div><div class="feature-copy"><div class="issue-labels"><span class="type-label">最新一期 / 周报</span></div><h2 id="latest-title">把梯度评估装进同一批次，并同时核算采样与提交成本</h2><p>本周证据把算法实现的比较单位从比特数和线路深度，推进到经典内存、有效样本、提交次数及达标时间。经典采样与 Pauli 传播更新了基线；真机误差处理展示偏差与方差的交换；一篇新预印本则把完整参数移位表装入一次提交，在相近采样预算下减少训练所需的往返。下一周优先完成一个双比特梯度练习，检验如何组织同预算的参数移位与 SPSA 评估。</p></div><div class="feature-actions"><a class="primary-link" href="reports/2026/2026-11-16_weekly-report.html">阅读本期<span class="arrow" aria-hidden="true">→</span></a><a class="secondary-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-16_weekly-report.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 ↗</a></div></section><div class="coverage-strip"><span><i class="dot"></i><strong>PennyLane + PyTorch</strong> 实现视角</span><span>算法范围 <strong>通用</strong></span><span>内容窗口 <strong>2026-11-09 — 2026-11-15</strong></span></div><section id="archive" class="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE ARCHIVE</div><h2 id="archive-title">简报档案</h2></div><p id="archive-status" class="archive-count" aria-live="polite">17 期</p></div><div class="archive-tools"><div class="filters" role="group" aria-label="按报刊类型筛选"><button type="button" data-filter="all" aria-pressed="true">全部 17</button><button type="button" data-filter="every-other-day-brief" aria-pressed="false">隔日简报 12</button><button type="button" data-filter="weekly-report" aria-pressed="false">周报 5</button></div><form id="archive-search-form" class="search" role="search"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor"/><path d="m13 13 4 4" stroke="currentColor"/></svg><input id="archive-search" type="search" aria-label="搜索简报" placeholder="搜索日期、主题或关键词" autocomplete="off"></form></div><div class="archive-list"><article class="report-row" data-report data-type="weekly-report" data-search="2026-11-16 量子算法工程师周报｜第005期 刊期 2026 年 11 月 16 日｜报道周 北京时间 11 月 9 日 00:00—11 月 15 日 23:59:59｜检索截止 11 月 16 日 09:27:40｜阅读约 9—12 分钟
+
+本期优先关注：把梯度评估装进同一批次，并同时核算采样与提交成本
+
+本周证据把算法实现的比较单位从比特数和线路深度，推进到经典内存、有效样本、提交次数及达标时间。经典采样与 pauli 传播更新了基线；真机误差处理展示偏差与方差的交换；一篇新预印本则把完整参数移位表装入一次提交，在相近采样预算下减少训练所需的往返。下一周优先完成一个双比特梯度练习，检验如何组织同预算的参数移位与 spsa 评估。
+
+本期参考 11 月 13 日简报 和 11 月 15 日简报，重新核对原始来源并补查批量训练。本周新增按正式发表、预印本公开或公告日期判断；既有方法、历史实验日期与长期趋势分别交代。
+
+1．经典基线同时受分布定义和数据移动影响
+
+学界与研究机构 × 科学与工程。图上 gbs 工作于 11 月 10 日正式发表于 quantum；线性分区 pauli 传播预印本于 11 月 12 日首次提交。
+
+anand 等人对固定正参数 c，给出图顶点子集分布 μ(s) ∝ c^(2|s|) pm(s)² 的多项式时间经典近似采样算法，其中 pm(s) 为诱导子图的完美匹配数。方法在两份原图连接而成的扩展图 g□k₂ 上采样加权完美匹配，再投影回子集。定理以全变差距离约束输出误差，为使用该指定分布的图应用提供经典比较对象。预印本首版为 2025 年 11 月，当前 v3 为 2026 年 11 月 6 日，本周新增是正式发表。 正式论文 · 分布与定理
+
+这里的实现问题是对齐任务：光子实验与经典采样器要使用相同的条件分布、碰撞处理和子集筛选，再比较后续图任务的质量与总成本。复杂度定理给出适用边界，有限规模的常数、混合时间和后处理仍需要实测。
+
+pauli 传播处理的是另一类基线：将目标观测量写成稀疏 pauli 和，沿海森堡图景传播。orfi 等人用二元域线性哈希分区，把同类字符串的全局去重改为预先确定的局部分区任务。pauli 旋转至多连接一对分区，一般 k 比特通道对应的独立任务组至多含 4ᵏ 个分区。 提交历史 · 方法
+
+在 16×16 横场 ising 模型的弱扩展测试中，作者固定每节点的保留项预算，最多使用 32 个节点，支持 1.6×10¹¹ 个字符串；去重截断后的字符串存储约 10.5 tib，总内存峰值约 28.8 tib。测试取 h/j = 3.04、20 个二阶 trotter 步和 jδt = 0.1。其工程进展是改善通信和内存利用，使较大的算符展开可被保留。 测试设置与内存口径
+
+两项工作的联系是，比较对象应由输出任务决定。图分布要求采样误差匹配；局域动力学要求目标观测量和截断误差匹配。小规模可由 pennylane 给出线路输出，pytorch 给出密集矩阵对照；扩大规模时，稀疏表示、去重和内存访问需要单独测量，现有框架的自动微分耗时也应列入记录。
+
+2．真机误差处理需要保留基准、筛选和方差信息
+
+研究机构与业界 × 科学与工程。bnzne 为 11 月 12 日预印本；二维格点规范场实验为 11 月 10 日预印本，均含真机证据。
+
+dlr 的随机化 bnzne 为应用线路配对一个理想输出可确定、原生门结构及误差相近的基准线路。它测量各折叠档位的有效噪声指标，再用该指标做零噪声外推，并可结合 pauli twirling 与读出误差处理。 提交历史 · 基准条件与协议
+
+ibm 实验的应用数据预算各为 196,608 shots。标准 zne 使用三个档位、每档 32 个随机化线路、每条 2,048 shots；bnzne 为每个应用变体增加配对基准，将每条减到 1,024 shots。论文以“缓解后单比特 z 期望值／精确值”在各比特上的平均作指标，所测各应用的均值更接近 1，深线路的方差增大。下一步复现应同时保存单项误差、均方误差和联合重采样区间，并将基准噪声估计的不确定度传入拟合。 实验与量度
+
+规范场实验则利用模型自身的约束。ibm、eth zurich 等团队在 ibm_phoenix 上使用 63 个比特，其中 12 个为辅助位，研究有动力学物质与磁性 plaquette 项的二维 z₂ 规范理论。保留独立的物质和规范自由度，使 gauss 定律成为可测的误差检测条件；作者结合辅助位检查、局域后选择和噪声重标度提取电荷、通量及弦动力学。 预印本 · 模型与实现
+
+实验最多运行 15 个二阶 trotter 步，每步 88 层 cnot，每个演化时点采集 10⁶ shots，并分配到 pauli 随机化实例。为控制后选择开销，分析集中在与对称检查同基读出的局域观测量，以及弦观测量的局域近似。复现时应从原始样本数、保留率到重标度系数依次记录，再计算最终误差条。 误差处理细节
+
+两种路线分别依赖可比较的基准噪声和可验证的物理约束。pennylane 适合构造小规模噪声模型、约束和读出，pytorch 负责拟合、计数及误差传播。真机评价应同时回答：输出偏差减少了多少、方差增加了多少，以及获得同一精度需要多少原始执行。
+
+3．训练应比较达标所需的采样、提交和实际时间
+
+学界与业界 × 工程。批量训练和喷注分类预印本均于 11 月 12 日公开；ibm 开发者公告为 11 月 11 日。
+
+faryad 与 alomairy 的新工作把每轮当前参数及全部 2p 个参数移位点，与 minibatch 组合后装入一个 qiskit pub job，返回结果后完成一次 adam 更新。它将每次与云端往返可承载的评估量作为优化器设计条件。参数移位与 adam 是既有方法，本周证据来自这种批量组织的模拟和实机比较。 提交日期 · 问题与执行模型
+
+作者在 ibm_fez 的 job mode 做三次交错比较：两次六比特、36 参数、10 个 cz，一次八比特、48 参数、14 个 cz；双方各 50 个训练 job。任务使用固定的 300 个训练与 300 个测试合成样本。八比特批量参数移位每 job 使用 21,728 shots，spsa 使用 22,528，差异来自整数取整；整个测试中批量臂最多少约 7%。批量臂分别在第 4、20、8 个 job 达到 spsa 第 50 个 job 的无噪训练损失，判定使用离线精确模拟。 硬件设置与结果
+
+八比特运行的达标成本如下。目标是 spsa 第 50 个 job 对应的无噪训练损失 0.1389；表中记录双方首次达标前的累计资源，往返时间含排队。
+
+| 方法 | 达标 job 数 | 累计计费 qpu 秒 | 累计提交至返回秒 |
+| --- | --- | --- | --- |
+| 批量参数移位 | 8 | 72 | 259 |
+| spsa | 35 | 280 | 601 |
+
+该八比特单次运行的测试准确率为 0.79 对 0.71，300 个测试点的 mcnemar 检验 p = 0.003；六比特两次运行的差异尚未显著。spsa 增益参数在模拟代理上调节，硬件上的再调参是作者提出的重要补充验证。采集模式、初始化和调参方式决定这些结果的适用范围。 达标口径与表 2 · 讨论 · 代码与原始数据
+
+喷注分类工作提供另一种成本视角：在五比特 iqm lagrange 上，最终四比特、12 参数、100 个训练样本、每次 256 shots、10 个 epoch 的配置完成全部量子训练与测试评估，经典更新由 cpu 处理。实测单模型训练 qpu 时间约 43 分钟，硬件与无噪模拟器各自训练后的 auc 均约 0.76。论文所见 qpu 时间占墙钟时间的 20%—50%，随执行变化。它适合检查完整训练循环的组成，而与上一项三组双臂实验采用不同的计时范围。 配置与实测流程
+
+ibm 的 samplomatic／executor 更新和托管工作流，把线路变体、参数绑定与服务端编排进一步显式化。当前文档中的 dry run 用于服务端参数验证、用量及可选时序检查，返回随机 mock 数据；物理结果仍需本地模拟或实际测量来验证。dry run 面向 flex、premium、on-prem 计划；托管工作流当前为 beta，接入前应核对计划权限。 11 月 11 日公告 · dry run 文档 · 托管工作流
+
+这一主题也出现在 11 月 13 日 caltech–broadcom 研讨会报道的互连、异构处理器和软件编排讨论中。双方五年合作始于 2023 年，本周消息是合作近况，活动具体日期未单列。作为趋势判断，算法、接口和执行环境的共同设计正成为值得持续跟踪的问题，证据应落在可复查的达标成本上。 caltech 官方报道
+
+人物与团队动向
+
+11 月 12 日标注为新闻稿的公开转载宣布，scott aaronson 加入 qedma 科学顾问委员会。公司官网 advisory board 名单列有 aaronson，职责方向涉及错误抑制、错误缓解及量子优势评估；准确生效日未单列。 新闻稿转载 · 公司顾问名单
+
+ionq 的 11 月 13 日管理层公告涉及 gary merrill 出任 cfo、thomas a. austin 出任首席会计官，以及 inder m. singh 离任。进一步核对同份 8-k 的正文与新闻稿附件，可见日期口径差异：正文写 merrill 的任命决定在 11 月 10 日，预计 12 月 3 日开始任职；singh 的相关职务至 11 月 10 日；austin 生效日列为 11 月 16 日。附件则使用“12 月初”和“立即生效”。本期保留这组来源差异，区分周内公告与后续到任安排。 8-k 正文第 5.02、8.01 项 · 同份提交的新闻稿附件
+
+下一周行动清单
+
+11 月 16—22 日先做一个独立的双比特能量优化练习，检验批量梯度组织与预算分配，再接入论文的分类数据和优化器设置。
+
+从 |00⟩ 出发，先对两个比特分别施加 ry(a)、ry(b)，再施加 cx₀→₁。取无量纲教学哈密顿量 h = 0.6z₀ + 0.4z₁ + 0.2x₀x₁，则
+
+e(a,b) = 0.6cos(a) + 0.4cos(a)cos(b) + 0.2sin(a)。
+
+每个参数仅出现一次，能量梯度可由 ±π/2 参数移位精确获得。z₀、z₁ 共用 z 基样本，x₀x₁ 使用 x 基样本，因此每组参数需要两个测量设置。
+
+1. 11 月 16—17 日，核对解析值与梯度。 pennylane 返回三项期望值，使用 torch 接口与 pytorch 的 float64 自动微分；同时保留 4×4 密集矩阵参考、参数移位和有限差分。先在 (a,b) = (0.7,−0.4) 及其他测试点比较能量和梯度。线路只需两个旋转和一个 cx，适合相邻双比特。 pennylane torch 接口
+2. 11 月 18—19 日，比较同预算的两种梯度估计。 参数移位每轮保存当前点和四个移位点，每个测量基 192 shots，合计 5×2×192 = 1,920。spsa 保存当前点和两个扰动点，每基 320 shots，同样 3×2×320 = 1,920；扰动方向取独立 ±1，先固定幅度 c = 0.1。两种估计使用相同的梯度下降步长 0.05。三个随机种子、各 20 轮、两种方法合计计划 230,400 次模拟执行。另用精确能量评价最终点，统计梯度误差、能量误差、方差和总采样量。有限 c 的近似偏差与单方向 spsa 的随机性应分别观察。
+3. 11 月 20—22 日，形成提交表和真机接入检查。 把每轮五组或三组参数及两个测量基预先列成表，核对插件或导出接口能否在同一 job 中承载。pytorch 负责更新、随机种子及账本，pennylane 负责线路与测量。若后端以 cz 为原生纠缠门，可用目标位前后各一个 h 实现 cx；x 基读出另加 h。记录编译后的门数、深度、布局和测量设置，再分别记录 job 数、qpu 计费时间和提交至返回时间。具备权限时可用 dry run 检查资源与格式，正确性对照仍使用精确模拟。
+
+来源覆盖与验证状态
+
+本周可以验证的共同进展是，经典基线、误差缓解和优化器都越来越依赖清楚定义的输出与执行接口。长期趋势仍需更多设备、访问模式、任务和初始化的对照。对近期学习，先把误差和资源账本做完整，再扩展问题规模。
+
+本次实际检索 arxiv quant-ph recent/new、quantum、qfi、原始论文及代码库、框架官方发布与文档、大学和公司官网，并核对 sec 原始文件。arxiv 返回最新为 11 月 13 日的刊列；quantum 首页最新所列论文为 11 月 10 日；qfi 返回空刊列，周末新增覆盖受可见来源限制。pennylane github 稳定版仍列 0.45.1、预发 0.46.0b1，pytorch 稳定版仍列 2.15.0，未核实到本周新版本。批量训练代码库注明硬件采集为 10 月 16—17 日，本周新增是预印本公开。 arxiv · quantum · qfi · pennylane 发布 · pytorch 发布
+
+独立教学模型已用 numpy 2.3.5 检查五组参数的能量、参数移位梯度和有限差分。能量与解析式最大差约 1.67×10⁻¹⁶，移位梯度最大差约 2.22×10⁻¹⁶，有限差分最大差约 1.03×10⁻¹⁰，分别通过预设 10⁻¹²、10⁻¹²、10⁻⁹ 阈值。pennylane/pytorch 执行、有限 shots 优化、作者原始数据复算、集群基准、dry run 和 qpu 任务均未运行，行动清单为待执行方案。"><div class="row-date mono"><time datetime="2026-11-16">2026-11-16</time><span class="type-label">周报</span></div><div class="row-content"><h3><a href="reports/2026/2026-11-16_weekly-report.html">把梯度评估装进同一批次，并同时核算采样与提交成本</a></h3><p>本周证据把算法实现的比较单位从比特数和线路深度，推进到经典内存、有效样本、提交次数及达标时间。经典采样与 Pauli 传播更新了基线；真机误差处理展示偏差与方差的交换；一篇新预印本则把完整参数移位表装入一次提交，在相近采样预算下减…</p></div><a class="row-action" href="reports/2026/2026-11-16_weekly-report.html" aria-label="阅读 2026-11-16 周报">阅读<span class="arrow" aria-hidden="true">↗</span></a></article>
+<article class="report-row" data-report data-type="every-other-day-brief" data-search="2026-11-15 量子算法工程师隔日简报｜第012期 刊期 2026 年 11 月 15 日｜北京时间 11 月 13 日 09:43:09 至 11 月 15 日 17:22:26｜含上期检索缺口补漏｜阅读约 6—8 分钟
 
 本期优先关注：用实测噪声指标做同预算外推
 
