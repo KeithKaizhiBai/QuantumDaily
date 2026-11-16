@@ -1,34 +1,17 @@
 # QuantumDaily current state
 
-Updated: 2026-11-16, Asia/Shanghai.
+Updated 2026-11-16 (Asia/Shanghai).
 
-## Objective and confirmed decisions
+## Scope and schedule
 
-Publish Chinese every-other-day briefs and Monday weekly reports for a quantum algorithm engineer, covering general algorithms, PennyLane/PyTorch feasibility, trends and public people/team moves along academia/industry and science/engineering axes. Automatic main publication is authorized. Both schedules target09:15 Asia/Shanghai. Use actual issue dates, independent windows and README Writing standard plus authoritative English AGENTS2026-10-27-r1 (direct writing section1).
+Chinese coverage of general quantum algorithms, classical simulation and hardware, with field trends and public people/team moves. The [project rules](AGENTS.md), [Chinese companion](AGENTS.zh-CN.md) and [source watchlist](README.md#source-watchlist) define the editorial policy. Both active automation prompts were updated and read back with their schedules and thread intact. Briefs start every two days at 09:15 and weeklies on Monday at 09:15. The fixed institutional beat replaces independent tracking of the QFI news site, PennyLane and PyTorch releases.
 
-## Active files and windows
+## Current issues
 
-- reports/2026/2026-11-16_weekly-report.md: finalized weekly005 covering November9 00:00-November15 23:59:59+08, actual research cutoffNovember16 09:27:40.
-- Matching docs/reports/2026/2026-11-16_weekly-report.html and docs/index.html: generated seventeen-issue archive, GitHub-saved and verified online.
-- Weekly005 is generated, GitHub-saved and online: coverageNovember9-15, research cutoffNovember16 09:27:40. Historical weekly004 coveredNovember2-8, cutoffNovember13 10:02:40.
-- Brief012 November15 stays saved and online. Its independent successful cutoff is November15 17:22:26. Next original brief anchorNovember17.
-- README.md is the report index/process; TASK_LOG.md retains historical evidence.
-- October27 source/page remain local-only recovery evidence, superseded by October30. Retain and exclude from builder inputs.
+- [Week 005](reports/2026/2026-11-16_weekly-report.md) covers November 9–15. Initial cutoff 2026-11-16 09:27:40, revision check 2026-11-16T11:55:24+08:00. Added the Fudan measurement-basis theorem, Delft grid experiment, Horizon/OQC control integration and Hong Kong Computer Society team announcement. Kept the original hardware results, SEC date discrepancy and previously executed NumPy check.
+- [Brief 012](reports/2026/2026-11-15_every-other-day-brief.md) has its independent successful cutoff 2026-11-15 17:22:26. Next scheduled brief November 17; next weekly November 23, covering November 16–22.
+- Seventeen issues are in the archive. The October 27 draft and its local reading page are recovery files only. The builder omits draft sources from its archive.
 
-The mirror has no .git. Preflight main6d6998242913a48c9026ad20e0c213163dbf5ede/tree52768aba6e7c6cd323cbe10c6a47a0dfa351d06d held16issues and no November16weekly. All44remote blobs matched46local files, with only two recovery files extra. Use fresh head/tree, expected_sha and force:false.
+## Verification
 
-## Evidence and validation
-
-Weekly005 synthesizes task-matched classical baselines (GBS formalNovember10, Pauli preprintNovember12), uncertainty-aware mitigation (bnZNE November12 and gauge experimentNovember10), and job-aware training/workflows. New QNN paper2611.16365v1 November12 batches current+2P shifted points per job. Hardware6/8qubit three interleaved comparisons, near-equal shots not exact; eight-qubit table uses common offline noiseless-loss target. PS8jobs/72metered/259roundtrip vs SPSA35/280/601. Hyperparameter tuning and access-mode scope retained; synthetic task, not application advantage.
-
-Original SEC8-K and its same-submission press-release exhibit have differing effective dates. Body: Merrill decisionNovember10, expectedDecember3 employment; Singh rolesuntilNovember10; Austin effectiveNovember16. ExhibitNovember13 says earlyDecember/immediately. Weekly states source discrepancy without changing confirmed historical briefs. Qedma advisory role confirmed by official about-page list; November12 announcement date from marked press-release republication, exact start date not separately given.
-
-Required sources freshly retrieved. arXiv recent/new latest visibleNovember13; Quantum latest listed papersNovember10; QFI empty. PL0.45.1stable/0.46.0b1GitHub prerelease, Torch2.15.0stable unchanged. Current IBM dry-run/managed-workflow docs are implementation context, with plan permissions and randomized mock-result scope.
-
-Independent NumPy2.3.5 teaching check: RY(a),RY(b),CX01; H=.6Z0+.4Z1+.2X0X1. Five points verify E=.6cosa+.4cosa cosb+.2sina to1.67e-16, shift gradients2.22e-16, finite differences1.03e-10 against1e-12/1e-12/1e-9 thresholds. Planned PS5settings*2bases*192shots and SPSA3*2*320 both1920/update;2methods*3seeds*20updates=230400 simulated executions, unrun. No framework, optimizer training, raw-author-data recomputation, cluster, dry run or QPU execution.
-
-Facts/citations and full prose reviewed before generation; independent read-only science review found no material issue, with primary validation retained. Unchanged builder generated17issues excluding recovery draft, all16previous pages/generated assets identical. Checked7h2,32external sources,table columns[4,4,4],converted2related brief links,formulas/emphasis,home focus/excerpt,17archive rows and326local links/fragments. Source SHA-256 0b232091922f6a0221fcc8edff3dff595f5ed873ddde5afde7b0fbe2051504e0. Content commitd6f8a6bfdc250fa26e01a5cb68d9482985051d79 saved exactly6paths with expected_sha/force:false; all6texts/Git blobs read back exactly. Pages run43787525950 succeeded. Live article/home HTTP200,source fingerprint,7h2,32sources,table[4,4,4],2related brief links,formulas/date differences,focus/excerpt and17archive rows verified. Style version79bbaf014fd5 unchanged. No new viewport inspection.
-
-## Next action
-
-Continue briefs fromNovember15 17:22:26; next original anchorNovember17. Next scheduled weeklyNovember23 coversNovember16-22. Retain independent windows, guarded publication, exact readback and Pages/live checks.
+The revised page and homepage were built from the new Markdown. Its source SHA-256 is a1f7ab98859c85c9b353940ce6bc16e2350b4b29c4583abb7e102dac9962524c. All sixteen other published articles and all shared assets remain byte-identical. Local Chromium checks at 1365 and 390 px confirmed the latest headline, archive filters and search, links into the article, two tables, source fingerprint and page width. No new simulation or QPU execution accompanied this revision. Release evidence and next actions are recorded in [TASK_LOG.md](TASK_LOG.md).

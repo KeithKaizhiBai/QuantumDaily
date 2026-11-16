@@ -2,7 +2,7 @@
 
 Personal quantum computing briefs for a quantum algorithm engineer working on simulation and implementation on quantum hardware.
 
-The algorithm scope is general. Engineering analysis focuses on PennyLane and PyTorch, with additional coverage of field trends and publicly documented personnel and team changes. Report bodies are in Simplified Chinese unless another language is requested.
+The algorithm scope is general. Engineering analysis covers simulation, measurement costs and hardware execution, alongside field trends and publicly documented personnel and team changes. Report bodies are in Simplified Chinese unless another language is requested.
 
 Reading website: [QuantumDaily](https://keithkaizhibai.github.io/QuantumDaily/).
 
@@ -32,30 +32,29 @@ Check for an existing file before writing. Skip an identical copy. Inspect diffe
 
 Classify contributions along academia/industry and science/engineering axes, allowing overlapping labels. Prioritize algorithm understanding, classical simulation and quantum hardware implementation. Preserve coverage of broader developments and publicly documented personnel changes without filling quotas.
 
-Follow original papers, official software documentation and releases, university/laboratory announcements, and company announcements. Use QFI and other aggregators to discover leads and trace their original sources.
+Use the fixed source watchlist below. Follow technical claims to original results, and personnel changes to dated appointments, official rosters or filings.
 
 Each issue should distinguish publication from event dates, preprints from reviewed publications, simulations from hardware experiments, and sourced facts from engineering assessments or trend hypotheses. State material source-coverage gaps and the actual reproduction status. Do not run paid hardware jobs or large computations merely to prepare a report.
 
+## Source watchlist
+
+Both scheduled reports check the following sources every run. Use the official news or laboratory page and a dated search of the institution's domain or affiliated authors' papers. Include only items supported by primary evidence in the reporting window. Describe a material access or indexing gap in the issue.
+
+| Beat | Primary sources |
+| --- | --- |
+| Research papers | [arXiv quant-ph](https://arxiv.org/list/quant-ph/recent) and [Quantum, published papers](https://quantum-journal.org/papers/). Check submission history, formal publication and the underlying evidence. |
+| Mainland universities | [USTC](https://news.ustc.edu.cn/), [Tsinghua](https://www.tsinghua.edu.cn/), [Peking University](https://icqm.pku.edu.cn/), [Fudan University](https://phys.fudan.edu.cn/). |
+| Hong Kong and the Greater Bay Area | [University of Hong Kong](https://www.scifac.hku.hk/), with regional coverage across Guangdong, Hong Kong and Macao. Start with [Southern University of Science and Technology, Shenzhen](https://www.sustech.edu.cn/), [Sun Yat-sen University, Guangzhou](https://www.sysu.edu.cn/), [HKUST](https://hkust.edu.hk/), and the [University of Macau](https://www.um.edu.mo/). Follow relevant local labs, companies and professional societies. |
+| Overseas universities | [Caltech](https://www.caltech.edu/about/news), [Harvard Quantum Initiative](https://quantum.harvard.edu/news), [MIT](https://news.mit.edu/topic/quantum-computing), [Princeton Quantum Initiative](https://quantum.princeton.edu/news), [ETH Zürich](https://qc.ethz.ch/news-events.html), and [TU Delft / QuTech](https://qutech.nl/newsroom/news/). |
+| Quantum companies | [IBM Quantum](https://www.ibm.com/quantum/blog), [Google Quantum AI](https://quantumai.google/research), [Quantinuum](https://ir.quantinuum.com/news-events/press-releases), [IonQ](https://www.ionq.com/news), [QuEra](https://www.quera.com/news), [Pasqal](https://www.pasqal.com/newsroom/), [Horizon Quantum](https://www.horizonquantum.com/resources/newsroom), and [Xanadu](https://www.xanadu.ai/press). Follow Xanadu's company, research and hardware news. |
+| Other established institutional sources | [University of Chicago PME](https://pme.uchicago.edu/), [Oak Ridge National Laboratory](https://www.ornl.gov/news/), [IQM](https://iqm.tech/), [NVIDIA](https://nvidianews.nvidia.com/) and [Qedma](https://www.qedma.com/). |
+| Verification for individual stories | Authors' publications, repositories and data; official platform documentation for reported experiments; institutional directories and dated appointments; [SEC EDGAR](https://www.sec.gov/search-filings) for relevant corporate filings. |
+
 ## Writing standard
 
-Apply the general AGENTS.md section 6, "Direct, Explanatory and Scientific Writing Style", to both report types. Its English text is authoritative. Write in natural Simplified Chinese for a colleague learning quantum algorithms and implementing them. Use recent reports to identify sources and continuity; use this standard to guide the prose.
+The project [AGENTS.md](AGENTS.md) defines the editorial standard for both report types, with a [Chinese companion](AGENTS.zh-CN.md). Write in natural Simplified Chinese. Lead with a concrete result, explain the mechanism, and state the measurement, comparison and resource conditions where they affect interpretation. For instance, name the loss threshold and the eight-qubit run when comparing training submissions. Remove imagined objections and repeated caveats during the full-issue edit. Keep genuine scientific conditions and unresolved discrepancies.
 
-- **Lead with the result.** Open each item with the concrete subject, advance, mechanism and strongest available evidence. Titles name the contribution or problem; short paragraphs explain why it matters for simulation or implementation.
-- **Explain the mechanism.** For an algorithm or physical result, follow the useful part of subject → governing principle → formulation or method → evidence → consequence. Introduce essential assumptions and symbols where they enter the argument. Scale the explanation to a brief; include a derivation or equation only when it improves understanding.
-- **Attach conditions to the claim they qualify.** State the tested system, benchmark, comparison baseline, error model or resource measure next to a quantitative result. Attribute reported results to their authors and mark engineering estimates as assessments. State a specific missing measurement or unresolved interface when it affects the conclusion.
-- **Give concrete implementation guidance.** Explain the roles of PennyLane and PyTorch, the smallest useful example, required operations and data, observable outputs and comparison criteria. Discuss gate counts, depth, shots, memory or runtime only when relevant. Headings should help reading; each item can use the amount of structure its evidence supports.
-- **Write public people/team news precisely.** Report documented role changes, dates and affiliations. A current title or a project role supplies context according to its source. When verified employment-move information is sparse, one short coverage note is enough.
-- **Consolidate verification status.** Give source coverage and the actual reproduction stage once in the verification section. Keep an item-specific qualification beside the result when it materially changes the reader's assessment. Record scheduling/upload diagnostics in project records; an operational delay belongs in the report only to explain a changed coverage window or cutoff.
-- **Revise the complete prose before publication.** After checking facts and citations, remove unnecessary defensive negation, invented objections, repeated caveats and empty transitions such as “值得强调的是” or “更准确地说”. Prefer affirmative statements of the result's scope and requirements. Retain negation that states an essential physical/mathematical condition, an evidence-backed exclusion, a real misconception or a material source/verification gap. Review candidate phrases in context; avoid mechanical keyword bans or blanket replacements.
-
-Examples adapted from the October 16 issue illustrate this revision pass:
-
-| Draft wording | More explanatory wording |
-| --- | --- |
-| 这不等于完整应用已经获得真机加速。 | 该结果评估指定子程序的逻辑资源；完整应用的端到端真机耗时仍待测量。 |
-| Python 接口并不自动意味着 PennyLane QNode 能直接运行。 | PennyLane 接入需核对设备插件、指令集、测量格式和反馈支持。 |
-
-The final editorial pass must preserve the scientific claim, its conditions, source links and dates. Complete it before building HTML, then inspect rendered headings, emphasis, equations if present, and the homepage excerpt. A phrase search can identify passages for review; editorial judgment determines the revision. Both scheduled tasks carry these requirements in their saved prompts as well as reading this README.
+Describe a small, checkable reproduction route in terms of the chosen method, inputs, outputs, reference answer and hardware requirements. Document the specific toolchain when the result depends on it. Verify source links and public dates before building, then inspect the article title, emphasis, formulas, tables and homepage excerpt.
 
 ## Reports
 
@@ -114,7 +113,7 @@ On 2026-10-14, the user authorized recurring report generation and automatic com
 For every scheduled run:
 
 1. Read the accessible project rules, this README, PROJECT_SUMMARY.md and recent reports. Inspect the latest remote `main` and local edits. This workspace is a file mirror; use the GitHub connector rather than assuming a local checkout. Reconcile required remote inputs without overwriting user changes.
-2. Research original sources, including arXiv quant-ph, Quantum, QFI discovery leads, official university/company announcements and relevant software documentation. Keep broad algorithms, PennyLane/PyTorch engineering analysis and both classification axes. Record source gaps and distinguish verified facts from implementation assessments.
+2. Search the entire Source watchlist for each report. Record material gaps, distinguish new evidence from earlier work, and assess simulation and hardware feasibility using the methods relevant to the result.
 3. Create the dated Markdown report with its actual coverage and research cutoff. Complete the factual and full-prose editorial passes in "Writing standard" before generating HTML. Use `status: published` for a completed automatic issue. If the same date/type is already fully published, skip duplicate generation. Resume an incomplete upload or deployment before creating another copy.
 4. Generate the matching HTML page and homepage with the existing builder. Update the README report table, PROJECT_SUMMARY.md and TASK_LOG.md. Preserve all historical issues and the existing website style. Check filenames, required metadata, source-link preservation and generated links. Prefer available project dependencies or the app's bundled Node runtime; `load_workspace_dependencies` can locate it without installing another runtime.
 5. Publish only the task's Markdown, generated report page/homepage and related index/state/log changes, in one commit based on the latest remote tree. Recheck the branch before writing; update it with `expected_sha` and `force: false`. If it changed, reread and reconcile the relevant changes. Never force-push or stage unrelated edits.
