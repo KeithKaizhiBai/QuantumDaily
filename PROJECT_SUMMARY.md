@@ -9,8 +9,8 @@ Publish Chinese every-other-day briefs and Monday weekly reports for a quantum a
 ## Active files and windows
 
 - reports/2026/2026-11-16_weekly-report.md: finalized weekly005 covering November9 00:00-November15 23:59:59+08, actual research cutoffNovember16 09:27:40.
-- Matching docs/reports/2026/2026-11-16_weekly-report.html and docs/index.html: generated seventeen-issue archive; GitHub save and live verification pending.
-- Last verified weekly004 is November13, covering November2-8, cutoffNovember13 10:02:40. Advance the weekly state after this release is saved and online.
+- Matching docs/reports/2026/2026-11-16_weekly-report.html and docs/index.html: generated seventeen-issue archive, GitHub-saved and verified online.
+- Weekly005 is generated, GitHub-saved and online: coverageNovember9-15, research cutoffNovember16 09:27:40. Historical weekly004 coveredNovember2-8, cutoffNovember13 10:02:40.
 - Brief012 November15 stays saved and online. Its independent successful cutoff is November15 17:22:26. Next original brief anchorNovember17.
 - README.md is the report index/process; TASK_LOG.md retains historical evidence.
 - October27 source/page remain local-only recovery evidence, superseded by October30. Retain and exclude from builder inputs.
@@ -27,8 +27,8 @@ Required sources freshly retrieved. arXiv recent/new latest visibleNovember13; Q
 
 Independent NumPy2.3.5 teaching check: RY(a),RY(b),CX01; H=.6Z0+.4Z1+.2X0X1. Five points verify E=.6cosa+.4cosa cosb+.2sina to1.67e-16, shift gradients2.22e-16, finite differences1.03e-10 against1e-12/1e-12/1e-9 thresholds. Planned PS5settings*2bases*192shots and SPSA3*2*320 both1920/update;2methods*3seeds*20updates=230400 simulated executions, unrun. No framework, optimizer training, raw-author-data recomputation, cluster, dry run or QPU execution.
 
-Facts/citations and full prose reviewed before generation; independent read-only science review found no material issue, with primary validation retained. Unchanged builder generated17issues excluding recovery draft, all16previous pages/generated assets identical. Checked7h2,32external sources,table columns[4,4,4],converted2related brief links,formulas/emphasis,home focus/excerpt,17archive rows and326local links/fragments. Source SHA-256 0b232091922f6a0221fcc8edff3dff595f5ed873ddde5afde7b0fbe2051504e0. Exact GitHub save and Pages/live checks remain the release gate.
+Facts/citations and full prose reviewed before generation; independent read-only science review found no material issue, with primary validation retained. Unchanged builder generated17issues excluding recovery draft, all16previous pages/generated assets identical. Checked7h2,32external sources,table columns[4,4,4],converted2related brief links,formulas/emphasis,home focus/excerpt,17archive rows and326local links/fragments. Source SHA-256 0b232091922f6a0221fcc8edff3dff595f5ed873ddde5afde7b0fbe2051504e0. Content commitd6f8a6bfdc250fa26e01a5cb68d9482985051d79 saved exactly6paths with expected_sha/force:false; all6texts/Git blobs read back exactly. Pages run43787525950 succeeded. Live article/home HTTP200,source fingerprint,7h2,32sources,table[4,4,4],2related brief links,formulas/date differences,focus/excerpt and17archive rows verified. Style version79bbaf014fd5 unchanged. No new viewport inspection.
 
 ## Next action
 
-Publish only this weekly source/page, homepage and existing README/state/log. Re-read main, guarded commit, exact blob readback and Pages/live checks, then record completion. Continue briefs from November15 17:22:26 independently.
+Continue briefs fromNovember15 17:22:26; next original anchorNovember17. Next scheduled weeklyNovember23 coversNovember16-22. Retain independent windows, guarded publication, exact readback and Pages/live checks.
