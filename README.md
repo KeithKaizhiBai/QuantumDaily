@@ -60,6 +60,7 @@ Describe a small, checkable reproduction route in terms of the chosen method, in
 
 | Issue date | Type | Status | Markdown source | Webpage |
 | --- | --- | --- | --- | --- |
+| 2026-11-17 | Every-other-day brief | Published | [Source](reports/2026/2026-11-17_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-11-17_every-other-day-brief.html) |
 | 2026-11-16 | Weekly report | Published | [Source](reports/2026/2026-11-16_weekly-report.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-11-16_weekly-report.html) |
 | 2026-11-15 | Every-other-day brief | Published | [Source](reports/2026/2026-11-15_every-other-day-brief.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-11-15_every-other-day-brief.html) |
 | 2026-11-13 | Weekly report | Published | [Source](reports/2026/2026-11-13_weekly-report.md) | [Read online](https://keithkaizhibai.github.io/QuantumDaily/reports/2026/2026-11-13_weekly-report.html) |
