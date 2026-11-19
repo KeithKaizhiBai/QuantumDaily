@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师隔日简报｜第014期 · QuantumDaily</title><meta name="description" content="CREST 在独立留出的 96 条线路上，将真机测量分布的平均保真度从 HAQA 基线的 0.18100 提高到 0.21347。它把线路结构与芯片校准信息一起用于选区，提供了一条适合小规模学习的工程路线：固定算法，比较不同物理位置上的输出质量。本期同时关注经典 OTOC 模拟、两项量子互连研究，以及硬件升级服务和公开顾问团队信息。CREST 实验"><meta name="source-sha256" content="b1dd4e8eda2aa978c3f4f25cbcd5cf513cc88fa4794cff0e99001f8be82317f8"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">EVERY OTHER DAY BRIEF / 2026-11-19</div><h1 class="issue-title">量子算法工程师隔日简报｜第014期</h1><div class="issue-toolbar"><span>内容窗口 2026-11-17 — 2026-11-19</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-19_every-other-day-brief.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>刊期 2026 年 11 月 19 日｜报道窗口 北京时间 11 月 17 日 17:17:05 至 11 月 19 日 17:19:24｜阅读约 6 分钟</p>
+<h2 id="section-2cef2d5ce5">本期优先关注：把线路放到合适的芯片区域</h2>
+<p>CREST 在独立留出的 96 条线路上，将真机测量分布的平均保真度从 HAQA 基线的 0.18100 提高到 0.21347。它把线路结构与芯片校准信息一起用于选区，提供了一条适合小规模学习的工程路线：固定算法，比较不同物理位置上的输出质量。本期同时关注经典 OTOC 模拟、两项量子互连研究，以及硬件升级服务和公开顾问团队信息。<a href="https://arxiv.org/html/2611.24886v1#S4.SS5" target="_blank" rel="noopener noreferrer">CREST 实验</a></p>
+<h2 id="section-1b5f3cd5cb"><span class="section-index">01</span>CREST 用真机数据学习线路与芯片区域的匹配</h2>
+<p><em>学界与业界 × 工程。</em> 电子科技大学、中电信量子研究院等团队于北京时间 11 月 19 日 02:31 公开 CREST 预印本。方法将门依赖、逻辑比特交互、芯片连接及校准属性编码成图，在路由前给候选区域打分，再交给路由器编译。监督信号来自真实执行结果；校准变化时，固定模型接收更新后的硬件属性。<a href="https://arxiv.org/abs/2611.24886" target="_blank" rel="noopener noreferrer">论文与提交时间</a></p>
+<p>论文中的 TianYan-176 实验实际使用 <strong>63 个可用物理比特、94 条耦合边</strong>。基准共 324 条、宽度 4—20 比特，其中 173 条用于训练、55 条用于验证、96 条独立测试；每条线路测量 1,000 次，未做读出缓解或后选择。测试指标为 <code>H(p,q) = (Σₓ √[p(x)q(x)])²</code>，p 是理想终端分布，q 是实测频率。96 条独立测试线路上，CREST 与最强基线 HAQA 的平均 H 分别为 0.21347 和 0.18100，相对提升 17.94%；配对均值差的 95% 成组 bootstrap 区间为 [0.01274, 0.05317]。实验在 9—10 月完成，本窗口新增的是论文公开。<a href="https://arxiv.org/html/2611.24886v1#S4" target="_blank" rel="noopener noreferrer">实验设置与独立测试</a></p>
+<p>这个结果把“在哪些物理比特上运行”变成可测量的优化目标。读者可以先固定线路和路由设置，比较不同区域的输出分布，再判断学习型打分是否值得增加训练成本。完整重建 CREST 还需要训练标签、模型实现和划分记录；本次未找到作者发布的模型代码仓库。</p>
+<h2 id="section-0a548ef416">优先学习：用四比特线路建立选区对照</h2>
+<p>下面是本刊设计的实验计划。先选两条固定线路：一条四比特 GHZ 链，一条含两层 Y 旋转和最近邻 CZ 的线路。后者固定旋转角，专门比较编译与位置选择，验证过程使用输出计数，无需求梯度。</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>固定条件与检查内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>建立参考</td>
+<td>用 16 个复振幅求精确输出分布；GHZ 参考为 0000、1111 各 1/2。</td>
+</tr>
+<tr>
+<td>比较放置</td>
+<td>选 3 个各含 4 个物理比特的连通区域，每区使用相同的 3 个路由随机种子、路由设置和校准快照。</td>
+</tr>
+<tr>
+<td>检查编译</td>
+<td>还原逻辑与物理比特顺序，要求无噪声编译前后概率最大绝对差 ≤ 10⁻¹²；保留原生双比特门数与深度。</td>
+</tr>
+<tr>
+<td>评估输出</td>
+<td>对每条编译线路拟采样 1,024 次，共 2 × 3 × 3 × 1,024 = 18,432 次；计算 H，并保留各线路结果及采样不确定度。</td>
+</tr>
+</tbody></table>
+<p>GHZ 链需要 3 个相邻 CNOT；在支持 CZ 的设备上，可把每个 CNOT 写成目标比特上的 H、CZ、H，再将单比特门编译到原生门集。物理区域应支持这些交互，额外 SWAP 的分解和深度计入比较。四比特状态向量的复双精度数据仅占 256 字节；本计划的主要成本是编译比较、采样及后处理。</p>
+<p>真机阶段需要能选择物理布局的后端、可读取的校准快照和原生门接口。为分辨位置收益与校准漂移，应交错执行不同区域的线路。若先用噪声模拟器筛选候选，随后再用实测分布检验排序。上述预算只含一次评估，重新校准后的重复测试和训练标签采集另计。</p>
+<h2 id="section-ad672a954a"><span class="section-index">02</span>Google Quantum AI 等团队证明一类 OTOC 的经典可计算性</h2>
+<p><em>学界与业界 × 科学。</em> Google Quantum AI、UC Berkeley、柏林自由大学及 CWI 等机构的研究者于北京时间 11 月 18 日 23:48 提交 window propagation 预印本。其结果针对一维 Haar 随机砖墙线路中的一阶失序关联函数（OTOC）：它衡量演化后的局域算符与另一局域算符的交错关联，可用于研究信息扰乱。作者给出任意深度下的经典多项式时间近似算法，误差保证是对该随机线路分布取平均的均方误差。<a href="https://arxiv.org/abs/2611.24640" target="_blank" rel="noopener noreferrer">论文与版本</a></p>
+<p>算法在海森堡表象中反向传播双副本算符，每层截去空间跨度过大的成分，并把保留项限制在一个滑动窗口内。截断尺度随深度与目标精度的对数增长，使需要保存的描述保持可控。数值比较分别覆盖最多 22 比特的 Haar 线路，以及 512 比特、768 个 T 门的 Clifford+T 线路。<a href="https://arxiv.org/html/2611.24640v1" target="_blank" rel="noopener noreferrer">算法与数值条件</a></p>
+<p>对算法工程的直接启发是按观测量选择经典基线。学习时可从 4—8 比特的一维随机线路开始，以完整矩阵计算的一阶 OTOC 为参考，检查窗口宽度、误差和运行时间的关系；每个规模使用多条随机线路，才能对照论文的平均误差口径。这里的复现重点是经典数据结构与截断误差。</p>
+<h2 id="section-ce4ade0fcf"><span class="section-index">03</span>两项互连研究分别推进纠缠蒸馏与微波—光学接口</h2>
+<p><em>学界 × 科学与工程。</em> Quantum 于 11 月 18 日正式发表 Jacoby、Arnon-Friedman 和 Rosenblum 的玻色纠缠蒸馏方案。方法用两个玻色系统的多个能级承载纠缠，通过局域操作，将有损耗和退相干的高维纠缠转为较低维、较高保真度的纠缠。证据来自理论分析与数值模拟；预印本首次公开于 2025 年 3 月，本期新增为同行评审发表。<a href="https://quantum-journal.org/papers/q-2026-11-18-2277/" target="_blank" rel="noopener noreferrer">Quantum 原文</a> · <a href="https://arxiv.org/abs/2503.09700" target="_blank" rel="noopener noreferrer">版本历史</a></p>
+<p>学习这一方案时，资源表应同时记录模式数、每个模式保留的能级数、制备成本和蒸馏成功概率。若每个模式截断为 d 维，两模式密度矩阵包含 d⁴ 个复数元素；提高截断维度并检查结果收敛，是建立小规模数值参考的起点。</p>
+<p>Caltech 的 Andrei Faraon 团队与 Stanford 的 Joonhee Choi 团队则报告了微波与光学双通道的超辐射频率梳，成果于 11 月 18 日发表于 Nature。镱离子系综耦合到超导谐振器，连续驱动下出现周期性集体发射，两个频段保持同步。其预印本在 4 月已公开，本期跟进正式发表及校方解释。<a href="https://www.caltech.edu/about/news/atoms-in-sync-superradiance-offers-a-new-kind-of-frequency-comb" target="_blank" rel="noopener noreferrer">Caltech 报道</a> · <a href="https://www.nature.com/articles/s41586-026-11289-7" target="_blank" rel="noopener noreferrer">论文</a> · <a href="https://arxiv.org/abs/2604.14601" target="_blank" rel="noopener noreferrer">预印本</a></p>
+<p>工程上，两项工作的连接点是异地量子设备之间的信息传递：前者处理共享纠缠的质量，后者研究连接微波与光学频段的物理机制。频率梳实验已测得同步发射；用于量子态传输还需评价转导效率、附加噪声和相干保持。</p>
+<h2 id="section-43a606a114"><span class="section-index">04</span>IQM 把硬件升级与超算工作流衔接纳入服务</h2>
+<p><em>业界 × 工程。</em> IQM 于 11 月 17 日宣布 Halocene 升级计划，给出从现有 150 比特系统到未来超过 1,000 比特系统的产品路径。每次升级附带 HPC 集成服务，连接中心已有调度器、GPU 平台和工作流；按公告安排，新系统投入服务后再移除旧系统。千比特系统的交付日期及对应逻辑错误率仍待披露。<a href="https://iqm.tech/press-releases/iqm-unveils-halocene-upgrade-program-at-sc26-creating-a-path-to-over-1000-qubits-while-accelerating-integration-with-ai-based-applications/" target="_blank" rel="noopener noreferrer">IQM 公告</a></p>
+<p>这使算法团队的长期维护问题更加具体：同一套测试线路能否在升级后重编译，结果是否保留校准版本，CPU/GPU 后处理与 QPU 作业能否继续调度。可先为小规模算法保留输入、参考分布和编译资源表，作为跨代设备的验收材料。</p>
+<h2 id="section-332e2f00ec">人物与团队：IonQ 公布联邦业务顾问委员会</h2>
+<p>IonQ 的 11 月 17 日公告列出八人顾问委员会，由前 NSA 副局长 George Barnes 任主席，向 IonQ Federal 执行主席 Robert Cardillo 汇报。成员包括前 NSA 研究主任 Gil Herrera、前 DARPA 主任及前 Lockheed Martin CTO Steven Walker。委员会向国防与情报客户相关业务提供独立咨询，任期一年、可续任。公开页面仅标日级公告日期，未列具体到任日；本期作为窗口边界信息补收。<a href="https://www.ionq.com/news/meet-the-ionq-federal-advisory-board" target="_blank" rel="noopener noreferrer">IonQ 原始公告</a></p>
+<h2 id="section-c5fa2390de">验证状态与下一步</h2>
+<p>本期完成论文、机构公告、版本时间与关键比较条件的核对。四比特选区实验、OTOC 窗口实现及玻色模型均为后续学习计划，本次未运行算法复现或真机任务。优先完成四比特编译前后的精确分布对照，再安排噪声模拟和采样比较；验收结果应包含线路、布局、原生门资源及逐线路分布指标。</p>
+<p>检索覆盖 arXiv quant-ph、Quantum，以及 <a href="https://github.com/KeithKaizhiBai/QuantumDaily#source-watchlist" target="_blank" rel="noopener noreferrer">README 固定名单</a>中的国内、粤港澳大湾区、海外高校和量子企业。澳门大学新闻主入口与大湾区量子科学中心本次访问受限，备用索引较旧；部分高校新闻索引更新滞后，已补查机构域名及作者论文。Nature 页面在本次直接访问中出现登录重定向，频率梳条目结合作者预印本与校方公开报道核验。</p>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-2cef2d5ce5">本期重点</a></li><li><a href="#section-1b5f3cd5cb">CREST 用真机数据学习线路与芯片区域的匹配</a></li><li><a href="#section-0a548ef416">优先学习</a></li><li><a href="#section-ad672a954a">Google Quantum AI 等团队证明一…</a></li><li><a href="#section-ce4ade0fcf">两项互连研究分别推进纠缠蒸馏与微波—光学接口</a></li><li><a href="#section-43a606a114">IQM 把硬件升级与超算工作流衔接纳入服务</a></li><li><a href="#section-332e2f00ec">人物与团队</a></li><li><a href="#section-c5fa2390de">验证状态与下一步</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>

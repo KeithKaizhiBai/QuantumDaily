@@ -1,19 +1,20 @@
 # QuantumDaily current state
 
-Updated 2026-11-17 (Asia/Shanghai).
+Updated 2026-11-19 (Asia/Shanghai).
 
 ## Scope and schedule
 
-The active every-other-day brief and Monday weekly both start at 09:15 Beijing time. Use the [project rules](AGENTS.md), [fixed source watchlist](README.md#source-watchlist) and independent reporting windows.
+The every-other-day brief and Monday weekly start at 09:15 Beijing time. Both use the [project rules](AGENTS.md), [fixed source watchlist](README.md#source-watchlist) and independent reporting windows. The two active automation prompts and bilingual project rules have been checked: the institutional roster is mandatory; QFI, PennyLane and PyTorch have no independent tracking requirement.
 
 ## Current issues
 
-- [Brief 013](reports/2026/2026-11-17_every-other-day-brief.md) covers November 15 17:22:26 to 2026-11-17T17:17:05+08:00. It covers block-encoding postselection, pulse compilation, decoder accuracy and throughput, and Willow stability experiments. Published and verified online; the next scheduled brief is November 19.
-- [Week 005](reports/2026/2026-11-16_weekly-report.md) covers November 9–15. Initial cutoff November 16 09:27:40, revision cutoff 11:55:24. The next weekly is November 23, covering November 16–22.
+- [Brief 014](reports/2026/2026-11-19_every-other-day-brief.md) covers November 17 17:17:05 to 2026-11-19T17:19:24+08:00. Focus: hardware-aware region selection, classical OTOC simulation, quantum interconnect research and public industry/team announcements. Generated locally; GitHub saving and Pages verification pending.
+- [Brief 013](reports/2026/2026-11-17_every-other-day-brief.md) remains the previous successfully published brief until this release is verified.
+- [Week 005](reports/2026/2026-11-16_weekly-report.md) covers November 9–15. Initial cutoff November 16 09:27:40, revision cutoff 11:55:24. Next weekly November 23 covers November 16–22.
 - The October 27 draft source and local HTML are recovery files only.
 
-## Validation
+## Validation and next action
 
-NumPy 2.3.5 verified a 4-by-4 block encoding and ideal acceptance probabilities 1, 5/9 and 1/9 at absolute tolerance 1e-12. Sampling and hardware execution are prospective. See [TASK_LOG.md](TASK_LOG.md) for publication evidence.
+Checked source dates, CREST's held-out comparison and resource conditions, and the complete prose. Learning experiments are plans; no algorithm reproduction or hardware job ran for brief 014. See [TASK_LOG.md](TASK_LOG.md) for source coverage and publication evidence.
 
-[Pages verification](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/44054909978) succeeded for release `991e5b9e8417`. GitHub and the live 18-issue archive match the release.
+Publish only the six report/index/state paths against a fresh main head, then verify exact GitHub readback, Pages and public article/homepage. After successful release, the next brief continues from 2026-11-19T17:19:24+08:00.
