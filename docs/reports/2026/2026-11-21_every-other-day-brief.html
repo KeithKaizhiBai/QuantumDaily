@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师隔日简报｜第015期 · QuantumDaily</title><meta name="description" content="新的量子最小值搜索理论把估值器的置信度处理纳入搜索过程，在常数成功概率下达到平方根级查询复杂度。本期用一个已核验的七比特估值组件说明问题，再看两项经典算法进展、Google 的四比特真机游戏、纠错解码时序和 Pasqal 的混合计算调度。"><meta name="source-sha256" content="f4c99a6c03223be7f0123eb3c32db958abd5d47f31dd583722c9575194b477ec"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">EVERY OTHER DAY BRIEF / 2026-11-21</div><h1 class="issue-title">量子算法工程师隔日简报｜第015期</h1><div class="issue-toolbar"><span>内容窗口 2026-11-19 — 2026-11-21</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-21_every-other-day-brief.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>刊期 2026 年 11 月 21 日｜报道窗口 北京时间 11 月 19 日 17:19:24 至 11 月 21 日 17:23:03｜阅读约 8 分钟</p>
+<h2 id="section-319a0a58e9">本期优先关注：估值有误差时，怎样寻找最小值</h2>
+<p>新的量子最小值搜索理论把估值器的置信度处理纳入搜索过程，在常数成功概率下达到平方根级查询复杂度。本期用一个已核验的七比特估值组件说明问题，再看两项经典算法进展、Google 的四比特真机游戏、纠错解码时序和 Pasqal 的混合计算调度。</p>
+<h2 id="section-e732e8630c"><span class="section-index">01</span>量子最小值搜索把估值验证嵌入搜索过程</h2>
+<p><em>学界 × 科学。</em> 挪威国防研究所的 Egil Bae 于北京时间 11 月 20 日 02:55 提交预印本：对归一化到 [0,1] 的 N 个候选值，若相干估值器以至少 2/3 的概率给出加性误差 ε 内的数值，算法可用 O(√N) 次估值器及其逆操作查询，以常数成功概率找到距最优值至多 2ε 的候选。<a href="https://arxiv.org/abs/2611.26606" target="_blank" rel="noopener noreferrer">论文与提交时间</a></p>
+<p>方法交替使用振幅放大、多项式过滤与候选验证，省去先把每次估值都放大到极高置信度所产生的对数查询开销。实现需要相干状态制备、估值器及两者的逆操作；ε 衡量数值估计误差。论文给出渐近查询保证，有限规模成本还取决于过滤器、验证常数和估值线路的门数。<a href="https://arxiv.org/html/2611.26606v1" target="_blank" rel="noopener noreferrer">模型、算法与资源分析</a></p>
+<h2 id="section-3d56657ff2">优先学习：先检查一个七比特估值组件</h2>
+<p>以下是本刊构造并执行矩阵核验的教学算例。用 3 个标签比特表示 i=0,…,7，目标值设为 f(i)=i/8；另用 1 个辅助比特和 3 个数值比特，数值整数 y 解码为 y/8，取 ε=1/32。</p>
+<p>均匀制备 P 只在标签上施加 3 个 H 门。估值器 A 先对辅助比特施加 RY(π/3)：辅助位为 0 时，将标签按相同位序异或写入初始全零的数值寄存器；辅助位为 1 时保留数值 0。因此，每个非零标签的正确估值概率为 3/4，标签 0 的估值始终正确。A 保持标签不变，能够反计算。</p>
+<p>现在仅接受低于阈值 1/16 的估值，即只接受 y=0。直接阈值筛选得到：</p>
+<table>
+<thead>
+<tr>
+<th>检查量</th>
+<th>精确结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通过筛选的概率</td>
+<td>11/32</td>
+</tr>
+<tr>
+<td>标签确为 0 且通过的概率</td>
+<td>1/8</td>
+</tr>
+<tr>
+<td>已通过样本中标签为 0 的概率</td>
+<td>4/11</td>
+</tr>
+</tbody></table>
+<p>大量候选会偶尔输出错误的低估值，使通过样本混入非最优标签。这一现象说明了候选验证所要处理的具体对象。NumPy 复双精度矩阵计算逐个标签核对了编码及准确率，上述概率误差均低于预设的 10⁻¹²；A†A 与单位阵的最大元素差为 7.44×10⁻¹⁸，反计算恢复的最大振幅差为 2.78×10⁻¹⁷。</p>
+<p>下一步可把这个组件编译到门模型模拟器，再评估真机接入：</p>
+<ul>
+<li>**线路与内存：**A 可写为一次 RY、辅助位上的两个 X，以及 3 个以标签位和辅助位为控制的 Toffoli。三个 Toffoli 共用辅助位，按此构造顺序执行；128 个复双精度振幅占 2 KiB。完整最小值算法还需过滤和验证的工作位与线路。</li>
+<li>**编译与测量：**选择 7 个可用物理比特，将 Toffoli 分解到设备原生门，记录双比特门数、深度及为满足连接性增加的 SWAP。还原逻辑位序后，用标签与数值的联合计数计算表中三项。</li>
+<li>**拟定预算：**先为 P 后接 A 的线路采样 1,024 次；理想期望是 352 次通过、128 次“正确且通过”。再为 P†A†AP 的全零回收检查采样 1,024 次。固定旋转角即可完成检查，无需求梯度；回收检查与逐标签编码检查各有用途。</li>
+</ul>
+<h2 id="section-bc0a1b21e6"><span class="section-index">02</span>北大与 RIKEN 给结构化费米子模型补上经典算法保证</h2>
+<p><em>学界 × 科学。</em> 北京大学与 RIKEN 团队于北京时间 11 月 20 日 00:40 公开随机经典算法，处理具有共轭跃迁矩阵、共轭配对轨道相互作用的费米子 Hamiltonian，覆盖吸引型 Hubbard 模型。其目标是<strong>全 Fock 空间上的基态能量</strong>，即在全部粒子数扇区中寻找最低能量；在给定加性精度下，运行时间对系统大小、输入强度尺度及精度倒数等参数为多项式，成功概率至少 3/4。<a href="https://arxiv.org/abs/2611.26382" target="_blank" rel="noopener noreferrer">预印本与版本</a></p>
+<p>证明把基态能量归约为有限温度配分函数，再写成行列式模平方的非负加权和，以对数凹计数工具控制采样复杂度。工程上，选用这些模型比较量子与经典方法时，应先核对相互作用结构和粒子数约束是否一致；固定粒子数扇区的能量与全 Fock 空间的最小能量需要分别计算。有限规模耗时仍需实现测量。<a href="https://arxiv.org/html/2611.26382v1" target="_blank" rel="noopener noreferrer">方法与适用模型</a></p>
+<h2 id="section-8576e7cd6c"><span class="section-index">03</span>清华、Harvard 等团队用随机实时间演化改善量子态观测量</h2>
+<p><em>学界 × 科学与经典模拟。</em> 清华、Harvard、PNNL 与 UCLA 的研究者于北京时间 11 月 20 日 02:45 提交动力学平均方法：将近似基态演化随机时长，再平均观测量，利用相位平均压低基态与激发态之间的交叉项。观测量误差达到波函数误差的二阶，需要时间分布在相关激发能差处充分消除相干，并控制演化误差。<a href="https://arxiv.org/abs/2611.26587" target="_blank" rel="noopener noreferrer">论文与单位信息</a></p>
+<p>作者在周期 12 自旋混合场 Ising 模型上使用 RBM 量子态，取 J=1、hₓ=1.25、h_z=0.15，以精确对角化作参考。随机时间的高斯宽度 σ=3 时，中心两点 XX 关联的相对误差呈近二阶下降，约在 10⁻⁴ 附近饱和，作者认为可能受演化精度限制。这是适合后续学习的经典模拟案例：先验证相位平均，再比较相同采样预算下的误差和耗时。<a href="https://arxiv.org/html/2611.26587v1" target="_blank" rel="noopener noreferrer">数值实验</a> · <a href="https://github.com/rr637/DynamicalAveragingNQS" target="_blank" rel="noopener noreferrer">作者代码</a></p>
+<h2 id="section-a6921956a0"><span class="section-index">04</span>Google 用四比特游戏给出明确的真机比较基准</h2>
+<p><em>业界 × 科学与工程。</em> Google Quantum AI 于 11 月 19 日介绍正式发表于 Science 的情境性实验；对应预印本首发于 2025 年 12 月。四比特“魔方阵游戏”使用两对 Bell 态，让 Alice 回答一行、Bob 回答一列，行内数值乘积须为 +1、列内乘积须为 −1，并要求交点答案一致。在输入均匀随机、双方收到问题后禁止通信的规则下，经典策略胜率上限为 8/9。<a href="https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/" target="_blank" rel="noopener noreferrer">官方介绍</a> · <a href="https://www.science.org/doi/10.1126/science.aec3042" target="_blank" rel="noopener noreferrer">正式论文</a></p>
+<p>Willow 上的实验为 9 种行列组合各采样 100,000 次，平均胜率为 <strong>0.9830±0.0001</strong>，误差条来自二项采样统计。这个基准适合学习如何把理论约束转成硬件验收指标：固定输入分布、两方各自的测量操作和评分规则，再比较观测胜率与 8/9。实验展示的是该游戏规则下的性能；全套 900,000 次采样应计入复现实验预算。<a href="https://arxiv.org/html/2512.02284v1" target="_blank" rel="noopener noreferrer">作者预印本与实验设置</a></p>
+<h2 id="section-53b9a635ec"><span class="section-index">05</span>Rapids 同时报告纠错解码的吞吐与判决延迟</h2>
+<p><em>学界 × 工程。</em> UC Berkeley 与 Harvard 团队于北京时间 11 月 20 日 01:16 公开 Rapids，将卷积、循环网络及整数化训练共同设计为流式纠错解码器。在码距 19 的旋转表面码、SI1000 噪声参数 p=0.15%、120 轮存储实验模拟中，其每轮逻辑错误率约为 union-find 的 1/240、最小权完美匹配的 1/10。<a href="https://arxiv.org/abs/2611.26447" target="_blank" rel="noopener noreferrer">预印本</a></p>
+<p>单块 AMD VP1802 方案的布局布线时序评估给出 <strong>0.944 μs/轮的处理间隔、20.36 μs 的总判决延迟</strong>。前者决定持续输入是否积压，后者决定等待解码结果的后续操作何时能够开始。准确率证据来自 Stim 噪声模拟，FPGA 时序来自 Vivado 的布局布线结果，板间通信另作 RTL 模拟。选用解码器时，应同时核算这两个时间量以及模型量化带来的准确率变化。<a href="https://arxiv.org/html/2611.26447v1" target="_blank" rel="noopener noreferrer">架构与 Methods</a></p>
+<h2 id="section-ed1a3ac9ba"><span class="section-index">06</span>Pasqal 将量子作业的会话管理接入 Slurm</h2>
+<p><em>业界 × 工程。</em> Pasqal 在 11 月 19 日公告中介绍 Slurm 26.11 的 HRES 集成：调度器通过 QRMI 检查量子处理器可用性，对本地 QPU 在作业开始时取得会话、在结束或取消时释放资源，组织 CPU、GPU 与 QPU 的混合任务。<a href="https://www.pasqal.com/newsroom/pasqal-makes-its-quantum-processors-native-to-slurm-with-nvidia-expansion-to-support-hierarchical-resources/" target="_blank" rel="noopener noreferrer">公司公告</a></p>
+<p>11 月 16 日已公开的技术说明提供 Pulser、CUDA-Q 与模拟云端／模拟本地设备的测试组合和示例代码。本次公告将这一集成正式对外发布。对于算法工程，直接可用的学习对象是作业生命周期：设备离线、排队取消、会话释放及失败恢复。CINECA 的已有接入采用 QRMI SPANK 路线，应与新 HRES 方案分别记录。<a href="https://www.pasqal.com/blog/enabling-hybrid-gpu-qpu-workflows-with-slurm-hres-and-pasqal-qpus/" target="_blank" rel="noopener noreferrer">技术说明与测试环境</a> · <a href="https://github.com/pasqal-io/qrmi-hres-pasqal-blog" target="_blank" rel="noopener noreferrer">示例仓库</a></p>
+<h2 id="section-111e70d3d4">人物动向与领域观察</h2>
+<p>本窗口未核实到具备公开变动日期、值得单列的资深从业者任职或团队迁移。</p>
+<p>本期几类结果显示，算法评估正在细分到可核对的资源：搜索论文数估值器调用，真机游戏数测量，解码器分别数处理间隔与判决延迟，调度工具管理作业与会话。对学习项目，最实用的下一步是把这些成本分别记录，再判断哪一步限制整体实验。</p>
+<h2 id="section-59ae6f0a40">验证状态与来源覆盖</h2>
+<p>本期实际运行了上述七比特估值组件的独立矩阵核验；完整最小值算法、有限采样实验和真机测试属于后续计划。其余结果依据论文、作者实现及机构公告核对。</p>
+<p>已检索 <a href="https://arxiv.org/list/quant-ph/recent" target="_blank" rel="noopener noreferrer">arXiv quant-ph</a>、<a href="https://quantum-journal.org/papers/" target="_blank" rel="noopener noreferrer">Quantum 已发表论文</a>及 <a href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/README.md#source-watchlist">固定机构名单</a>，覆盖内地、粤港澳、海外高校和全部公司名单，结合官网栏目、日期限定搜索与作者论文。部分高校栏目更新较慢；Caltech 总站、澳门大学及港科大广州新闻入口和大湾区量子中心存在访问限制，已以可读院系页及域名搜索补查。Google 的正式论文页面访问受限，实验细节以作者预印本核验。</p>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-319a0a58e9">本期重点</a></li><li><a href="#section-e732e8630c">量子最小值搜索把估值验证嵌入搜索过程</a></li><li><a href="#section-3d56657ff2">优先学习</a></li><li><a href="#section-bc0a1b21e6">北大与 RIKEN 给结构化费米子模型补上经典算…</a></li><li><a href="#section-8576e7cd6c">清华、Harvard 等团队用随机实时间演化改善…</a></li><li><a href="#section-a6921956a0">Google 用四比特游戏给出明确的真机比较基准</a></li><li><a href="#section-53b9a635ec">Rapids 同时报告纠错解码的吞吐与判决延迟</a></li><li><a href="#section-ed1a3ac9ba">Pasqal 将量子作业的会话管理接入 Slurm</a></li><li><a href="#section-111e70d3d4">人物动向与领域观察</a></li><li><a href="#section-59ae6f0a40">验证状态与来源覆盖</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>
