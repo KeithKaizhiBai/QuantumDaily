@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师隔日简报｜第016期 · QuantumDaily</title><meta name="description" content="同一条理想线路，换一组匹配的 Pauli 门，就能改变各层误差相互叠加的方式。本期从一个已执行的两比特算例解释这种机制，再看无辅助比特的 Dicke 态制备、八阶时间演化公式，以及把编译成本提前纳入设备选择的方法。"><meta name="source-sha256" content="76f0cf010a37c8c4f2cdae3847bdc41632105452d4ffac8711a5237925b2cc54"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">EVERY OTHER DAY BRIEF / 2026-11-23</div><h1 class="issue-title">量子算法工程师隔日简报｜第016期</h1><div class="issue-toolbar"><span>内容窗口 2026-11-21 — 2026-11-23</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-23_every-other-day-brief.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>刊期 2026 年 11 月 23 日｜报道窗口 北京时间 11 月 21 日 17:23:03 至 11 月 23 日 17:22:13｜阅读约 7—8 分钟</p>
+<h2 id="section-d94c1060f5">本期优先关注：用 Pauli 随机化改变相干误差的累积方向</h2>
+<p>同一条理想线路，换一组匹配的 Pauli 门，就能改变各层误差相互叠加的方式。本期从一个已执行的两比特算例解释这种机制，再看无辅助比特的 Dicke 态制备、八阶时间演化公式，以及把编译成本提前纳入设备选择的方法。</p>
+<p>本期四篇论文均进入 <strong>11 月 23 日 arXiv quant-ph 新刊目录</strong>，首次提交时间分别列在条目中；选题按本次新增公告批次纳入，提交日期与公告日期分别记录。<a href="https://arxiv.org/list/quant-ph/new" target="_blank" rel="noopener noreferrer">本日新刊目录</a></p>
+<h2 id="section-72c85908ea"><span class="section-index">01</span>Pauli 随机化把同向误差累积改为随机符号累积</h2>
+<p><em>学界 × 科学、工程。</em> 新加坡国立大学、A*STAR 与 Harvard 等机构的团队分析了单个随机化线路实例如何抑制相干误差。预印本首次提交于北京时间 11 月 20 日 23:08。方法在双比特 Clifford 门前后插入匹配的 Pauli 门，使每个实例都实现原来的理想操作，同时改变局域误差在整条线路中的方向。<a href="https://arxiv.org/abs/2611.27703" target="_blank" rel="noopener noreferrer">论文与提交记录</a></p>
+<p>论文将第 ℓ 层相干误差写成 exp(−iεHℓ)，其中 ε 为误差强度、Hℓ 为误差生成元，并假定各层生成元范数有与总层数 L 无关的上界。在 Lε≪1 的微扰区，二阶失真项由各层生成元的协方差决定：同向的跨层项可产生 Θ(L²ε²) 的累积。各层独立、均匀的 Pauli 随机化使跨层协方差平均消去，进而在固定置信度下给出随机实例二阶失真项 O(Lε²) 的上界。收益大小取决于线路、输入态和误差结构。<a href="https://arxiv.org/html/2611.27703v1" target="_blank" rel="noopener noreferrer">理论与协方差分析</a></p>
+<p>作者还报告了 IBM 超导处理器上的 GHZ 制备实验。24 比特时，原线路保真度为 0.472，多个随机化实例的<strong>平均</strong>保真度为 0.578；保真度通过均匀抽取 GHZ 稳定子并测量其期望值估计。硬件章节给出了实例间标准差，精确复现实验仍需补齐该 GHZ 测试的后端、实例数及每组测量的采样预算。<a href="https://arxiv.org/html/2611.27703v1#S4" target="_blank" rel="noopener noreferrer">硬件实验，第四节</a></p>
+<h2 id="section-19cadbd296">优先学习：两比特上验证“理想操作相同，误差方向不同”</h2>
+<p>本刊用 NumPy 执行了以下教学模型。初态为 |+0⟩，q₀ 是控制位；G=CNOT₀→₁。每次 CNOT 前发生相同相干误差 E=exp(−iεZ₀)，取 ε=0.02 弧度，矩阵乘积按右侧先作用。Pauli 门本身取理想操作。</p>
+<p>从 16 个双比特 Pauli 乘积中均匀选 P，令 Q=GPG†。无噪声时 QGP=G；有噪声时 QGEP=G exp(−isεZ₀)，其中 s=±1 各占一半。每层独立抽样后，原来按 L 相加的旋转角变为 εΣs。取偶数层 L，理想总操作 Gᴸ=I，目标态仍为 |+0⟩。</p>
+<p>以“1−目标态保真度”为误差，原线路的精确值是 sin²(Lε)，随机化实例的平均值是 [1−cos(2ε)ᴸ]/2。本次逐一枚举每个 L 的全部 2ᴸ 种符号串，并核对 16 组 Pauli 校正关系；矩阵等式和数值公式均通过预设的 10⁻¹² 误差阈值。</p>
+<table>
+<thead>
+<tr>
+<th>CNOT 层数 L</th>
+<th>原线路失真</th>
+<th>随机化实例平均失真</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4</td>
+<td>0.00638636</td>
+<td>0.00159787</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.02538229</td>
+<td>0.00319063</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0.05650254</td>
+<td>0.00477830</td>
+</tr>
+</tbody></table>
+<p>另取随机种子 20261123 生成一条 12 层线路，得到 Σs=2，失真为 0.00159915。整个两比特态矢量只有 4 个复双精度振幅，占 64 字节。</p>
+<p>下一步的门模型与真机检查可以共用下列设计：</p>
+<ul>
+<li>**编译与连接性：**选一对可执行纠缠门的物理比特。原线路有 L 个串行 CNOT，每次随机化至多增加 4 个单比特 Pauli 门；再统计原生门分解、相邻 Pauli 合并后的门数和深度。编译时保留待测的物理门序列，防止偶数次 CNOT 被消去；若直接随机化原生 Clifford 门，须重新计算其匹配校正。</li>
+<li>**测量与预算：**末端在 q₀ 上施加 H，再测量两位，00 的概率就是本算例目标态保真度。对 L=4、8、12，各测原线路和 8 个独立随机实例，每条 1,024 次，共 27,648 次采样。记录各实例计数、均值与离散程度，分别估计采样误差和实例波动。</li>
+<li>**运行顺序：**先在理想模拟器逐实例核对目标输出，再加入明确噪声模型；随后凭设备账户、可用耦合边、校准信息及授权预算接入硬件。旋转角固定，无需求梯度；后处理只需计数与统计。本期实际完成的是矩阵核验，有限采样、SDK 编译和真机运行列为后续实验。</li>
+</ul>
+<h2 id="section-e78667042c"><span class="section-index">02</span>大湾区团队用输出寄存器自身完成 Dicke 态精确制备</h2>
+<p><em>学界 × 科学。</em> 粤港澳大湾区量子科学中心、河套数学与交叉学科研究院和福州大学提出：对任意 0&lt;k&lt;n，精确制备 n 比特、恰有 k 个 1 的等幅叠加态，可用 O(n) 个任意单比特门与 CNOT、O(log n) 深度，且无需额外辅助比特。预印本首次提交于北京时间 11 月 20 日 22:04。<a href="https://arxiv.org/abs/2611.27640" target="_blank" rel="noopener noreferrer">论文与提交记录</a></p>
+<p>构造先压缩对称态的小块，在输出寄存器内腾出工作位以施加依赖汉明重量的相位，再通过符号校正和集体旋转获得与目标态常数级的重叠，最后用常数次精确振幅放大完成制备。门数和深度的渐近界在论文的任意单比特门+CNOT 模型下成立；部署到受限连接图或离散容错门集时，还要计入路由和旋转合成成本。<a href="https://arxiv.org/html/2611.27640v1" target="_blank" rel="noopener noreferrer">构造与定理</a></p>
+<p>对固定激发数的算法初始化，这提供了一个值得跟踪的理论组件。实际选择实现时，应先取得有限 n 的门表、常数开销和编译后深度，再与现有制备线路比较。</p>
+<h2 id="section-b0c55eae60"><span class="section-index">03</span>八阶 Trotter 公式的收益取决于截断误差与门噪声的平衡</h2>
+<p><em>学界 × 科学、工程。</em> 波恩大学团队发布优化的八阶 Trotter–Suzuki 系数及 qiskit-omelyan 线路生成工具；预印本首次提交于北京时间 11 月 21 日 01:36。高阶公式通过更精细的指数算符组合降低时间离散误差，同时增加每步操作数量。<a href="https://arxiv.org/abs/2611.27896" target="_blank" rel="noopener noreferrer">论文与提交记录</a></p>
+<p>作者用 Qiskit Aer 密度矩阵模拟 6 比特开放边界 Heisenberg XZ 链，取 ℏ=1、耦合 J=1，局域 z 场从 [−0.1,0.1] 均匀抽取后固定；演化时间 t=10（时间单位 ℏ/J），采用局域算符排序。每个单比特或双比特 Pauli 旋转门后施加退极化噪声，单比特错误概率为双比特的十分之一，指标是全部 64 个计算基输入相对精确演化态的平均失真。在双比特错误概率 10⁻³ 时，二阶 Leapfrog 的最优失真优于所测高阶方案；到 10⁻⁵ 时，所测高阶方案在未做外推时也均优于二阶。<a href="https://arxiv.org/html/2611.27896v1#S4" target="_blank" rel="noopener noreferrer">噪声模型、图 6 与表 5</a></p>
+<p>工程上可把这项工作与 Pauli 随机化配合学习：前者调整理想演化近似，后者调整给定线路的误差累积。比较时固定 Hamiltonian、总演化时间和目标误差，再记录编译后的双比特门数、深度与测量预算。文中的零噪声外推使用理想退极化缩放和无采样噪声的模拟；真机预算还须计入折叠线路及外推方差。</p>
+<h2 id="section-a29bd670a8"><span class="section-index">04</span>设备选择先估计编译开销，再验证入选线路</h2>
+<p><em>业界 × 工程。</em> Red Hat 的 Ana Paula Appel 提出一个多厂商 QPU 调度原型，先用线路与设备拓扑差异估计路由增加的门数，再预测任务成功概率，以筛选设备；对入选设备执行编译后复核。预印本首次提交于北京时间 11 月 21 日 02:01。<a href="https://arxiv.org/abs/2611.27927" target="_blank" rel="noopener noreferrer">论文与提交记录</a></p>
+<p>作者在三台 IBM Heron 上执行 102 条镜像线路，每台各跑一遍，共 306 次线路执行，每次 2,000 次采样。成功率定义为测得已知目标位串的频率。无需预先编译全部候选设备的预测，与实测成功率的 Spearman 排序相关系数为 0.95，平均绝对误差为 0.10；使用实际编译门数的估计也得到这两项数值。<a href="https://arxiv.org/html/2611.27927v1#S6" target="_blank" rel="noopener noreferrer">硬件验证，表 5</a></p>
+<p>相近设备之间的选择仍需要更细信息：在 fez 与 marrakesh 的两机比较中，基于设备平均错误率的估计仅在 48% 的线路上选中较好设备。论文还发现跨厂商校准口径影响绝对成功率预测。因此，实用调度应保存任务级测量结果和物理布局，持续核查预测偏差。<a href="https://arxiv.org/html/2611.27927v1" target="_blank" rel="noopener noreferrer">设备选择诊断与跨厂商测试</a></p>
+<h2 id="section-6b842da5a6">领域观察与人物动向</h2>
+<p>这四项工作把算法工程的三个成本层次连在一起：理想线路的构造复杂度、噪声下的任务误差，以及映射到设备后的实际门数。后续复现可以围绕同一个小问题同时记录这三层数据，使渐近改进、有限规模收益和运行开销能够逐项比较。这是本刊据本期证据提出的工程观察。</p>
+<p>本轮未核实到观察名单内、报道窗口中具有明确时间与原始来源的资深从业者任职、跳槽或团队创办信息。</p>
+<h2 id="section-59ae6f0a40">验证状态与来源覆盖</h2>
+<p>四项成果均按 arXiv 预印本报道。本刊已核对摘要、提交记录和相关全文章节；本地运行仅为上述两比特 NumPy 2.3.5 矩阵检查，论文中的硬件与数值结果据作者报告引用。</p>
+<p>本次检索覆盖 arXiv quant-ph、<a href="https://quantum-journal.org/" target="_blank" rel="noopener noreferrer">Quantum</a> 及 README 的完整机构名单：中科大、清华、北大、复旦、港大与广东—香港—澳门相关机构；Caltech、Harvard、MIT、Princeton、ETH、Delft/QuTech、芝加哥大学与 ORNL；IBM、Google Quantum AI、Quantinuum、IonQ、QuEra、Pasqal、Horizon Quantum、Xanadu、IQM、NVIDIA、Qedma。Quantum 可核实的最新出版条目为 11 月 20 日，企业官网巡检未得到窗口内适合独立报道的新公告。</p>
+<p>访问缺口集中于澳门大学新闻页超时、湾区量子科学中心官网正文抽取为空、Caltech 总站返回 403、ETH 主栏目抽取有限，以及 QuTech 索引可能更新延迟；已用可访问的院系、研究组页面和官方域名搜索补查。NVIDIA 一条论坛近期活动线索未取得对应正文，保留为待核查项。</p>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-d94c1060f5">本期重点</a></li><li><a href="#section-72c85908ea">Pauli 随机化把同向误差累积改为随机符号累积</a></li><li><a href="#section-19cadbd296">优先学习</a></li><li><a href="#section-e78667042c">大湾区团队用输出寄存器自身完成 Dicke 态精…</a></li><li><a href="#section-b0c55eae60">八阶 Trotter 公式的收益取决于截断误差与…</a></li><li><a href="#section-a29bd670a8">设备选择先估计编译开销，再验证入选线路</a></li><li><a href="#section-6b842da5a6">领域观察与人物动向</a></li><li><a href="#section-59ae6f0a40">验证状态与来源覆盖</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>

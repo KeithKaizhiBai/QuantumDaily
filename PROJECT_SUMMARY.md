@@ -8,13 +8,13 @@ Every-other-day briefs and Monday weeklies start at 09:15 Beijing time. Both fol
 
 ## Current issues
 
-- [Week 006](reports/2026/2026-11-23_weekly-report.md) covers November 16–22; research cutoff 2026-11-23T09:26:34+08:00. Focus: the four-qubit magic-square benchmark, classical preprocessing and separate system-time metrics. Generated, saved to GitHub and verified online.
-- [Brief 015](reports/2026/2026-11-21_every-other-day-brief.md) is saved and online. Its successful cutoff remains 2026-11-21T17:23:03+08:00. The November 23 brief continues from that cutoff and must be processed separately.
-- Next weekly is November 30, covering November 23–29.
+- [Brief 016](reports/2026/2026-11-23_every-other-day-brief.md) continues from the November 21 17:23:03 cutoff through 2026-11-23T17:22:13+08:00. Focus: Pauli randomization and coherent error accumulation, with Dicke preparation, Trotter formulas and QPU selection. Generated locally; GitHub save and live deployment verification pending.
+- [Week 006](reports/2026/2026-11-23_weekly-report.md) covers November 16–22; research cutoff 2026-11-23T09:26:34+08:00. Generated, saved to GitHub and verified online. Its source and reading page are preserved.
+- Next brief is November 25; after successful publication it continues from brief 016's cutoff. Next weekly is November 30, covering November 23–29.
 - October 27 draft source and local HTML remain recovery files only.
 
 ## Validation
 
-Independent scientific and reader reviews approved the same final weekly source, including the removal of defensive prose. The four-qubit NumPy check verified 4,096 classical strategies, nine quantum probability distributions, measurement-basis gates and resource counts. SDK, finite-shot, noise and QPU experiments remain planned.
+Independent scientific and fresh-context reader reviews approved the same final brief source, including removal of redundant defensive prose. Source SHA-256: 76f0cf010a37c8c4f2cdae3847bdc41632105452d4ffac8711a5237925b2cc54. NumPy 2.3.5 checked all 16 Pauli corrections, exhaustive sign patterns at 4/8/12 layers, exact infidelity formulas and one seeded circuit. SDK compilation, finite-shot/device-noise-model simulation and QPU experiments remain planned.
 
-The existing builder generated 21 issues and checked 335 internal links/fragments. All 20 prior article pages and shared assets are unchanged. [Release fd88abbd586b](https://github.com/KeithKaizhiBai/QuantumDaily/commit/fd88abbd586ba1a4045bfa060f8e936e0bcbee4d) passed exact text and blob readback for all six paths. [Pages run 45095155329](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/45095155329) succeeded. The public article and homepage returned HTTP 200, with matching source fingerprint, 17 source URLs, two tables and 21 archive entries. See [TASK_LOG.md](TASK_LOG.md) for evidence. No website code changed.
+The existing builder generated 22 issues and preserved all 21 prior reading pages and shared assets. See [TASK_LOG.md](TASK_LOG.md) for source coverage, checks and publication recovery. No website code changed.

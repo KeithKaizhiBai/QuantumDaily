@@ -390,3 +390,58 @@ Independent scientific and reader reviews of draft d35e82d98f13be1455a129957011b
 Build validation: 21 issues, 335 internal links/fragments, 7 article headings, 17 external source links, table columns [3, 3, 3, 3, 4, 4, 4, 4], source fingerprint and homepage focus/excerpt checked. All20 prior article pages and shared assets are byte-identical. No website code changed; no new viewport test performed.
 
 Release verification: [commit fd88abbd586ba1a4045bfa060f8e936e0bcbee4d](https://github.com/KeithKaizhiBai/QuantumDaily/commit/fd88abbd586ba1a4045bfa060f8e936e0bcbee4d), tree 91ac1d57f91d1f5f71dda80a70c326e50a0982f0, saved exactly six release paths from freshly checked main 059c0875f178ab3710e2ff489e1423f1c5637a7c with expected_sha and force:false. All56 tree blobs match the expected preserved base plus intended changes. All six full texts and blob hashes matched on remote readback. [Pages run 45095155329](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/45095155329) completed successfully. Cache-busted live article and homepage returned HTTP200; checked matching source fingerprint 0d42196b833b7a81cc32a16d779694f255e7c08d87d67b0cf1d2df823bf34652,7 headings,17 source URLs,8 table rows,key scientific figures,home focus/new link,21archive entries and recovery-draft exclusion. Shared assetversion79bbaf014fd5 retained. Weekly006 is generated, GitHub-saved and online. Brief015 cutoff remains2026-11-21T17:23:03+08:00; the November23brief is still a separate due task. Next weeklyNovember30 coversNovember23–29. Completion records only are saved in the following guarded two-file commit.
+
+## 2026-11-23 — Brief 016
+
+Scheduled 09:15 Beijing; heartbeat arrived at 17:14:30. Actual research window continues from brief015's successful 2026-11-21T17:23:03+08:00 cutoff through 2026-11-23T17:22:13+08:00. No past publication time is imputed. Morning weekly006 retains its independent November16–22 window and 09:26:34 cutoff. Fresh remote main 34e98789bde6441eb959d18f88876917b3d9d8e7 / tree abcda8e478370f1419c77c416441f78c71a59df8 matched all56 remote-owned local blobs; no November23brief existed. Preserve both local-only October27 recovery files.
+
+Read project rules, README, current state and recent issue. Primary and bounded read-only China/GBA, overseas and company agents searched arXiv quant-ph, Quantum and the full README roster, using official news/lab pages, dated domain searches and affiliated-author papers. Today's new arXiv listing contains the four selected papers; v1 timestamps precede the preceding brief's cutoff, so announcement batch and submission date are explicitly separated. Quantum latest verified publication2279 is November20. Company patrol found no eligible new standalone announcement; people search found no verified new senior appointment or team founding. Material access gaps are recorded once in the issue.
+
+China/GBA scope included USTC, Tsinghua, PKU, Fudan, HKU, SUSTech and its quantum materials lab, SYSU, HKUST, HKUST Guangzhou and its functional hub, University of Macau, Quantum Science Center of Guangdong-Hong Kong-Macao Greater Bay Area (https://www.qscgba.org.cn/) and Hetao Institute. Overseas scope included Caltech/PMA, Harvard/Gazette, MIT, Princeton, ETH Quantum Center/QIT/QuDev, Delft/QuTech, Chicago PME and ORNL. Companies: IBM, Google Quantum AI, Quantinuum, IonQ, QuEra, Pasqal, Horizon Quantum, Xanadu, IQM, NVIDIA and Qedma. Gaps: Macau timeout, GBA center empty extracted text, Caltech main403 (PMA accessible), ETH partial main page, QuTech index freshness, NVIDIA forum recent-activity link without corresponding reply body.
+
+Excluded/research leads: USTC November21 FeMoco/SC26 award announcement has no time later than previous cutoff; award event November19 Chicago/November20 Beijing. Retain https://news.ustc.edu.cn/info/1055/96988.htm and https://sc26.supercomputing.org/proceedings/papers/paper_pages/gb103.html for later classical-baseline investigation, with full error criteria still unverified. Zhejiang QRAM November23 media lead traced to March18 original announcement https://physics.zju.edu.cn/2026/0318/c69694a3141786/page.htm and March16 Nature Physics, excluded as old evidence. Caltech gravity proposal2611.26755 and Purdue/ORNL frequency-bin QSS2611.26816 in November23new listing were lower-priority peripheral items. Google catalog leads2609.35660,2606.28518,2506.00132 had older submission/revision dates and were excluded.
+
+Four stories: 2611.27703 Pauli single-realization covariance analysis (bounded layerwise generator norms,L epsilon small, leading second-order bound), GHZ24 IBM .472 bare/.578 mean over instances, GHZ backend/M/shots still missing; 2611.27640 GBA/Hetao/Fuzhou exact Dicke synthesis O(n) arbitrary1q+CNOT/O(log n), no external ancilla, routing/synthesis extra; 2611.27896 Bonn eighth-order product formulas, six-site open HeisenbergXZ, J1,h drawn[-.1,.1]fixed,t10 hbar/J, Pauli-rotation depolarizing p1q=p2q/10, all64basisstates, simulation with idealized ZNE; 2611.27927 RedHat scheduler,102mirrorcircuits*3IBM*2000shots,Spearman.95/MAE.10,fez-marrakesh top1 .48, calibration comparability. All4 remain preprints; paper hardware and large simulations were not independently rerun.
+
+Reader questions fixed for the brief: (1) what Pauli dressing changes/preserves, under which error conditions, and single-instance versus average evidence; (2) the two-qubit check, completed stage and remaining resource budget; (3) Dicke gate/depth accounting and hardware overhead; (4) Trotter and scheduling metrics, conditions and implementation consequences. Primary acted as director/writer/integrator. Independent science and fresh-context reader reviewed full frozen sources. Draft5f3b9c114f6250b6307c2ffb8de580a13fb82d2b6166e6345d33168b08d32928 was returned for explicit Pauli perturbative/norm assumptions, Trotter units/noise/comparison conditions, table5 link, and three redundant reminders. Final source76f0cf010a37c8c4f2cdae3847bdc41632105452d4ffac8711a5237925b2cc54 was approved by both science and a new reader after full re-review. No source text changed after approval.
+
+Executed NumPy2.3.5 at bundled Python runtime. Model: q0MSB, |+0>, G=CX0->1, E=exp(-i*.02*Z0) before eachG, ideal Pauli gates, Q=GPGdagger. All16 correction equations and noisy sign identities had maximum matrix residual0. Exhaustive sign averages for L4/8/12 match [1-cos(2epsilon)^L]/2 within1e-12; bare sin²(L epsilon). Bare/mean infidelities: L4 .006386358312187/.001597868213368; L8 .025382290958780/.003190630061082; L12 .056502538610359/.004778301861740. Seed20261123 yields frame indices[14,0,9,3,14,1,8,6,0,11,14,8],sumSigns2,infidelity.00159914684869078. Independent science reviewer rebuilt every matrix/sign string: max single-string deviation2.22e-15, mean deviation9.97e-16. Proposed hardware27circuits*1024=27648shots is unexecuted; no SDK/QPU/paid job. Retain the exact primary check below for reproducibility.
+
+```python
+import numpy as np,itertools,json,math
+I=np.eye(2,dtype=complex);X=np.array([[0,1],[1,0]],complex);Y=np.array([[0,-1j],[1j,0]],complex);Z=np.diag([1.,-1.]).astype(complex)
+K=np.kron;I4=np.eye(4);Z0=K(Z,I);G=np.array([[1,0,0,0],[0,1,0,0],[0,0,0,1],[0,0,1,0]],complex)
+psi=np.array([1,0,1,0],complex)/np.sqrt(2)
+eps=.02;E=np.cos(eps)*I4-1j*np.sin(eps)*Z0
+frames=[K(a,b) for a,b in itertools.product([I,X,Y,Z],repeat=2)]
+equiv=[];noise=[];signs=[]
+for P in frames:
+ Q=G@P@G.conj().T
+ equiv.append(np.max(abs(Q@G@P-G)))
+ s=float(np.trace(P@Z0@P@Z0).real/4)
+ signs.append(s)
+ target=G@(np.cos(eps)*I4-1j*s*np.sin(eps)*Z0)
+ noise.append(np.max(abs(Q@G@E@P-target)))
+assert max(equiv)<1e-12 and max(noise)<1e-12
+rows=[]
+for L in [4,8,12]:
+ ideal=np.linalg.matrix_power(G,L)@psi
+ bare=np.linalg.matrix_power(G@E,L)@psi
+ inf_bare=1-abs(np.vdot(ideal,bare))**2
+ infs=np.array([np.sin(eps*sum(ss))**2 for ss in itertools.product([-1,1],repeat=L)])
+ mean=float(infs.mean());exact=(1-np.cos(2*eps)**L)/2
+ assert abs(inf_bare-np.sin(L*eps)**2)<1e-12 and abs(mean-exact)<1e-12
+ rows.append(dict(L=L,bare_infidelity=float(inf_bare),dressed_mean_infidelity=mean,sign_patterns=2**L))
+rng=np.random.default_rng(20261123)
+inds=rng.integers(0,16,size=12);v=psi.copy()
+for idx in inds:
+ P=frames[idx];Q=G@P@G.conj().T;v=Q@G@E@P@v
+S=int(sum(signs[i] for i in inds))
+fixed=1-abs(np.vdot(psi,v))**2
+assert abs(fixed-np.sin(eps*S)**2)<1e-12
+print(json.dumps(dict(numpy=np.__version__,eps=eps,ordering='q0 MSB',frames=16,sign_counts=[signs.count(-1),signs.count(1)],ideal_matrix_residual=float(max(equiv)),noisy_matrix_residual=float(max(noise)),rows=rows,seed=20261123,frame_indices=inds.tolist(),fixed_L12_sign_sum=S,fixed_L12_infidelity=float(fixed),state_bytes=psi.nbytes,tolerance=1e-12)))
+```
+
+Generated candidate and reviewed source are local. Guarded GitHub save/readback and Pages/live verification follow; preserve this candidate on failure.
+
+Build validation: 22issues, 350internal links/fragments, 8article headings, 12source URLs, table columns[3,3,3,3]. Source fingerprint, title, focus, formulas, numerical table and archive row checked. All21prior reading pages and shared assets unchanged. Same-date weekly006 remains present, and the local-only October27 draft is excluded. No website code changed and no new viewport test was performed.
