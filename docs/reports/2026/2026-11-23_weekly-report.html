@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14"><title>量子算法工程师周报｜第006期 · QuantumDaily</title><meta name="description" content="Google 的四比特游戏实验把“超过经典上限”落实到一套可逐项检查的规则。本周其他进展接着回答实现中的两个问题：经典预处理怎样改善量子采样，控制链路与解码怎样计时。建议先完成九种输入的游戏基准，再沿同一套任务定义记录编译、采样与等待成本。Google 实验说明"><meta name="source-sha256" content="0d42196b833b7a81cc32a16d779694f255e7c08d87d67b0cf1d2df823bf34652"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=79bbaf014fd5"><script src="../../assets/site.js?v=79bbaf014fd5" defer></script></head><body><div id="reading-progress" class="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html" aria-label="QuantumDaily 首页"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="8" stroke="currentColor" stroke-width="1.2" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="8" stroke="#b19afa" stroke-width="1.2" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="32" cy="12" r="2.1" fill="#a4d8ff"/></svg></span><span>Quantum<span>Daily</span></span></a><nav class="site-nav" aria-label="主导航"><a href="../../index.html#archive">简报档案</a><a href="../../index.html#about">关于</a><a class="nav-repo" href="https://github.com/KeithKaizhiBai/QuantumDaily" aria-label="GitHub 仓库" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="arrow" aria-hidden="true">↗</span></a></nav></div></header><main id="main" class="wrap"><header class="issue-top"><a class="back-link" href="../../index.html#archive"><span aria-hidden="true">←</span>返回简报档案</a><div class="eyebrow">WEEKLY REPORT / 2026-11-23</div><h1 class="issue-title">量子算法工程师周报｜第006期</h1><div class="issue-toolbar"><span>内容窗口 2026-11-16 — 2026-11-22</span><a class="source-link" href="https://github.com/KeithKaizhiBai/QuantumDaily/blob/main/reports/2026/2026-11-23_weekly-report.md" target="_blank" rel="noopener noreferrer">Markdown 原稿 <span class="arrow" aria-hidden="true">↗</span></a></div></header><div class="reading-layout"><article class="article-body"><p>刊期 2026 年 11 月 23 日｜报道周 11 月 16 日 00:00 至 22 日 23:59:59（北京时间）｜检索截止 11 月 23 日 09:26:34</p>
+<h2 id="section-e4b15532c8">本期优先关注：用四比特游戏贯通经典基线、测量线路与真机验收</h2>
+<p>Google 的四比特游戏实验把“超过经典上限”落实到一套可逐项检查的规则。本周其他进展接着回答实现中的两个问题：经典预处理怎样改善量子采样，控制链路与解码怎样计时。建议先完成九种输入的游戏基准，再沿同一套任务定义记录编译、采样与等待成本。<a href="https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/" target="_blank" rel="noopener noreferrer">Google 实验说明</a></p>
+<h2 id="section-8b7872b89f"><span class="section-index">01</span>比较量子与经典，先固定双方能做什么</h2>
+<p><em>业界 × 科学与工程。</em> Google Quantum AI 在 11 月 19 日介绍发表于 Science 的测量情境性研究，原预印本于 2025 年 12 月首次公开。最小实验是四比特 magic-square 游戏：Alice 随机收到三行之一，Bob 随机收到三列之一；两人在收到问题后分别作答、保持无通信。Alice 的三个 ±1 答案乘积须为 +1，Bob 的乘积须为 −1，交叉位置一致即获胜。九种输入等概率时，经典策略的最高平均胜率为 8/9；两对 Bell 态与适当的联合测量可使理想胜率达到 1。<a href="https://arxiv.org/abs/2512.02284" target="_blank" rel="noopener noreferrer">版本记录</a> · <a href="https://arxiv.org/html/2512.02284v1" target="_blank" rel="noopener noreferrer">实验与测量定义</a></p>
+<p>Willow 实验对九种输入各采样 100,000 次，共 900,000 次，胜率为 <strong>0.9830 ± 0.0001</strong>，误差来自计数统计。这一指标检验的是规定通信条件下的游戏表现；工程复现需同时保存问题分布、测量基和结果映射。四比特规模使理想答案可以在本地逐项算清，再用偏差定位状态制备、门操作和读出的影响。<a href="https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/" target="_blank" rel="noopener noreferrer">Google 原始报道</a></p>
+<p><em>学界 × 科学。</em> 北大与 RIKEN 的新预印本从另一侧收紧经典比较：对具有共轭跃迁矩阵与共轭配对相互作用的一类费米子模型，作者给出估计完整 Fock 空间基态能量的经典随机算法，附加误差 ε、成功概率至少 3/4，复杂度对系统规模、相互作用强度界和 ε⁻¹ 为多项式。论文北京时间 11 月 20 日首投。为这类模型设计量子基准时，要先核对模型结构、粒子数约束和能量精度；固定粒子数扇区与完整 Fock 空间对应不同的优化问题。<a href="https://arxiv.org/abs/2611.26382" target="_blank" rel="noopener noreferrer">预印本及定理</a> · <a href="https://arxiv.org/html/2611.26382v1" target="_blank" rel="noopener noreferrer">方法正文</a></p>
+<p>这两项工作的联系在比较规则：游戏限制通信，基态算法限制哈密顿量结构。把限制和输出精度写进测试输入，才能判断后续线路改善了哪项任务。</p>
+<h2 id="section-a4f99ec09d"><span class="section-index">02</span>先改善参数和物理位置，再看样本带来的收益</h2>
+<p><em>学界与业界 × 工程。</em> IBM 等团队的 LUCJ 参数初始化研究于 11 月 19 日发表于 Quantum。LUCJ 用轨道旋转和相互作用门构造分子波函数；作者通过压缩双重分解重新拟合经典含单、双激发的耦合簇（CCSD）振幅，使缩短且受连接性约束的线路保留更多原近似信息，另用张量网络改善采样型算法的初值。这些步骤在经典端完成。<a href="https://quantum-journal.org/papers/q-2026-11-19-2278/" target="_blank" rel="noopener noreferrer">Quantum 正式论文</a></p>
+<p>真机比较使用 ibm_kingston、单层 LUCJ、XY4 动态解耦，每种设置做 10 次独立运行，每次每线路 100 万 shots。对甲酰胺二聚体 6-31+G* 的 36 电子、30 轨道活性空间，压缩初始化在 10 轮构型恢复后的 SQD 能量误差低于直接截断；对氮分子 cc-pVDZ、键长 1.2 Å 的 10 电子、26 轨道算例，压缩与直接截断未显示明显差异。甲酰胺线路的两比特门由直接截断方案的 2,684 个增至 2,838 个，深度由 126 增至 156。SQD 在测得的电子构型及恢复后的子空间中对角化哈密顿量，因此评估要同时记录线路、采样和经典对角化成本。<a href="https://arxiv.org/html/2511.22476v2#S4" target="_blank" rel="noopener noreferrer">硬件设置与结果</a></p>
+<p>同周的 CREST 预印本关注线路放在哪一片物理比特上。电子科大与中国电信量子团队用图神经网络匹配线路结构和设备校准，再交给 SABRE 路由。在天衍 176 的 63 个可用比特、94 条连接上，96 条留出测试线路各采样 1,000 次；其平均测量分布保真度为 <strong>0.21347</strong>，HAQA 对照为 <strong>0.18100</strong>，相对提高 <strong>17.94%</strong>。这里的保真度为 <code>F=(Σₓ√(pₓqₓ))²</code>，比较实测与理想输出分布。论文北京时间 11 月 19 日公开，硬件数据采于 9—10 月。<a href="https://arxiv.org/abs/2611.24886" target="_blank" rel="noopener noreferrer">预印本</a> · <a href="https://arxiv.org/html/2611.24886v1#S4.SS5" target="_blank" rel="noopener noreferrer">留出测试</a></p>
+<p>工程上可把二者串成实验顺序：固定问题与采样预算，先选择参数，再比较物理布局，最后计算目标指标。分布保真度和分子能量各自回答不同问题；对采样后还需求解子空间的算法，应直接检查最终能量及其经典处理开销。</p>
+<h2 id="section-710feaaf02"><span class="section-index">03</span>吞吐、反馈延迟和作业等待分别计时</h2>
+<p><em>学界与业界 × 工程。</em> 本周出现了三种不同层级的纠错系统指标。解码器根据纠错校验结果（syndrome）推断错误或所需的逻辑修正。码参数 [[n,k,d]] 分别表示物理比特数、逻辑比特数和码距；FPGA 是可编程逻辑芯片，qLDPC 指量子低密度奇偶校验码。下表列出各自计量的对象。</p>
+<table>
+<thead>
+<tr>
+<th>工作与本周进展</th>
+<th>比较条件与结果</th>
+<th>用于判断什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IBM Pelagos，11 月 16 日公开介绍；预印本为 11 月 12 日</td>
+<td>Two-gross [[288,12,18]] 码、Relay-BP 深度 50、线路 Pauli 噪声 p=0.003。每 GPU 批量 1,024 个 syndrome，1→8 块 MI355X 时总批量同步扩大，端到端总吞吐为单卡的 <strong>7.01 倍</strong></td>
+<td>离线蒙特卡洛测试每秒能处理多少解码样本</td>
+</tr>
+<tr>
+<td>Berkeley／Harvard Rapids，北京时间 11 月 20 日首投</td>
+<td>d=19 旋转表面码；单 VP1802、423.7 MHz 的布局布线结果给出 <strong>0.944 μs/轮</strong>处理间隔、<strong>20.36 μs</strong>判决延迟</td>
+<td>连续输入是否积压，以及一次反馈需等多久</td>
+</tr>
+<tr>
+<td>Xanadu Backline，11 月 16 日发布测量</td>
+<td>相同 VPK120、Threadripper PRO、ConnectX-7 和 100 Gbps 直连线，换用 HSB RDMA 引擎。CPU 回显往返中位数 <strong>1.736 μs</strong>，ERNIC 对照 <strong>2.470 μs</strong>；含 MI210 上 qLDPC 解码的往返为 <strong>31.84／32.65 μs</strong></td>
+<td>传输链路与实际解码合起来占用多少时间</td>
+</tr>
+</tbody></table>
+<p>Pelagos 数据来自实际多 GPU 批处理，计入主机预处理、分发和收集，以预热后的三次运行中位数比较。Rapids 的准确率来自噪声模拟，表中时序来自 FPGA 布局布线；其判决延迟包含 16.05 μs 缓冲和 4.31 μs 流水线。Backline 用 FPGA 计时器测量发送至收到回复，每组运行 100 万轮并剔除首轮。较低的传输开销能给解码留出时间，具体收益仍由解码计算在总往返中的占比决定。<a href="https://arxiv.org/html/2611.16285v1#S4" target="_blank" rel="noopener noreferrer">Pelagos 方法</a> · <a href="https://www.ibm.com/quantum/blog/pelagos" target="_blank" rel="noopener noreferrer">IBM 公告</a> · <a href="https://arxiv.org/html/2611.26447v1" target="_blank" rel="noopener noreferrer">Rapids 原文</a> · <a href="https://pennylane.ai/blog/2026/11/faster-round-trips-backline-holoscan-sensor-bridge/" target="_blank" rel="noopener noreferrer">Backline 原始基准</a></p>
+<p>再向上到用户提交的作业，Pasqal 在 11 月 19 日公布 Slurm HRES–QRMI 接入。11 月 16 日的技术说明展示了可用性检查、会话分配、取消和资源回收，并区分模拟接入测试与 FRESNEL_CAN1 的真机工作流。它解决的是 CPU、GPU、QPU 各阶段的资源生命周期。实际复现可分别记录排队、编译、执行与后处理时间，再定位慢在作业调度还是设备反馈。<a href="https://www.pasqal.com/newsroom/pasqal-makes-its-quantum-processors-native-to-slurm-with-nvidia-expansion-to-support-hierarchical-resources/" target="_blank" rel="noopener noreferrer">正式公告</a> · <a href="https://www.pasqal.com/blog/enabling-hybrid-gpu-qpu-workflows-with-slurm-hres-and-pasqal-qpus/" target="_blank" rel="noopener noreferrer">技术流程</a></p>
+<h2 id="section-0c8764652b"><span class="section-index">04</span>团队与趋势：围绕科学任务联合设计</h2>
+<p>Harvard 与 Cornell 在 11 月 20 日披露 ASQC 项目的研究分工。Harvard 的 Mikhail Lukin 牵头，Cornell 的 Eun-Ah Kim 团队计划用强化学习把算法编译为中性原子移动和门操作，并以强关联电子模拟检验纠错方案；后续测试平台包括 Harvard、MIT 与 QuEra。项目获得的 1,200 万美元 DOE 支持已于 10 月 9 日宣布，本周新增的是分工与路线说明。<a href="https://as.cornell.edu/news/cornell-collaborate-genesis-mission-project-advance-quantum-computing-ai" target="_blank" rel="noopener noreferrer">Cornell 官方说明</a></p>
+<p>本刊据这些证据作出的趋势判断是：应用输出质量正在成为连接参数、编译、纠错与系统时间的共同验收对象。ASQC 提供了明确的合作计划；本周各项实验则提供了可独立测量的局部指标。下一步值得跟进的是完整科学任务上能否同时报告精度和总资源。</p>
+<p>人物方面，IonQ 于 11 月 17 日宣布八人联邦顾问委员会，由前 NSA 副局长 <strong>George Barnes</strong> 担任主席，向 IonQ Federal 执行主席 <strong>Robert Cardillo</strong> 汇报。成员以一年为期，可续任，职责是为联邦客户需求、战略和产品方向提供咨询。公告给出了职责及任期安排，具体任职生效日未列明。<a href="https://www.ionq.com/news/meet-the-ionq-federal-advisory-board" target="_blank" rel="noopener noreferrer">IonQ 任职公告</a></p>
+<h2 id="section-e4f103ccd5"><span class="section-index">05</span>下一周行动：把四比特游戏做成可验收实验</h2>
+<p>本刊已完成一次独立 NumPy 矩阵核验。把 Alice 的两个比特记为 q0、q1，Bob 的记为 q2、q3，制备 q0–q2、q1–q3 两对 Bell 态。以下九个算符作用于各方的两个比特；I 为恒等算符，X、Y、Z 为 Pauli 算符。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>第一列</th>
+<th>第二列</th>
+<th>第三列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一行</td>
+<td>IZ</td>
+<td>ZI</td>
+<td>ZZ</td>
+</tr>
+<tr>
+<td>第二行</td>
+<td>XI</td>
+<td>IX</td>
+<td>XX</td>
+</tr>
+<tr>
+<td>第三行</td>
+<td>−XZ</td>
+<td>−ZX</td>
+<td>YY</td>
+</tr>
+</tbody></table>
+<p>每行算符彼此对易且乘积为 I，每列彼此对易且乘积为 −I。Alice 测量所收行、Bob 测量所收列；各测前两个算符，第三个答案由规定的乘积补出。共享 Bell 态使同一交叉位置的结果一致。独立核验枚举了 <strong>4,096</strong> 对合法经典确定性策略，最高命中 8/9；量子联合投影概率在九种输入下的胜率均为 1、概率总和均为 1。经典共享随机策略是这些确定性策略的混合，因而沿用该上限。</p>
+<p>本地检查还把测量转成门操作：Alice 的第二行使用两个 H；第三行先 CZ、再两个 H，并翻转前两个答案的符号。Bob 的前两列分别在第一个、第二个本地比特上加 H；第三列先 CX、再对控制位加 H。测量输出按对应算符排序。矩阵变换的最大残差为 <strong>4.45×10⁻¹⁶ 以下</strong>，通过预设的 10⁻¹² 绝对误差阈值。16 维 complex128 态向量占 256 字节。此核验为四比特理想教学模型。</p>
+<p>11 月 23—29 日按以下顺序推进：</p>
+<ol>
+<li><strong>实现九条测量线路。</strong> 在所选 SDK 中逐项核对算符、位序与符号映射，使无噪输出通过上述概率验收。线路仅用固定 Clifford 门，无需梯度训练。理想连接下，Bell 态制备加局部测量每条需 2—4 个两比特门；所需边为 02、13、01、23，组成四节点环。两对 Bell 态的制备可并行，后续局部测量最多再用一层两比特门。</li>
+<li><strong>比较两个物理布局。</strong> 保存目标设备校准、原生门集、编译后的两比特门数、深度和读出分配；逐条检查问题给定后仍只有双方各自的局部操作。硬件连接不足时，把路由引入的门与等待写入资源表。</li>
+<li><strong>做有限采样与噪声检查。</strong> 每布局九种输入各 1,024 shots，共 9,216；两个布局总预算 18,432。逐输入报告胜率和计数不确定度，再按九种输入等权合并。先在本地验证，真机运行需另行确认平台权限、设备支持和费用。</li>
+<li><strong>保存完整时间账。</strong> 分开记录排队、编译、设备执行和结果处理，附线路与原始计数。验收结果应能同时回答胜率、采样量及执行成本。</li>
+</ol>
+<h2 id="section-59ae6f0a40">验证状态与来源覆盖</h2>
+<p>本期在 11 月 17、19、21 日隔日简报基础上重新核对原始来源，补入 LUCJ 正式发表、Backline 测量和 ASQC 分工。覆盖 arXiv quant-ph、Quantum、README 的全部固定机构与企业名单，以及广东、香港、澳门的补充入口；对 11 月 21—22 日另作日期检索。arXiv 最近列表可见至 11 月 20 日。部分高校列表更新滞后，已补查实验室和作者论文；澳门大学新闻入口超时，湾区量子科学中心正文获取受限。Science 正文访问受限，Google 公告与作者预印本提供发表及方法依据。</p>
+<p>实际运行限于上述 NumPy 2.3.5 的经典策略穷举、四比特联合测量和基变换核验。SDK 实现、有限 shots、噪声实验及真机步骤列在行动清单中。</p>
+<p>本周相关简报：<a href="2026-11-17_every-other-day-brief.html">11 月 17 日</a> · <a href="2026-11-19_every-other-day-brief.html">11 月 19 日</a> · <a href="2026-11-21_every-other-day-brief.html">11 月 21 日</a></p>
+</article><aside class="outline" aria-label="本期导航"><details open><summary>本期目录</summary><ol><li><a href="#section-e4b15532c8">本期重点</a></li><li><a href="#section-8b7872b89f">比较量子与经典，先固定双方能做什么</a></li><li><a href="#section-a4f99ec09d">先改善参数和物理位置，再看样本带来的收益</a></li><li><a href="#section-710feaaf02">吞吐、反馈延迟和作业等待分别计时</a></li><li><a href="#section-0c8764652b">团队与趋势</a></li><li><a href="#section-e4f103ccd5">下一周行动</a></li><li><a href="#section-59ae6f0a40">验证状态与来源覆盖</a></li></ol></details><p class="outline-note">从进展到实现<br>留意假设、证据与资源条件。</p></aside></div></main><footer class="site-footer"><div class="wrap footer-inner"><span class="mono">QUANTUMDAILY / ALGORITHMS · SIMULATION · HARDWARE</span><span>隔日简报与周报 · <a href="https://github.com/KeithKaizhiBai/QuantumDaily" target="_blank" rel="noopener noreferrer">查看原稿与来源 ↗</a></span></div></footer></body></html>
