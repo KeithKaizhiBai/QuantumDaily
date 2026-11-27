@@ -8,9 +8,9 @@ Every-other-day briefs and Monday weeklies start at 09:15 Beijing time. Both fol
 
 ## Current issues
 
-- [Brief 018](reports/2026/2026-11-27_every-other-day-brief.md) continues from November 25 17:20:49 through 2026-11-27T17:18:38+08:00. Focus: compact Rydberg optimization encoding and a locally checked ten-site physical-model counterexample; chemistry cost baselines, bosonic sensing, a Zeno tutorial and IQM's Korean order. Source and webpage generated; GitHub save and live deployment verification pending.
+- [Brief 018](reports/2026/2026-11-27_every-other-day-brief.md) continues from November 25 17:20:49 through 2026-11-27T17:18:38+08:00. Focus: compact Rydberg optimization encoding and a locally checked ten-site physical-model counterexample; chemistry cost baselines, bosonic sensing, a Zeno tutorial and IQM's Korean order. Generated, saved to GitHub and verified online.
 - [Week 006](reports/2026/2026-11-23_weekly-report.md) covers November 16–22; research cutoff 2026-11-23T09:26:34+08:00. Generated, saved to GitHub and verified online. Its source and reading page are preserved.
-- Next brief is November 29, continuing from brief 018's cutoff after successful publication. Next weekly is November 30, covering November 23–29.
+- Next brief is November 29, continuing from brief 018's cutoff. Next weekly is November 30, covering November 23–29.
 - October 27 draft source and local HTML remain recovery files only.
 
 ## Validation and next action
@@ -19,4 +19,6 @@ Independent scientific and fresh-context reader reviews approved the same final 
 
 The existing builder generated 24 issues, preserving all 23 prior reading pages/assets. Checked 458 internal links/fragments, all 11 source URLs, 10 section headings, 21 emphasis spans, title, focus and homepage excerpt. Shared asset version 79bbaf014fd5 is unchanged. [TASK_LOG.md](TASK_LOG.md) contains source coverage, input coordinates, verification criteria and review evidence.
 
-Next: commit only the six issue/page/index/state files from rechecked remote main, read all saved files back, then verify Pages and the public article/homepage. If publication fails, retain the current source and generated pages and resume the missing steps.
+[Release 6bbf04215155](https://github.com/KeithKaizhiBai/QuantumDaily/commit/6bbf04215155dc28dbf567baa26bd1c0213ec64d) passed a guarded main update and full 62-blob tree validation. All six release files passed exact text/blob readback. [Pages run 45974663951](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/45974663951) succeeded. Public article and homepage HTTP200 checks verified the source fingerprint, 11 source URLs, 10 headings, 21 emphasis spans, 24 archive entries and preserved weekly 006. An initial article request returned 503; a fresh retry passed all checks.
+
+Next: continue the November 29 brief from the cutoff above and prepare the November 30 weekly independently. No publication recovery remains.
