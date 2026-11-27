@@ -1,6 +1,6 @@
 # QuantumDaily current state
 
-Updated 2026-11-25 (Asia/Shanghai).
+Updated 2026-11-27 (Asia/Shanghai).
 
 ## Scope and schedule
 
@@ -8,15 +8,15 @@ Every-other-day briefs and Monday weeklies start at 09:15 Beijing time. Both fol
 
 ## Current issues
 
-- [Brief 017](reports/2026/2026-11-25_every-other-day-brief.md) continues from November 23 17:22:13 through 2026-11-25T17:20:49+08:00. Focus: QSSD low-energy subspace sampling, with input-ensemble Trotter error, Dirac propagation, recursive Clifford noise reduction, Pasqal CoPaNA and Quantum Art appointments. Generated, saved to GitHub and verified online.
+- [Brief 018](reports/2026/2026-11-27_every-other-day-brief.md) continues from November 25 17:20:49 through 2026-11-27T17:18:38+08:00. Focus: compact Rydberg optimization encoding and a locally checked ten-site physical-model counterexample; chemistry cost baselines, bosonic sensing, a Zeno tutorial and IQM's Korean order. Source and webpage generated; GitHub save and live deployment verification pending.
 - [Week 006](reports/2026/2026-11-23_weekly-report.md) covers November 16–22; research cutoff 2026-11-23T09:26:34+08:00. Generated, saved to GitHub and verified online. Its source and reading page are preserved.
-- Next brief is November 27, continuing from brief 017's cutoff. Next weekly is November 30, covering November 23–29.
+- Next brief is November 29, continuing from brief 018's cutoff after successful publication. Next weekly is November 30, covering November 23–29.
 - October 27 draft source and local HTML remain recovery files only.
 
 ## Validation and next action
 
-Independent scientific and fresh-context reader reviews approved the same final source SHA256 2fa396138095f119faf861d080c85945828bebc514369b7c5065ca85c9c2a16c. Review evidence is recorded in [TASK_LOG.md](TASK_LOG.md). This issue contains feasibility/test plans; no numerical or hardware experiment was run locally.
+Independent scientific and fresh-context reader reviews approved the same final source SHA256 a9d0d407d64e18cea6fe2352140c9f5f351aec96d9f730fbe1c0ddfc7377a1a8. Python exact enumeration verified the ten-site static example; the science reviewer independently reproduced it with JavaScript rational arithmetic. Dynamics, pulse optimization, sampling and QPU jobs remain proposed work.
 
-The existing builder generated 23 issues, preserving all 22 prior reading pages/assets. Checked 438 internal links/fragments, all 12 source URLs, title, focus, emphasis and formulas. All six release files passed exact text/blob readback. Pages deployment and the live article/homepage passed verification. The next run continues from the cutoff above.
+The existing builder generated 24 issues, preserving all 23 prior reading pages/assets. Checked 458 internal links/fragments, all 11 source URLs, 10 section headings, 21 emphasis spans, title, focus and homepage excerpt. Shared asset version 79bbaf014fd5 is unchanged. [TASK_LOG.md](TASK_LOG.md) contains source coverage, input coordinates, verification criteria and review evidence.
 
-[Release 93331ef30035](https://github.com/KeithKaizhiBai/QuantumDaily/commit/93331ef30035d5c8d98ae7f52e1b4a38b1e7694b) passed a guarded main update and full 60-blob tree validation. [Pages run 45586634365](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/45586634365) succeeded. Public article/homepage HTTP200 checks verified the source fingerprint, 12 source URLs, 9 section headings, 14 emphasis spans, 23 archive entries and preserved weekly 006. Shared asset version 79bbaf014fd5 remains unchanged.
+Next: commit only the six issue/page/index/state files from rechecked remote main, read all saved files back, then verify Pages and the public article/homepage. If publication fails, retain the current source and generated pages and resume the missing steps.

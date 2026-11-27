@@ -477,3 +477,44 @@ Build validation: {"issues": 23, "prior_pages_preserved": 22, "internal_links_ch
 Release verification at2026-11-25T17:35:37+08:00: [commit93331ef30035d5c8d98ae7f52e1b4a38b1e7694b](https://github.com/KeithKaizhiBai/QuantumDaily/commit/93331ef30035d5c8d98ae7f52e1b4a38b1e7694b), treeea832c8b01dcb290e7e36a81d11ffb914321cce1, saved exactly six release paths from rechecked main8b92f41bca8e744804534a5afa52e70ed8ee408f using expected_sha and force:false. All60tree blobs match the preserved base plus intended changes. Full text and blob readback passed for all six files. [Pages run45586634365](https://github.com/KeithKaizhiBai/QuantumDaily/actions/runs/45586634365) completed success. Cache-busted article and homepage returned HTTP200 and verified source fingerprint2fa396138095f119faf861d080c85945828bebc514369b7c5065ca85c9c2a16c,12source URLs,9headings,14emphasis spans,23archive entries,newfocus/excerpt and weekly006. Assetversion79bbaf014fd5 retained. October27recovery draft stays excluded.
 
 Brief017 is generated, GitHub-saved and online. Next brief continues from2026-11-25T17:20:49+08:00; weekly content and cutoff are unchanged. Local transfer exceeded the terminal output cap when all six files were read together; read bounded text chunks and verified reconstructed content by Git blob hashes. The index contains three non-BMP characters, so transfer length checks use Unicode code points rather than UTF16 code units. These diagnostics changed neither report content nor published files. Completion records only are saved in a following guarded two-file commit; verify readback and its Pages run.
+
+## 2026-11-27 — Brief 018 research, exact check, review and build
+
+Automation quantumdaily checked in at 2026-11-27T09:11:13.932Z (17:11:13 Beijing). Actual issue date is November 27; no earlier publication time was assigned. The reporting window continues brief 017's 2026-11-25T17:20:49+08:00 cutoff and ends at 2026-11-27T17:18:38+08:00. Weekly 006 and its independent cutoff are unchanged.
+
+Preflight read applicable rules, README, PROJECT_SUMMARY and brief 017. Remote main was 601bf24b5448fb585ba739195490602c98721e07, tree 4adf747b832e562cc695a65a0c5f7b642eda03e2; all 60 remote-owned blobs matched the local mirror. No November 27 issue existed. The local-only October 27 Markdown and HTML were preserved and excluded from the isolated build.
+
+Research checked arXiv quant-ph (latest accessible announcement November 26), Quantum and every fixed domestic, Greater Bay Area, overseas and company source. Domestic coverage included USTC, Tsinghua, PKU, Fudan, HKU, SUSTech, SYSU, HKUST, HKUST Guangzhou, UMacau, the Greater Bay Area quantum center and Hetao. Overseas covered Caltech, Harvard, MIT, Princeton, ETH, Delft/QuTech, Chicago PME and ORNL. Industry covered IBM, Google Quantum AI, Quantinuum, IonQ, QuEra, Pasqal, Horizon Quantum, Xanadu, IQM, NVIDIA and Qedma. Research agents worked read-only; the primary agent integrated all files.
+
+Selected first submissions 2611.34792 and 2611.34889, Tsinghua's November 26 announcement of the November 25 Nature sensing article, Quantum 2285's November 27 formal publication, and IQM's November 25 17:30 EET regulatory order notice. People searches yielded no adequately dated new appointment in this window. Material gaps: UMacau news/FST 503, Caltech main 403, empty Greater Bay Area quantum-center extraction; partial ETH/Google and HKU/Fudan quantum-subsite access; IQM investor-entry restrictions. Used accessible sub-sites, official-domain searches and SEC primary attachments. PKU ICQM was accessible this run. Nature sensing full text required subscription; the readable abstract, final institutional account and early author preprint supported the reported claims.
+
+Other reviewed candidates were kept out of the new-results list: QuTech Majorana paper has July 10 first submission and November 25 publication without a time; Riverlane directional codes have a July 2025 first submission, November 2 latest preprint and November 26 company explanation of the November 25 formal publication; IQM/AQACYB's November 25 page carries a November 24 dateline and October 7 preprint. HKUST Guangzhou 2611.34742 was a valid additional theory candidate; the issue selected four research/learning stories plus the dated hardware order.
+
+Frozen reader questions tested the encoding mechanism and guarantees; the smallest input, answer and performed/planned checks; full-interaction effects and implementation resources; chemistry-cost and photon-measurement conditions; and first-publication/announcement dates, people and search gaps. The primary agent wrote the brief. Initial reader review of source 6fa386acf2424a9adce14be552deb3fab3222bdcfaf60b60dda9c60d8a3cf1e5 requested an explanation connecting local assignments to the global objective. Revision 812adb436059a127e21acf5b255a5f976eb0651ae52ccbb12ae4ef5382120863 added geometry and endpoint-compensation reasoning, clarified chemistry's first submission, and removed a generic conclusion. Science review then precisely limited consistency to active copies and clarified propagation rightward/upward from the diagonal. The intermediate reader review was stopped before acceptance. Both science review and a new fresh-context reader explicitly approved the complete final SHA256 a9d0d407d64e18cea6fe2352140c9f5f351aec96d9f730fbe1c0ddfc7377a1a8. The final five reader questions passed. Optional nonblocking shortening suggestions were left unchanged to preserve the approved version.
+
+### Executed ten-site check
+
+Environment: Python 3.12.14, standard-library itertools/Fraction; source passed through standard input from PowerShell in E:/CosmosWork/QC_News. Deterministic exhaustive check, no random seed. Inputs follow arXiv:2611.34792v1 III.1, D.1 and F. Coordinates below are integers; divide by 20 to obtain q, and multiply q by R_b for physical coordinates.
+
+| Site | Integer coordinates | Weight |
+| --- | --- | --- |
+| d1 | (12,12) | 16 |
+| d2 | (39,-15) | 30 |
+| d3 | (66,-42) | 14 |
+| u00 | (27,0) | 39 |
+| u01 | (27,12) | 26 |
+| u10 | (39,0) | 26 |
+| v00 | (54,-27) | 39 |
+| v01 | (54,-15) | 26 |
+| v10 | (66,-27) | 26 |
+| v11 | (66,-15) | 15 |
+
+Acceptance criteria were exact, without floating-point tolerances: integer squared distance <=400 gives 17 graph edges; source Q=-3*x1-4*x2-x3+2*x1*x2-2*x2*x3 under x1+x2<=1 has unique optimum 011, Q=-7; graph independent sets have unique optimum {d2,d3,u01,v11}, weight 85. All passed.
+
+For every one of 1,024 occupations, computed weight W and exact U=sum(Fraction(400, squared_distance)**3) over all occupied pairs. Included configurations that violate graph edges. For each of 128 occupations with diagonal readout 011, compared U_k-t*W_k <= U_j-t*W_j with every occupation j. Equivalently a*t<=b, a=W_j-W_k, b=U_j-U_k: a>0 sets an upper bound, a<0 a lower bound, a=0 requires b>=0. Intersected these closed constraints with t>0, preserving ties. All 128 intersections were empty. This covers the continuous positive half-axis at fixed coordinates, fixed relative detunings and zero drive. An independent scientific reviewer used JavaScript BigInt rational arithmetic and obtained the same source, graph and full-interaction results. No dynamics, optimized pulse, noise model, sampled experiment or QPU submission was run.
+
+### Build and publication checkpoint
+
+Node v24.22.1 with bundled marked dependencies ran the existing tools/build-site.mjs in an isolated temporary mirror of the remote-owned files plus this report. Build passed: 24 issues, all 23 previous reading pages/assets byte-identical; 458 internal links/fragments; 11 preserved external source URLs; 10 section headings; all 21 source emphasis spans rendered, no raw Markdown markers. Title, focus, formulas and full homepage excerpt passed inspection. Asset version 79bbaf014fd5 and weekly 006 retained. No website code changed and no new viewport test was performed.
+
+Source and pages are generated. GitHub save, exact readback, Pages and public-page verification are pending. On failure retain this candidate and generated pages, reread main, and resume only the missing publication steps.
